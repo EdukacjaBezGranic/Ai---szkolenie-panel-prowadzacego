@@ -1390,5 +1390,173 @@ window.EXERCISES = {
         "Sprawdźcie, czy szkic nie obiecuje za dużo i nie brzmi defensywnie."
       ]
     }
+  ],
+  "code-tool": [
+    {
+      "title": "Ćwiczenie: Mini narzędzie w HTML",
+      "heading": "Zaprojektujcie prosty kalkulator dla prowadzącego",
+      "task": "Materiał do pracy:\nChcecie przygotować małe narzędzie, które pomaga prowadzącemu szybko policzyć, czy ćwiczenie zmieści się w zaplanowanym czasie. Nie chodzi o dużą aplikację. Chodzi o jeden prosty plik HTML, który można otworzyć w przeglądarce.\n\nDane wejściowe:\n- liczba grup,\n- czas pracy jednej grupy w minutach,\n- czas omówienia jednej grupy w minutach,\n- przerwa techniczna w minutach,\n- limit czasu: 45 minut.\n\nOczekiwane działanie:\nPo wpisaniu wartości strona pokazuje łączny czas oraz komunikat: „mieści się w limicie” albo „za długo o X minut”.\n\nWarunki:\n- kod ma działać jako jeden plik HTML,\n- bez instalowania czegokolwiek,\n- bez logowania,\n- bez zewnętrznych bibliotek,\n- bez wysyłania danych gdziekolwiek.\n\nPrzebieg:\n1. Napiszcie prompt do ChatGPT albo Claude, który najpierw prosi AI o krótki plan działania, a dopiero potem o kod.\n2. Doprecyzujcie, że kod ma być prosty, czytelny i możliwy do wklejenia do jednego pliku HTML.\n3. Poproście AI o 5 testów ręcznych: jakie liczby wpisać i jaki wynik powinien się pojawić.\n4. Przeczytajcie odpowiedź i zaznaczcie miejsca, w których trzeba doprecyzować wymagania.\n\nEfekt pracy:\nPrompt do stworzenia mini narzędzia, lista testów oraz 2-3 poprawki, które warto dopisać do polecenia.",
+      "hint": "Podpowiedzi:\n- Nie musicie rozumieć całego kodu. Macie umieć sprawdzić, czy odpowiada na zadanie.\n- Poproście AI o kod w jednym bloku oraz krótką instrukcję: gdzie wkleić i jak uruchomić.\n- Testy są ważniejsze niż ładny wygląd. Jeśli kalkulator liczy źle, ładny przycisk niczego nie ratuje.\n- W darmowej wersji ChatGPT albo Claude wystarczy poprosić o kod, wyjaśnienie i testy. Uruchamianie kodu jest dodatkiem, nie warunkiem wykonania ćwiczenia.",
+      "check": "Kontrola jakości:\n1. Czy prompt opisuje cel narzędzia i użytkownika?\n2. Czy wymagania są konkretne i mierzalne?\n3. Czy AI ma zakaz używania bibliotek i zewnętrznych usług?\n4. Czy są testy dla wyniku poniżej limitu, równo z limitem i powyżej limitu?\n5. Czy uczestnik bez wiedzy technicznej rozumie, jak sprawdzić wynik?",
+      "sample": "Przykładowe polecenie do AI:\nPrzygotuj jeden prosty plik HTML z CSS i JavaScriptem. Narzędzie ma liczyć łączny czas ćwiczenia na podstawie: liczby grup, czasu pracy jednej grupy, czasu omówienia jednej grupy i przerwy technicznej. Limit wynosi 45 minut. Najpierw pokaż krótki plan działania, potem kod w jednym bloku, a na końcu 5 testów ręcznych z oczekiwanym wynikiem. Nie używaj zewnętrznych bibliotek ani usług.",
+      "result": "prompt do stworzenia prostego narzędzia, kod do oceny i lista testów ręcznych",
+      "discuss": "Pytania do omówienia:\n- Co musiało znaleźć się w promptcie, żeby AI nie zrobiła zbyt dużej aplikacji?\n- Który test najlepiej sprawdza, czy kalkulator naprawdę działa?\n- Jak poprosić AI o poprawkę, jeśli wynik jest błędny albo opis niejasny?",
+      "intro": "To ćwiczenie pokazuje, że AI może pomóc stworzyć bardzo proste narzędzie bez instalowania programów. Waszą rolą nie jest „wierzyć w kod”, tylko dobrze opisać wymagania i sprawdzić wynik.",
+      "time": "22-28 min",
+      "form": "pary lub małe grupy",
+      "steps": [
+        "Ustalcie minimalne wymagania dla narzędzia.",
+        "Napiszcie prompt, który prowadzi AI od planu do kodu.",
+        "Poproście o testy ręczne i sprawdźcie, czy obejmują różne przypadki.",
+        "Zapiszcie jedną zasadę pracy z AI przy generowaniu kodu."
+      ]
+    }
+  ],
+  "code-debug": [
+    {
+      "title": "Ćwiczenie: Napraw kod z pomocą AI",
+      "heading": "Znajdźcie błąd i poproście AI o bezpieczną poprawkę",
+      "task": "Materiał do pracy:\nMacie fragment kodu, który miał policzyć osoby z potwierdzonym udziałem w szkoleniu. Wynik jest błędny. Waszym zadaniem nie jest samodzielne programowanie, tylko przygotowanie dobrego polecenia dla AI: znajdź błąd, wyjaśnij go prostym językiem, popraw kod i pokaż testy.\n\nKod do analizy:\nconst uczestnicy = [\n  { imie: 'Anna', status: 'potwierdzony' },\n  { imie: 'Piotr', status: 'brak odpowiedzi' },\n  { imie: 'Marta', status: 'potwierdzony' },\n  { imie: 'Ola', status: 'rezygnacja' }\n];\n\nfunction policzPotwierdzonych(lista) {\n  let wynik = '';\n  lista.forEach(osoba => {\n    if (osoba.status = 'potwierdzony') wynik = wynik + 1;\n  });\n  return wynik;\n}\n\nconsole.log(policzPotwierdzonych(uczestnicy));\n\nOczekiwane działanie:\nDla powyższych danych wynik powinien wynosić 2.\n\nPrzebieg:\n1. Przeczytajcie kod jak instrukcję, nie jak egzamin z programowania. Co miał zrobić?\n2. Napiszcie prompt do ChatGPT albo Claude: poproście o znalezienie błędu, wyjaśnienie bez żargonu i poprawkę.\n3. Dodajcie warunek: AI ma wskazać, które linie są ryzykowne i dlaczego.\n4. Poproście o 3 testy: brak potwierdzonych, wszyscy potwierdzeni, mieszane statusy.\n\nEfekt pracy:\nPrompt do debugowania, poprawiona wersja kodu oraz krótka notatka „co było błędem i jak to sprawdzić”.",
+      "hint": "Podpowiedzi:\n- W debugowaniu nie pytajcie tylko „napraw”. Poproście: „najpierw wyjaśnij, co ten kod robi, potem wskaż błąd”.\n- AI może poprawić kod, ale może też pominąć testy. Testy trzeba zamówić w promptcie.\n- Poproście o wyjaśnienie dla osoby nietechnicznej. To wymusza lepszą odpowiedź.\n- Uważajcie na poprawki, które zmieniają zakres zadania zamiast naprawić błąd.",
+      "check": "Kontrola jakości:\n1. Czy AI wskazała błąd z pojedynczym znakiem równości w warunku?\n2. Czy AI zauważyła, że wynik zaczyna jako tekst, a nie liczba?\n3. Czy poprawiony kod nadal liczy tylko status „potwierdzony”?\n4. Czy testy mają oczekiwane wyniki?\n5. Czy wyjaśnienie da się zrozumieć bez znajomości JavaScriptu?",
+      "sample": "Przykładowe polecenie do AI:\nPrzeanalizuj poniższy kod jak recenzent. Najpierw napisz jednym akapitem, co kod miał robić. Potem wskaż błędy, wyjaśnij je prostym językiem i zaproponuj minimalną poprawkę bez przebudowy całego kodu. Na końcu podaj 3 testy ręczne z oczekiwanym wynikiem. Nie zakładaj, że odbiorca jest programistą.",
+      "result": "poprawiony kod, wyjaśnienie błędu i zestaw testów sprawdzających",
+      "discuss": "Pytania do omówienia:\n- Czy AI naprawiła tylko błąd, czy zaczęła przebudowywać całość?\n- Co w promptcie pomogło dostać zrozumiałe wyjaśnienie?\n- Jak można używać AI do kontroli kodu, nawet jeśli nie jest się programistą?",
+      "intro": "To ćwiczenie uczy pracy z AI jako pomocnikiem od diagnozy błędów. Najważniejsze jest nie samo „napraw kod”, tylko wymuszenie wyjaśnienia, minimalnej poprawki i testów.",
+      "time": "20-25 min",
+      "form": "pary",
+      "steps": [
+        "Ustalcie, jaki wynik kod powinien zwrócić.",
+        "Napiszcie prompt do analizy błędu i minimalnej poprawki.",
+        "Poproście o testy i oczekiwane wyniki.",
+        "Zapiszcie, jak rozpoznaliście, że poprawka jest sensowna."
+      ]
+    }
+  ],
+  "code-data": [
+    {
+      "title": "Ćwiczenie: Dane w mały raport",
+      "heading": "Poproście AI o kod, który porządkuje prostą tabelę",
+      "task": "Materiał do pracy:\nMacie krótką listę zgłoszeń na szkolenie. Chcecie szybko sprawdzić: ile osób jest z każdego działu, ile osób potwierdziło udział i kto wymaga kontaktu. AI może pomóc przygotować prosty kod albo strukturę raportu, ale wynik trzeba sprawdzić.\n\nDane testowe:\nimie;dzial;status;wynik_testu\nAnna;Kadry;potwierdzony;8\nPiotr;IT;brak odpowiedzi;0\nMarta;Kadry;potwierdzony;9\nOla;Finanse;rezygnacja;0\nTomasz;IT;potwierdzony;6\nEwa;Finanse;brak odpowiedzi;0\n\nWymagania:\n- przygotuj raport w tabeli,\n- policz osoby według działu,\n- policz statusy zgłoszeń,\n- wypisz osoby do kontaktu: status „brak odpowiedzi”,\n- nie zmieniaj danych źródłowych,\n- pokaż, jak ręcznie sprawdzić wynik.\n\nPrzebieg:\n1. Napiszcie prompt do ChatGPT albo Claude, który prosi o dwa wyniki: raport dla człowieka oraz prosty kod JavaScript do powtórzenia analizy.\n2. Dodajcie warunek, że AI ma najpierw przepisać dane do tabeli kontrolnej, żeby łatwo zauważyć pomyłki.\n3. Poproście o ręczne sprawdzenie: ile powinno być osób w każdym dziale i ile osób wymaga kontaktu.\n4. Oceńcie, czy wynik AI zgadza się z danymi, zanim uznacie raport za gotowy.\n\nEfekt pracy:\nPrompt do analizy danych, raport kontrolny i prosta procedura sprawdzania wyniku.",
+      "hint": "Podpowiedzi:\n- Dane są małe specjalnie. Dzięki temu można ręcznie sprawdzić, czy AI liczy poprawnie.\n- Poproście AI, żeby nie tylko podała wynik, ale też opisała sposób liczenia.\n- Jeśli AI wygeneruje kod, poproście o komentarze przy najważniejszych liniach.\n- W darmowej wersji ChatGPT/Claude można wykonać ćwiczenie jako analizę i projekt kodu. Uruchamianie kodu jest opcjonalne.",
+      "check": "Kontrola wyniku:\n1. Czy Kadry mają 2 osoby, IT 2 osoby, Finanse 2 osoby?\n2. Czy status „potwierdzony” ma 3 osoby?\n3. Czy do kontaktu są Piotr i Ewa?\n4. Czy AI nie usunęła osoby z rezygnacją?\n5. Czy kod albo opis działania da się powtórzyć na podobnej tabeli?",
+      "sample": "Przykładowe polecenie do AI:\nNa podstawie poniższych danych przygotuj raport kontrolny oraz prosty kod JavaScript, który można wykorzystać ponownie dla podobnej tabeli. Najpierw przepisz dane do czytelnej tabeli, potem policz osoby według działu, statusy zgłoszeń i osoby do kontaktu. Nie zmieniaj danych źródłowych. Na końcu pokaż ręczne sprawdzenie wyniku krok po kroku.",
+      "result": "raport z danych, prosty kod pomocniczy i lista kontroli wyniku",
+      "discuss": "Pytania do omówienia:\n- Co było ważniejsze: kod czy sposób sprawdzenia wyniku?\n- Gdzie AI mogłaby pomylić się przy większej tabeli?\n- Jak zmienić prompt, gdy dane mają inne kolumny?",
+      "intro": "Ćwiczenie pokazuje, jak użyć AI do prostego porządkowania danych i jednocześnie nie oddać jej pełnej kontroli. Najpierw mały raport, potem kod, potem ręczne sprawdzenie.",
+      "time": "24-30 min",
+      "form": "małe grupy",
+      "steps": [
+        "Przeczytajcie dane i ustalcie, co trzeba policzyć.",
+        "Napiszcie prompt do raportu, kodu i kontroli wyniku.",
+        "Sprawdźcie ręcznie najważniejsze liczby.",
+        "Zapiszcie, jak zabezpieczyć podobne zadanie przy większych danych."
+      ]
+    }
+  ],
+  "code-script": [
+    {
+      "title": "Ćwiczenie: Automatyzacja w Google Apps Script",
+      "heading": "Zaprojektujcie bezpieczny skrypt, który niczego sam nie wysyła",
+      "task": "Materiał do pracy:\nWyobraźcie sobie arkusz z uczestnikami szkolenia. Chcecie przygotować automatyzację, która na podstawie danych z arkusza tworzy treść wiadomości przypominającej, ale jej automatycznie nie wysyła. To ważny bezpiecznik: człowiek ma sprawdzić treść przed użyciem.\n\nDane wejściowe:\nArkusz ma kolumny: Imię, Email, Status, Termin szkolenia, Link do materiałów, Komunikat roboczy.\n\nOczekiwane działanie:\nSkrypt ma przejść po wierszach i dla osób ze statusem „potwierdzony” wpisać do kolumny „Komunikat roboczy” krótką wiadomość przypominającą o szkoleniu. Dla pozostałych statusów ma zostawić pustą komórkę albo dopisać „nie dotyczy”.\n\nBezpiecznik:\nSkrypt nie może wysyłać maili, usuwać danych, zmieniać statusów ani pobierać informacji z zewnątrz.\n\nPrzebieg:\n1. Przygotujcie prompt do ChatGPT albo Claude, który opisuje arkusz, kolumny i ograniczenia.\n2. Poproście AI o kod Google Apps Script oraz instrukcję, gdzie go wkleić.\n3. Dodajcie wymóg: zanim skrypt cokolwiek zmieni, ma być łatwy do przetestowania na 3 przykładowych wierszach.\n4. Poproście AI o listę ryzyk: co sprawdzić przed uruchomieniem na prawdziwym arkuszu.\n\nEfekt pracy:\nPrompt do wygenerowania skryptu, bezpieczna lista ograniczeń oraz plan testu na przykładowych danych.",
+      "hint": "Podpowiedzi:\n- W automatyzacji najważniejsze są ograniczenia: czego skrypt nie może zrobić.\n- Lepiej zacząć od wpisywania tekstu do kolumny niż od automatycznego wysyłania maili.\n- Poproście o komentarze w kodzie i instrukcję cofnięcia zmian.\n- To ćwiczenie da się zrobić koncepcyjnie w darmowym ChatGPT/Claude. Uruchomienie w Google Apps Script jest opcjonalne i wymaga konta Google.",
+      "check": "Kontrola bezpieczeństwa:\n1. Czy prompt wyraźnie zakazuje wysyłania maili?\n2. Czy skrypt ma działać tylko na kolumnie „Komunikat roboczy”?\n3. Czy statusy inne niż „potwierdzony” nie uruchamiają wiadomości?\n4. Czy AI podała instrukcję testu na kopii danych?\n5. Czy uczestnik wie, co sprawdzić przed uruchomieniem skryptu?",
+      "sample": "Przykładowe polecenie do AI:\nNapisz kod Google Apps Script dla arkusza z kolumnami: Imię, Email, Status, Termin szkolenia, Link do materiałów, Komunikat roboczy. Skrypt ma dla osób ze statusem „potwierdzony” wpisać do kolumny „Komunikat roboczy” krótką wiadomość przypominającą. Nie wolno wysyłać maili, usuwać danych ani zmieniać statusów. Dodaj komentarze w kodzie, instrukcję testu na kopii arkusza i listę ryzyk do sprawdzenia przed użyciem.",
+      "result": "prompt do bezpiecznej automatyzacji, kod do oceny i lista ryzyk przed uruchomieniem",
+      "discuss": "Pytania do omówienia:\n- Dlaczego w tym ćwiczeniu nie wysyłamy maili automatycznie?\n- Jakie ograniczenie w promptcie najbardziej chroni dane?\n- Co trzeba sprawdzić, zanim podobny skrypt trafi do prawdziwego arkusza?",
+      "intro": "To trudniejsze ćwiczenie łączy AI, arkusz i automatyzację. Celem nie jest szybkie „zrób skrypt”, tylko bezpieczne opisanie działania, ograniczeń i testu.",
+      "time": "25-35 min",
+      "form": "małe grupy lub demonstracja prowadzona",
+      "steps": [
+        "Zdefiniujcie kolumny, działanie i zakazy dla skryptu.",
+        "Napiszcie prompt do wygenerowania kodu i instrukcji testu.",
+        "Sprawdźcie, czy kod nie wysyła maili i nie zmienia danych źródłowych.",
+        "Zapiszcie zasadę bezpieczeństwa przy automatyzacjach tworzonych z AI."
+      ]
+    }
+  ],
+  "file-doc": [
+    {
+      "title": "Ćwiczenie: Dokument Google Docs",
+      "heading": "Przygotujcie dokument roboczy do współpracy",
+      "task": "Materiał do pracy:\nMacie przygotować krótki dokument Google Docs dla zespołu organizującego szkolenie. Dokument ma być praktyczny: ma pomagać w ustaleniach, a nie tylko ładnie wyglądać.\n\nDane źródłowe:\nSzkolenie dotyczy praktycznego wykorzystania AI w pracy biurowej. Uczestnicy będą pracować z promptami, tekstami, ankietą, krótkim raportem i weryfikacją odpowiedzi AI. Przed szkoleniem trzeba wysłać informację organizacyjną, sprawdzić dostęp do materiałów, przygotować QR do ankiety i ustalić, kto odpowiada za listę obecności.\n\nStruktura dokumentu:\n- tytuł dokumentu,\n- cel dokumentu w 2-3 zdaniach,\n- tabela ustaleń: zadanie, osoba, termin, status, pytanie do doprecyzowania,\n- sekcja „ryzyka i decyzje”,\n- krótka checklista na dzień przed szkoleniem,\n- miejsce na komentarze zespołu.\n\nPlik wynikowy:\nDokument Google Docs gotowy do wklejenia lub utworzenia ręcznie: z nagłówkami, tabelą, checklistą i jasnym miejscem na komentarze.\n\nPrzebieg:\n1. Napiszcie prompt do ChatGPT albo Claude, który tworzy treść i strukturę dokumentu, ale nie wymyśla osób ani terminów.\n2. Poproście AI o wersję łatwą do przeniesienia do Google Docs: nagłówki, tabela, lista kontrolna.\n3. Dodajcie warunek, że brakujące dane mają być oznaczone jako „do ustalenia”.\n4. Po otrzymaniu wyniku wskażcie, które fragmenty powinny stać się komentarzami w Google Docs, a które treścią główną.\n\nEfekt pracy:\nGotowy szkic dokumentu Google Docs oraz lista miejsc, które zespół powinien uzupełnić wspólnie.",
+      "hint": "Podpowiedzi:\n- Dokument roboczy powinien ułatwiać rozmowę zespołu. Nie musi być długi.\n- Poproście AI o tabelę w formacie, który da się wkleić do Google Docs.\n- Jeżeli brakuje osoby, daty albo decyzji, AI ma wpisać „do ustalenia”, a nie zgadywać.\n- W Google Docs dobrze działają nagłówki, checklisty i komentarze przypisane do konkretnego fragmentu.",
+      "check": "Kontrola dokumentu:\n1. Czy dokument ma jasny cel i odbiorcę?\n2. Czy tabela zawiera zadania, osoby, terminy, status i pytania?\n3. Czy braki są oznaczone, a nie dopowiedziane?\n4. Czy dokument da się wkleić do Google Docs bez długiego poprawiania?\n5. Czy wiadomo, które elementy mają być komentarzami zespołu?",
+      "sample": "Przykładowe polecenie do AI:\nPrzygotuj szkic dokumentu Google Docs dla zespołu organizującego szkolenie z praktycznego wykorzystania AI. Dokument ma zawierać: cel, tabelę ustaleń, ryzyka i decyzje, checklistę na dzień przed szkoleniem oraz miejsce na komentarze. Nie wymyślaj osób ani terminów. Jeśli czegoś brakuje, wpisz „do ustalenia”. Zwróć treść w układzie łatwym do wklejenia do Google Docs.",
+      "result": "szkic dokumentu Google Docs z tabelą ustaleń, checklistą i miejscami do uzupełnienia",
+      "discuss": "Pytania do omówienia:\n- Co w dokumencie powinno być treścią, a co komentarzem?\n- Które braki AI mogłaby niebezpiecznie dopowiedzieć?\n- Jak poznać, że dokument nadaje się do pracy zespołowej?",
+      "intro": "Tworzycie dokument roboczy, który można od razu przenieść do Google Docs i wspólnie uzupełniać. Najważniejsza jest struktura, odpowiedzialności i widoczne braki.",
+      "time": "22-30 min",
+      "form": "pary lub małe grupy",
+      "steps": [
+        "Ustalcie, po co zespół ma używać tego dokumentu.",
+        "Napiszcie prompt do struktury Google Docs z tabelą i checklistą.",
+        "Sprawdźcie, czy AI nie wymyśliła osób, terminów ani decyzji.",
+        "Zaznaczcie miejsca do komentarzy i wspólnego uzupełnienia."
+      ]
+    }
+  ],
+  "file-text": [
+    {
+      "title": "Ćwiczenie: Plik tekstowy z instrukcją",
+      "heading": "Stwórzcie prosty plik TXT albo Markdown",
+      "task": "Materiał do pracy:\nMacie przygotować krótki plik tekstowy dla uczestników szkolenia. Plik ma działać jako prosta instrukcja „co zrobić po szkoleniu”, którą można wysłać mailem, wkleić do folderu albo zapisać jako README.txt lub README.md.\n\nDane źródłowe:\nPo szkoleniu uczestnik powinien: wybrać jedno realne zadanie z pracy, napisać prompt z kontekstem i ograniczeniami, sprawdzić odpowiedź AI, poprawić prompt, zapisać finalną wersję i nie wklejać do narzędzi danych poufnych. Ma też znać zasadę: AI pomaga przygotować szkic, ale człowiek odpowiada za decyzję i weryfikację.\n\nFormat wyjściowy:\n- tytuł,\n- 5 kroków działania,\n- sekcja „czego nie wklejać do AI”,\n- mini szablon promptu,\n- checklista przed użyciem wyniku,\n- jedno zdanie do zapamiętania.\n\nPlik wynikowy:\nTreść gotowa do zapisania jako plik tekstowy lub Markdown, bez obrazków i bez skomplikowanego formatowania.\n\nPrzebieg:\n1. Napiszcie prompt, który każe AI stworzyć prostą instrukcję w formacie TXT lub Markdown.\n2. Poproście o krótkie nagłówki i listy, żeby plik był czytelny także bez formatowania.\n3. Dodajcie ograniczenie: maksymalnie jedna strona tekstu po wydrukowaniu.\n4. Sprawdźcie, czy instrukcja jest praktyczna i nie brzmi jak regulamin.\n\nEfekt pracy:\nGotowa treść pliku tekstowego oraz lista 3 miejsc, które warto skrócić albo doprecyzować przed wysłaniem uczestnikom.",
+      "hint": "Podpowiedzi:\n- Plik tekstowy ma być prosty. Jeśli potrzebuje kolorów i ramek, to znaczy, że tekst jest za słaby.\n- Poproście AI o wersję Markdown, ale bez nadmiaru znaków i ozdobników.\n- Dobra instrukcja mówi, co zrobić, czego nie robić i jak sprawdzić wynik.\n- Uczestnik po szkoleniu ma móc wrócić do pliku bez tłumaczenia prowadzącego.",
+      "check": "Kontrola pliku:\n1. Czy instrukcja mieści się na jednej stronie?\n2. Czy każdy krok zaczyna się od działania?\n3. Czy jasno opisano, czego nie wklejać do AI?\n4. Czy szablon promptu ma miejsce na kontekst, zadanie, format i ograniczenia?\n5. Czy tekst nadaje się do wysłania uczestnikom po szkoleniu?",
+      "sample": "Przykładowe polecenie do AI:\nPrzygotuj prosty plik README.md dla uczestników szkolenia z AI. Ma zawierać 5 kroków pracy po szkoleniu, sekcję „czego nie wklejać do AI”, mini szablon promptu, checklistę przed użyciem wyniku i jedno zdanie do zapamiętania. Pisz krótko, praktycznie i bez marketingowego tonu. Całość ma zmieścić się na jednej stronie po wydrukowaniu.",
+      "result": "treść pliku TXT/Markdown gotowa do zapisania i wysłania uczestnikom",
+      "discuss": "Pytania do omówienia:\n- Czy plik naprawdę pomaga wrócić do tematu po szkoleniu?\n- Który fragment jest najbardziej praktyczny?\n- Co trzeba usunąć, żeby instrukcja była krótsza i mocniejsza?",
+      "intro": "Tworzycie prosty plik tekstowy, który uczestnik może zabrać ze sobą po szkoleniu. Tu wygrywa jasność, a nie rozbudowana forma.",
+      "time": "18-25 min",
+      "form": "pary",
+      "steps": [
+        "Ustalcie, co uczestnik ma zrobić po szkoleniu.",
+        "Napiszcie prompt do krótkiego pliku TXT lub Markdown.",
+        "Sprawdźcie, czy tekst jest praktyczny i mieści się na jednej stronie.",
+        "Zapiszcie jedną zasadę pisania instrukcji z pomocą AI."
+      ]
+    }
+  ],
+  "file-sheet": [
+    {
+      "title": "Ćwiczenie: Arkusz Excel lub Google Sheets",
+      "heading": "Przygotujcie arkusz do kontroli zgłoszeń",
+      "task": "Materiał do pracy:\nMacie przygotować prosty arkusz do obsługi szkolenia. Może to być Google Sheets albo Excel online. AI ma pomóc zaprojektować kolumny, przykładowe dane, formuły i kontrolę błędów.\n\nDane źródłowe:\nLista uczestników ma zawierać: imię i nazwisko, instytucję, email, status zgłoszenia, obecność, wynik testu po szkoleniu, zgoda na kontakt po szkoleniu, uwagi. Organizator chce szybko zobaczyć: liczbę potwierdzonych osób, liczbę obecnych, średni wynik testu i osoby wymagające kontaktu.\n\nWymagania:\n- zaproponuj układ arkusza,\n- podaj 8 przykładowych wierszy danych testowych,\n- zaproponuj formuły do podsumowania,\n- dodaj kolumnę „do kontaktu” zależną od statusu lub braku wyniku,\n- przygotuj kontrolę jakości danych: puste emaile, błędne statusy, wynik poza zakresem 0-10.\n\nPlik wynikowy:\nProjekt arkusza, który można odtworyć w Google Sheets lub Excelu: kolumny, dane przykładowe, formuły i lista kontroli.\n\nPrzebieg:\n1. Napiszcie prompt do ChatGPT albo Claude, który tworzy specyfikację arkusza i formuły.\n2. Poproście o formuły w dwóch wersjach, jeśli to możliwe: Google Sheets i Excel.\n3. Dodajcie warunek, że AI ma wyjaśnić każdą formułę prostym językiem.\n4. Sprawdźcie ręcznie 2-3 formuły na małych danych, zanim uznacie arkusz za gotowy.\n\nEfekt pracy:\nPrompt do stworzenia arkusza, projekt tabeli, przykładowe dane, formuły i lista kontroli jakości.",
+      "hint": "Podpowiedzi:\n- Nie zaczynajcie od formuł. Najpierw ustalcie, jakie decyzje ma wspierać arkusz.\n- Poproście AI o nazwy kolumn bez skrótów, żeby arkusz był czytelny dla innych.\n- Formuły muszą mieć testy. Sama odpowiedź AI nie wystarcza.\n- Dobrze jest poprosić o oddzielną sekcję „panel podsumowania” nad tabelą albo w drugim arkuszu.",
+      "check": "Kontrola arkusza:\n1. Czy kolumny odpowiadają realnemu procesowi obsługi szkolenia?\n2. Czy formuły liczą potwierdzonych, obecnych i średni wynik?\n3. Czy jest mechanizm wskazania osób do kontaktu?\n4. Czy kontrola jakości wyłapuje puste emaile i błędne wyniki?\n5. Czy arkusz da się odtworzyć bez dodatkowych narzędzi?",
+      "sample": "Przykładowe polecenie do AI:\nZaprojektuj prosty arkusz Google Sheets lub Excel do obsługi zgłoszeń na szkolenie. Podaj kolumny, 8 przykładowych wierszy danych, formuły do podsumowania oraz kontrolę jakości danych. Chcę widzieć liczbę potwierdzonych osób, liczbę obecnych, średni wynik testu i osoby wymagające kontaktu. Wyjaśnij każdą formułę prostym językiem i dodaj testy ręczne.",
+      "result": "projekt arkusza Excel/Google Sheets z danymi testowymi, formułami i kontrolą jakości",
+      "discuss": "Pytania do omówienia:\n- Jakie decyzje ma wspierać arkusz?\n- Która formuła wymaga najdokładniejszego sprawdzenia?\n- Jakie dane nie powinny trafiać do narzędzi AI podczas pracy na prawdziwym arkuszu?",
+      "intro": "Projektujecie arkusz, który nie tylko przechowuje dane, ale też pomaga szybko zauważyć status szkolenia i błędy w danych.",
+      "time": "25-35 min",
+      "form": "małe grupy",
+      "steps": [
+        "Ustalcie decyzje, które arkusz ma wspierać.",
+        "Napiszcie prompt do kolumn, danych testowych, formuł i kontroli jakości.",
+        "Sprawdźcie ręcznie wybrane formuły na prostych danych.",
+        "Zapiszcie, jak bezpiecznie pracować z AI na danych arkuszowych."
+      ]
+    }
+  ],
+  "file-slides": [
+    {
+      "title": "Ćwiczenie: Prezentacja w Google Slides",
+      "heading": "Przygotujcie szkielet krótkiej prezentacji",
+      "task": "Materiał do pracy:\nMacie przygotować krótką prezentację dla osób, które dopiero zaczynają pracę z AI. Prezentacja ma mieć 6 slajdów i służyć jako wprowadzenie do ćwiczenia, nie jako wykład pełen tekstu.\n\nDane źródłowe:\nTemat: „Jak mądrze korzystać z AI w pracy biurowej”. Główne myśli: AI pomaga przygotować szkic, porządkować informacje i sprawdzać warianty; człowiek odpowiada za cel, dane, decyzję i weryfikację; nie wolno wklejać danych poufnych; dobry prompt zawiera kontekst, zadanie, format, ograniczenia i sposób sprawdzenia wyniku.\n\nUkład slajdów:\n1. tytuł i obietnica praktyczna,\n2. do czego AI przydaje się w pracy,\n3. czego AI nie powinna robić za człowieka,\n4. schemat dobrego promptu,\n5. przykład: słaby prompt kontra lepszy prompt,\n6. zadanie dla uczestników.\n\nPlik wynikowy:\nSzkielet prezentacji do przeniesienia do Google Slides: tytuły slajdów, 3-4 krótkie punkty, notatki prowadzącego i sugestia prostego elementu wizualnego.\n\nPrzebieg:\n1. Napiszcie prompt do ChatGPT albo Claude, który tworzy strukturę prezentacji do Google Slides.\n2. Poproście o mało tekstu na slajdach i osobne notatki prowadzącego.\n3. Dodajcie ograniczenie: zero ogólnych haseł typu „AI zmienia wszystko”. Każdy slajd ma prowadzić do ćwiczenia.\n4. Sprawdźcie, czy z prezentacji da się przejść do konkretnego działania uczestników.\n\nEfekt pracy:\nGotowy szkic 6-slajdowej prezentacji wraz z notatkami prowadzącego i sugestiami wizualnymi.",
+      "hint": "Podpowiedzi:\n- Slajd nie jest dokumentem. Mniej tekstu na slajdzie, więcej w notatkach prowadzącego.\n- Poproście AI o osobną kolumnę: tytuł slajdu, punkty na slajdzie, notatka prowadzącego, element wizualny.\n- Dobra prezentacja szkoleniowa kończy się działaniem uczestników, nie podsumowaniem w stylu plakatu.\n- Jeśli AI daje za dużo tekstu, poproście o wersję „do pokazania na rzutniku”.",
+      "check": "Kontrola prezentacji:\n1. Czy prezentacja ma 6 slajdów i jasny cel?\n2. Czy każdy slajd ma mało tekstu?\n3. Czy notatki prowadzącego pomagają mówić, a nie dublują slajdu?\n4. Czy jest przykład słabego i lepszego promptu?\n5. Czy ostatni slajd prowadzi do ćwiczenia uczestników?",
+      "sample": "Przykładowe polecenie do AI:\nPrzygotuj szkielet 6-slajdowej prezentacji do Google Slides na temat „Jak mądrze korzystać z AI w pracy biurowej”. Dla każdego slajdu podaj: tytuł, maksymalnie 4 krótkie punkty, notatkę prowadzącego i prostą sugestię wizualną. Unikaj ogólnych haseł. Prezentacja ma prowadzić do ćwiczenia z pisania promptu.",
+      "result": "szkielet prezentacji Google Slides: 6 slajdów, notatki prowadzącego i sugestie wizualne",
+      "discuss": "Pytania do omówienia:\n- Który slajd jest najbardziej potrzebny uczestnikom, a który można skrócić?\n- Czy prezentacja pomaga rozpocząć ćwiczenie?\n- Jak poprosić AI o mniej tekstu i bardziej szkoleniowy rytm slajdów?",
+      "intro": "Tworzycie szkic prezentacji, który da się szybko przenieść do Google Slides. Celem jest prowadzenie uczestników do ćwiczenia, a nie budowanie długiego wykładu.",
+      "time": "22-30 min",
+      "form": "pary lub małe grupy",
+      "steps": [
+        "Ustalcie, co uczestnik ma zrobić po obejrzeniu prezentacji.",
+        "Napiszcie prompt do 6 slajdów, notatek i sugestii wizualnych.",
+        "Skróćcie slajdy, jeśli AI da zbyt dużo tekstu.",
+        "Sprawdźcie, czy ostatni slajd uruchamia konkretne ćwiczenie."
+      ]
+    }
   ]
 };

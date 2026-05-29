@@ -1,5 +1,12 @@
 const EXERCISES = window.EXERCISES || {};
 let currentExerciseType = 'prompt';
+let currentExercise = null;
+let timerDuration = 10 * 60;
+let timerRemaining = timerDuration;
+let timerEndAt = 0;
+let timerInterval = null;
+let timerHasStarted = false;
+let timerStatusText = 'Gotowe do startu';
 
 function escapeHtml(value) {
   return String(value || '').replace(/[&<>"']/g, char => ({
@@ -100,7 +107,26 @@ function formatRichText(value) {
     'Tekst wygenerowany przez AI',
     'Fragment odpowiedzi AI',
     'Materiał do oceny',
-    'Komunikat wygenerowany przez AI'
+    'Komunikat wygenerowany przez AI',
+    'Dane wejściowe',
+    'Dane testowe',
+    'Kod do analizy',
+    'Wymagania',
+    'Warunki',
+    'Oczekiwane działanie',
+    'Błąd do znalezienia',
+    'Testy ręczne',
+    'Bezpiecznik',
+    'Dane źródłowe',
+    'Struktura dokumentu',
+    'Plik wynikowy',
+    'Format wyjściowy',
+    'Kontrola dokumentu',
+    'Kontrola pliku',
+    'Kontrola arkusza',
+    'Kontrola prezentacji',
+    'Układ slajdów',
+    'Zasady pracy'
   ];
   const labelPattern = new RegExp(`^(\\s*)(${labels.map(label =>
     label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
@@ -115,11 +141,37 @@ function setRichText(id, value) {
   document.getElementById(id).innerHTML = formatRichText(value);
 }
 
+function renderScreenExercise(e) {
+  document.getElementById('screenTitle').textContent = e.title;
+  document.getElementById('screenIntro').textContent = e.intro || '';
+  document.getElementById('screenHeading').textContent = e.heading;
+  setRichText('screenTask', e.task);
+  setRichText('screenHint', e.hint);
+  setRichText('screenSample', e.sample);
+  setRichText('screenCheck', e.check);
+  ['screenHint','screenSample','screenCheck'].forEach(id => document.getElementById(id).classList.remove('active'));
+}
+
 function pickExercise(type) {
   const list = EXERCISES[type] || EXERCISES.prompt;
   return list[Math.floor(Math.random() * list.length)];
 }
+function getExerciseTimerMinutes(e) {
+  const values = String(e?.time || '').match(/\d+/g);
+  if (!values) return null;
+  const minutes = values.map(Number).filter(Number.isFinite);
+  return minutes.length ? Math.max(...minutes) : null;
+}
+function setTimerForExercise(e) {
+  const minutes = getExerciseTimerMinutes(e);
+  const input = document.getElementById('timerMinutes');
+  if (!minutes || !input) return;
+  input.value = minutes;
+  timerReset();
+}
 function renderExercise(e) {
+  currentExercise = e;
+  setTimerForExercise(e);
   const steps = e.steps || [
     'Przeczytajcie zadanie i zaznaczcie, czego brakuje w pierwszej wersji.',
     'Przygotujcie własną wersję w parach lub małych grupach.',
@@ -144,6 +196,7 @@ function renderExercise(e) {
   }));
   ['exHint','exCheck','exSample','exDiscuss'].forEach(id => document.getElementById(id).classList.remove('active'));
   document.getElementById('exWork').value = '';
+  if (document.getElementById('exerciseScreen').classList.contains('active')) renderScreenExercise(e);
 }
 function openExercise(type) {
   currentExerciseType = type;
@@ -155,6 +208,15 @@ function randomizeCurrentExercise() {
 }
 function closeExercise() {
   document.getElementById('exerciseOverlay').classList.remove('active');
+}
+function openScreenExercise() {
+  if (!currentExercise) return;
+  renderScreenExercise(currentExercise);
+  document.getElementById('exerciseScreen').classList.add('active');
+  setTimerState(timerStatusText);
+}
+function closeScreenExercise() {
+  document.getElementById('exerciseScreen').classList.remove('active');
 }
 function toggle(id) {
   document.getElementById(id).classList.toggle('active');
@@ -184,12 +246,99 @@ function qrBig() {
 function closeQrBig() {
   document.getElementById('qrFull').classList.remove('active');
 }
+function timerBig() {
+  document.getElementById('timerFull').classList.add('active');
+  setTimerState(timerStatusText);
+}
+function closeTimerBig() {
+  document.getElementById('timerFull').classList.remove('active');
+}
 function renderQrImage(containerId, src) {
   const img = document.createElement('img');
   const container = document.getElementById(containerId);
   img.src = src;
   img.alt = 'QR';
   container.replaceChildren(img);
+}
+function formatTimer(seconds) {
+  const safeSeconds = Math.max(0, Math.ceil(seconds));
+  const minutes = Math.floor(safeSeconds / 60);
+  const rest = safeSeconds % 60;
+  return `${minutes}:${String(rest).padStart(2, '0')}`;
+}
+function readTimerMinutes() {
+  const input = document.getElementById('timerMinutes');
+  const value = Number(input?.value || 10);
+  return Math.min(180, Math.max(1, Number.isFinite(value) ? value : 10));
+}
+function setTimerState(status) {
+  timerStatusText = status;
+  const displays = ['timerDisplay', 'timerFullDisplay', 'screenTimerDisplay'].map(id => document.getElementById(id)).filter(Boolean);
+  const statusBoxes = ['timerStatus', 'timerFullStatus', 'screenTimerStatus'].map(id => document.getElementById(id)).filter(Boolean);
+  const progressBars = ['timerProgress', 'timerFullProgress', 'screenTimerProgress'].map(id => document.getElementById(id)).filter(Boolean);
+  const timerCards = ['timerCard', 'timerFull', 'exerciseScreen'].map(id => document.getElementById(id)).filter(Boolean);
+  if (!displays.length || !statusBoxes.length || !progressBars.length) return;
+  const progressValue = timerDuration ? Math.max(0, Math.min(100, (timerRemaining / timerDuration) * 100)) : 0;
+  displays.forEach(display => { display.textContent = formatTimer(timerRemaining); });
+  statusBoxes.forEach(statusBox => { statusBox.textContent = status; });
+  progressBars.forEach(progress => { progress.style.width = `${progressValue}%`; });
+  timerCards.forEach(card => { card.classList.toggle('done', timerRemaining <= 0); });
+}
+function timerReset() {
+  clearInterval(timerInterval);
+  timerInterval = null;
+  timerHasStarted = false;
+  timerDuration = readTimerMinutes() * 60;
+  timerRemaining = timerDuration;
+  setTimerState('Gotowe do startu');
+}
+function timerTick() {
+  timerRemaining = Math.max(0, Math.ceil((timerEndAt - Date.now()) / 1000));
+  if (timerRemaining <= 0) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+    timerHasStarted = false;
+    setTimerState('Czas minął');
+    return;
+  }
+  setTimerState('Odliczanie trwa');
+}
+function timerStart() {
+  if (timerInterval) return;
+  if (timerRemaining <= 0) timerReset();
+  if (!timerHasStarted) {
+    timerDuration = readTimerMinutes() * 60;
+    timerRemaining = timerDuration;
+  }
+  timerHasStarted = true;
+  timerEndAt = Date.now() + timerRemaining * 1000;
+  timerTick();
+  timerInterval = setInterval(timerTick, 250);
+}
+function timerPause() {
+  if (!timerInterval) return;
+  clearInterval(timerInterval);
+  timerInterval = null;
+  setTimerState('Pauza');
+}
+function setTimerPreset(minutes) {
+  const input = document.getElementById('timerMinutes');
+  if (input) input.value = minutes;
+  timerReset();
+}
+function bindTimer() {
+  const input = document.getElementById('timerMinutes');
+  if (!input) return;
+  input.addEventListener('input', () => {
+    if (!timerInterval && !timerHasStarted) timerReset();
+  });
+  input.addEventListener('change', () => {
+    if (!timerInterval) timerReset();
+  });
+  document.querySelectorAll('[data-timer-preset]').forEach(button => {
+    button.addEventListener('click', () => setTimerPreset(Number(button.dataset.timerPreset)));
+  });
+  timerReset();
 }
 function bindUiActions() {
   document.querySelectorAll('[data-exercise]').forEach(button => {
@@ -201,18 +350,40 @@ function bindUiActions() {
   document.querySelectorAll('[data-action]').forEach(button => {
     const action = button.dataset.action;
     if (action === 'close-exercise') button.addEventListener('click', closeExercise);
+    if (action === 'screen-exercise') button.addEventListener('click', openScreenExercise);
+    if (action === 'screen-close') button.addEventListener('click', closeScreenExercise);
     if (action === 'random-exercise') button.addEventListener('click', randomizeCurrentExercise);
     if (action === 'qr-generate') button.addEventListener('click', qrGenerate);
     if (action === 'qr-big') button.addEventListener('click', qrBig);
     if (action === 'qr-clear') button.addEventListener('click', qrClear);
     if (action === 'qr-close') button.addEventListener('click', closeQrBig);
+    if (action === 'timer-start') button.addEventListener('click', timerStart);
+    if (action === 'timer-pause') button.addEventListener('click', timerPause);
+    if (action === 'timer-reset') button.addEventListener('click', timerReset);
+    if (action === 'timer-big') button.addEventListener('click', timerBig);
+    if (action === 'timer-close') button.addEventListener('click', closeTimerBig);
   });
+  document.getElementById('exerciseScreen')?.addEventListener('click', event => {
+    if (event.target.closest('[data-action="screen-close"]')) closeScreenExercise();
+  });
+  bindTimer();
 }
 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
+    if (document.getElementById('exerciseScreen').classList.contains('active')) {
+      closeScreenExercise();
+      return;
+    }
+    if (document.getElementById('timerFull').classList.contains('active')) {
+      closeTimerBig();
+      return;
+    }
+    if (document.getElementById('qrFull').classList.contains('active')) {
+      closeQrBig();
+      return;
+    }
     closeExercise();
-    closeQrBig();
   }
 });
 document.addEventListener('DOMContentLoaded', bindUiActions);

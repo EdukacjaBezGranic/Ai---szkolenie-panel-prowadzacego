@@ -3,13 +3,13 @@
   "short_name": "Panel AI",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#f6f8fb",
-  "theme_color": "#f6f8fb",
+  "background_color": "#e5edf6",
+  "theme_color": "#e5edf6",
   "icons": [
     {
-      "src": "assets/icon.svg",
+      "src": "assets/project-icon.png",
       "sizes": "512x512",
-      "type": "image/svg+xml"
+      "type": "image/png"
     }
   ]
 }
