@@ -1,36 +1,56 @@
-# Panel szkolenia AI - wersja stabilna v2
+# Panel szkolenia AI
 
-Ta paczka jest przygotowana do wrzucenia bezpośrednio do głównego katalogu repozytorium GitHub Pages.
+Statyczny panel do prowadzenia szkolenia z praktycznego wykorzystania AI. Zawiera szybki dostęp do prezentacji, materiałów, gotowych promptów, narzędzi AI, generatora QR oraz ćwiczeń warsztatowych dla uczestników.
 
-## Ważne
+## Co jest w projekcie
 
-W ZIP-ie plik `index.html` jest na najwyższym poziomie. Po rozpakowaniu wrzuć na GitHub:
-- `index.html`
-- `assets/`
-- `prompts/`
-- `service-worker.js`
-- `reset-cache.html`
-- pozostałe pliki
+- `index.html` - główny panel szkolenia.
+- `assets/app.css` - wygląd panelu.
+- `assets/app.js` - obsługa panelu, ćwiczeń i QR.
+- `assets/exercises.js` - baza ćwiczeń warsztatowych.
+- `prompts/` - osobne strony z gotowymi promptami.
+- `assets/prompt.css` i `assets/prompt.js` - wspólne pliki dla stron promptów.
+- `reset-cache.html` - pomocnicza strona do odświeżenia cache, gdy przeglądarka pokazuje starą wersję.
 
-Nie wrzucaj samego folderu jako podfolderu, tylko jego zawartość.
+## Uruchomienie lokalnie
 
-## Gdy po aktualizacji dalej widzisz starą wersję
+Najprościej otworzyć plik `index.html` w przeglądarce.
 
-Otwórz:
-`https://TWOJ-ADRES-GITHUB-PAGES/reset-cache.html`
+Można też uruchomić prosty serwer lokalny w katalogu projektu:
 
-Potem wróć do `index.html` i odśwież stronę przez:
-- Mac: Cmd + Shift + R
-- Windows: Ctrl + F5
+```bash
+python3 -m http.server 4173
+```
 
-## Naprawione
+Następnie wejść na:
 
-- `index.html` zawiera głównie strukturę panelu,
-- wygląd panelu jest w `assets/app.css`,
-- obsługa przycisków, ćwiczeń i QR jest w `assets/app.js`,
-- warianty ćwiczeń są w `assets/exercises.js`,
-- strony promptów korzystają ze wspólnych plików `assets/prompt.css` i `assets/prompt.js`,
-- ćwiczenia otwierają się z kafelków,
-- każde ćwiczenie ma warianty do losowania,
-- trudne maile i notatki mają gotowe przykłady,
-- prompty są w osobnych plikach HTML.
+```text
+http://127.0.0.1:4173/index.html
+```
+
+## Publikacja na GitHub Pages
+
+1. Utwórz nowe repozytorium na GitHubie.
+2. Wgraj zawartość tej paczki bezpośrednio do głównego katalogu repozytorium.
+3. Upewnij się, że `index.html` jest w katalogu głównym repozytorium, a nie w dodatkowym podfolderze.
+4. W ustawieniach repozytorium wybierz `Settings -> Pages`.
+5. Jako źródło wybierz branch `main` i katalog `/root`.
+
+Po publikacji strona będzie dostępna pod adresem GitHub Pages podanym w ustawieniach repozytorium.
+
+## Aktualizacja po zmianach
+
+Jeżeli po aktualizacji GitHub Pages nadal pokazuje starą wersję, otwórz:
+
+```text
+https://ADRES-TWOJEJ-STRONY/reset-cache.html
+```
+
+Następnie wróć do strony głównej i odśwież ją mocno:
+
+- Mac: `Cmd + Shift + R`
+- Windows: `Ctrl + F5`
+
+## Uwagi
+
+Projekt jest statyczny i nie wymaga procesu budowania. Generator QR korzysta z zewnętrznej usługi, więc do wygenerowania kodu QR potrzebne jest połączenie z internetem.
