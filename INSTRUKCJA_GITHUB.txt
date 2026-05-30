@@ -1,6 +1,6 @@
 AKTUALNA PACZKA PANELU AI
 
-Wersja: 2026-05-30 / 20 cwiczen / cwiczenie 2 dopracowane bez losowania
+Wersja: 2026-05-30 / 20 cwiczen / delikatne wyroznienia sekcji
 
 Jak wgrac na GitHub:
 
@@ -31,7 +31,7 @@ Po publikacji:
 Jak poznac, ze jest aktualna wersja:
 
 - Na dole panelu powinien byc tekst:
-  Panel szkolenia AI. Wersja GitHub 2026-05-30 / 20 cwiczen / cwiczenie 2 dopracowane bez losowania.
+  Panel szkolenia AI. Wersja GitHub 2026-05-30 / 20 cwiczen / delikatne wyroznienia sekcji.
 
 - Obok tekstu w stopce powinien byc maly przycisk:
   Sprawdz nowsza wersje

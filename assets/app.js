@@ -1,5 +1,5 @@
 const EXERCISES = window.EXERCISES || {};
-const APP_VERSION = '20260530-09';
+const APP_VERSION = '20260530-15';
 const TOOL_SETS = {
   default: {
     intro: 'Użyjcie narzędzia, do którego macie dostęp. Wystarczy jedno narzędzie tekstowe; nie trzeba testować wszystkich.',
@@ -225,10 +225,28 @@ function escapeHtml(value) {
   })[char]);
 }
 
-function formatRichText(value) {
-  const labels = [
+const RICH_LABELS = [
     'Materiał do pracy',
     'Materiał dla uczestników',
+    'Opis ćwiczenia',
+    'Sytuacja zawodowa',
+    'Co wiadomo o szkoleniu',
+    'Odbiorcy komunikatu',
+    'Informacje, których jeszcze nie znamy',
+    'Jakiego stylu oczekujemy',
+    'Niedopracowany prompt do analizy',
+    'Dlaczego ten prompt wymaga poprawy',
+    'Zadanie dla uczestników',
+    'Przebieg pracy',
+    'Checklista dobrego promptu',
+    'Przykład poprawionego promptu',
+    'Przykład notatki po pracy',
+    'Omówienie dla prowadzącego',
+    'Wariant bez logowania',
+    'Wariant trudniejszy',
+    'Czas',
+    'Forma pracy',
+    'Narzędzia do wykonania ćwiczenia',
     'Karta sytuacji',
     'Przebieg',
     'Efekt pracy',
@@ -345,13 +363,109 @@ function formatRichText(value) {
     'Układ slajdów',
     'Zasady pracy'
   ];
-  const labelPattern = new RegExp(`^(\\s*)(${labels.map(label =>
-    label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  ).join('|')}):(?=\\s|$)`);
 
-  return escapeHtml(value).split('\n').map(line =>
-    line.replace(labelPattern, '$1<strong class="text-label">$2:</strong>')
-  ).join('\n');
+function getRichHeading(line) {
+  const trimmed = line.trim();
+  const markdownHeading = trimmed.match(/^(#{1,3})\s+(.+)$/);
+  if (markdownHeading) {
+    return { title: markdownHeading[2], level: markdownHeading[1].length };
+  }
+  if (/^Krok\s+\d+\./i.test(trimmed)) return { title: trimmed, level: 4 };
+  const labelOnly = trimmed.match(/^(.{2,90}):$/);
+  if (labelOnly && RICH_LABELS.includes(labelOnly[1])) {
+    return { title: labelOnly[1], level: 3 };
+  }
+  const labelWithText = trimmed.match(/^(.{2,90}):\s+(.+)$/);
+  if (labelWithText && RICH_LABELS.includes(labelWithText[1])) {
+    return { title: labelWithText[1], level: 3, lead: labelWithText[2] };
+  }
+  return null;
+}
+
+function formatParagraph(lines) {
+  const text = lines.join(' ').trim();
+  if (!text) return '';
+  const className = /^„/.test(text) || /^"[^"]/.test(text) ? ' class="rich-quote"' : '';
+  return `<p${className}>${escapeHtml(text)}</p>`;
+}
+
+function formatStructuredText(value) {
+  const lines = String(value || '').replace(/\r\n?/g, '\n').split('\n');
+  let html = '<div class="rich-content">';
+  let sectionOpen = false;
+  let paragraph = [];
+  let listType = '';
+
+  const closeList = () => {
+    if (!listType) return;
+    html += `</${listType}>`;
+    listType = '';
+  };
+  const closeParagraph = () => {
+    if (!paragraph.length) return;
+    html += formatParagraph(paragraph);
+    paragraph = [];
+  };
+  const closeSection = () => {
+    closeParagraph();
+    closeList();
+    if (sectionOpen) html += '</section>';
+    sectionOpen = false;
+  };
+  const openSection = (heading) => {
+    closeSection();
+    const levelClass = heading.level <= 1 ? 'major' : heading.level === 2 ? 'standard' : 'compact';
+    html += `<section class="rich-section rich-section-${levelClass}"><h4>${escapeHtml(heading.title)}</h4>`;
+    sectionOpen = true;
+    if (heading.lead) paragraph.push(heading.lead);
+  };
+  const appendListItem = (type, text) => {
+    closeParagraph();
+    if (listType && listType !== type) closeList();
+    if (!listType) {
+      html += `<${type}>`;
+      listType = type;
+    }
+    html += `<li>${escapeHtml(text)}</li>`;
+  };
+
+  lines.forEach(line => {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      closeParagraph();
+      closeList();
+      return;
+    }
+    if (/^---+$/.test(trimmed)) {
+      closeSection();
+      return;
+    }
+    const heading = getRichHeading(trimmed);
+    if (heading) {
+      openSection(heading);
+      return;
+    }
+    const bullet = trimmed.match(/^[-*]\s+(.+)$/);
+    if (bullet) {
+      appendListItem('ul', bullet[1]);
+      return;
+    }
+    const number = trimmed.match(/^\d+\.\s+(.+)$/);
+    if (number) {
+      appendListItem('ol', number[1]);
+      return;
+    }
+    closeList();
+    paragraph.push(trimmed);
+  });
+
+  closeSection();
+  html += '</div>';
+  return html;
+}
+
+function formatRichText(value) {
+  return formatStructuredText(value);
 }
 
 function setRichText(id, value) {
@@ -359,12 +473,7 @@ function setRichText(id, value) {
 }
 
 function formatGuideText(value) {
-  return escapeHtml(value).split('\n').map(line => {
-    if (/^###\s+/.test(line)) return `<h4>${line.replace(/^###\s+/, '')}</h4>`;
-    if (/^##\s+/.test(line)) return `<h3>${line.replace(/^##\s+/, '')}</h3>`;
-    if (/^---$/.test(line.trim())) return '<hr>';
-    return line;
-  }).join('\n');
+  return formatStructuredText(value);
 }
 
 function setTrainingGuide(value) {
@@ -432,18 +541,6 @@ function getScreenTask(e) {
 
 function getPrintTask(e) {
   return e?.printTask || e?.screenTask || getParticipantTask(e);
-}
-
-function formatPrintTaskText(value) {
-  const rawText = String(value || '');
-  const isLongTask = rawText.length > 1500;
-  return rawText.split(/\n{2,}/).map(block => {
-    const trimmed = block.trim();
-    if (!trimmed) return '';
-    const startsNewPart = /^(Wasze zadanie):/i.test(trimmed);
-    const className = `print-task-block${isLongTask && startsNewPart ? ' print-block-break' : ''}`;
-    return `<div class="${className}">${formatRichText(trimmed)}</div>`;
-  }).join('');
 }
 
 function renderScreenExercise(e) {
@@ -564,15 +661,13 @@ function buildPrintableExercise(e) {
       <div><strong>Forma:</strong> ${escapeHtml(e.form || 'praca w parach lub grupach')}</div>
       <div><strong>Efekt:</strong> ${escapeHtml(e.result || 'wynik do omówienia')}</div>
     </div>
-    <section class="print-section print-tools">${buildToolsHtml(getExerciseTools(e), 'h2')}</section>
-    <section class="print-section">
-      <h2>${escapeHtml(getParticipantHeading(e))}</h2>
-      <div class="print-task">${formatPrintTaskText(getPrintTask(e))}</div>
-    </section>
-    <section class="print-section print-steps">
-      <h2>Jak wykonać zadanie?</h2>
-      <ol>${steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>
-    </section>
+    <div class="print-tools">${buildToolsHtml(getExerciseTools(e), 'h2')}</div>
+    <h2>${escapeHtml(getParticipantHeading(e))}</h2>
+    <div class="print-task">${formatRichText(getPrintTask(e))}</div>
+    <h2>Jak wykonać zadanie?</h2>
+    <ol>${steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>
+    <h2>Notatki uczestników</h2>
+    <div class="print-notes"><span></span><span></span><span></span><span></span><span></span></div>
   `;
 }
 function printCurrentExercise() {

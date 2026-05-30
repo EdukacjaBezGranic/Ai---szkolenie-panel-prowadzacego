@@ -16,7 +16,12 @@ Statyczny panel do prowadzenia szkolenia z praktycznego wykorzystania AI. Zawier
 - W panelu jest też timer do odmierzania czasu ćwiczeń, z opcją powiększenia na cały ekran.
 - Ćwiczenia mają tryb ekranowy do pokazania zadania uczestnikom na rzutniku.
 - W oknie ćwiczenia można wydrukować czystą wersję zadania dla uczestników.
-- Wydruk ćwiczenia jest projektowany jako czytelna karta pracy bez miejsca na notatki, docelowo do 2 stron, z łamaniem stron na granicach sekcji.
+- Wydruk ćwiczenia ma przywrócony poprzedni, bardziej czytelny wygląd karty pracy z miejscem na notatki uczestników.
+- Ćwiczenie 1 ma nowy opis z pliku Word i osobną, skróconą kartę pracy do druku.
+- Ćwiczenie 2 ma nowy scenariusz o prostym języku w wiadomości urzędowej dotyczącej braków w dokumentacji.
+- Długie opisy ćwiczeń są automatycznie dzielone na czytelne sekcje, ramki, listy i kroki.
+- Scenariusze prowadzącego w ćwiczeniach 1 i 2 nie powtarzają pełnej karty uczestnika.
+- Sekcje w opisach ćwiczeń mają delikatne kolorowe akcenty, które poprawiają orientację w długich materiałach.
 - W oknie ćwiczenia pojawia się krótka sekcja `Narzędzia do wykonania ćwiczenia`, dobrana do typu zadania.
 - Pierwsze ćwiczenie ma osobno uporządkowaną treść dla uczestników, widok pełnoekranowy i scenariusz prowadzącego.
 - Drugie ćwiczenie ma osobno uporządkowaną treść dla uczestników, widok pełnoekranowy, wydruk i scenariusz prowadzącego.

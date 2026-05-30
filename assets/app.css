@@ -570,7 +570,7 @@ body {
   font-size: clamp(19px, 1.7vw, 25px);
   line-height: 1.55;
   text-align: left;
-  white-space: pre-wrap;
+  white-space: normal;
 }
 
 .screen-side {
@@ -703,7 +703,7 @@ body {
   color: #172033;
   font-size: 16px;
   line-height: 1.62;
-  white-space: pre-wrap;
+  white-space: normal;
 }
 
 .guidebox h3,
@@ -755,7 +755,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   text-align: left;
-  white-space: pre-wrap;
+  white-space: normal;
 }
 
 
@@ -843,6 +843,128 @@ body {
   font-weight: 800;
 }
 
+.rich-content {
+  display: grid;
+  gap: 12px;
+}
+
+.rich-section {
+  --section-accent: var(--accent);
+  --section-tint: #f8fbff;
+  --section-heading: #0f172a;
+  position: relative;
+  overflow: hidden;
+  padding: 14px 15px;
+  background:
+    linear-gradient(135deg, var(--section-tint) 0%, rgba(255, 255, 255, .96) 34%, #ffffff 100%);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--section-accent);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, .035);
+}
+
+.rich-content > .rich-section:nth-of-type(6n+1) {
+  --section-accent: #2563eb;
+  --section-tint: #eff6ff;
+  --section-heading: #1d4ed8;
+}
+
+.rich-content > .rich-section:nth-of-type(6n+2) {
+  --section-accent: #0f766e;
+  --section-tint: #ecfdf5;
+  --section-heading: #0f766e;
+}
+
+.rich-content > .rich-section:nth-of-type(6n+3) {
+  --section-accent: #b45309;
+  --section-tint: #fff7ed;
+  --section-heading: #92400e;
+}
+
+.rich-content > .rich-section:nth-of-type(6n+4) {
+  --section-accent: #6d5bd0;
+  --section-tint: #f3f0ff;
+  --section-heading: #5b4ac6;
+}
+
+.rich-content > .rich-section:nth-of-type(6n+5) {
+  --section-accent: #475569;
+  --section-tint: #f8fafc;
+  --section-heading: #334155;
+}
+
+.rich-content > .rich-section:nth-of-type(6n+6) {
+  --section-accent: #0e7490;
+  --section-tint: #ecfeff;
+  --section-heading: #0e7490;
+}
+
+.rich-section-major {
+  --section-accent: #0f766e;
+  --section-tint: #ecfdf5;
+  --section-heading: #0f766e;
+  background:
+    linear-gradient(135deg, #ecfdf5 0%, #f8fbff 46%, #ffffff 100%);
+}
+
+.rich-section-compact {
+  padding: 12px 13px;
+  background:
+    linear-gradient(135deg, var(--section-tint) 0%, #ffffff 42%, #ffffff 100%);
+}
+
+.rich-section h4 {
+  margin: 0 0 9px;
+  color: var(--section-heading);
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.rich-section h4:only-child {
+  margin-bottom: 0;
+}
+
+.screen-taskbox .rich-section h4 {
+  font-size: clamp(20px, 1.8vw, 26px);
+}
+
+.rich-section p {
+  margin: 0 0 9px;
+  color: #27364a;
+}
+
+.rich-section p:last-child,
+.rich-section ul:last-child,
+.rich-section ol:last-child {
+  margin-bottom: 0;
+}
+
+.rich-section ul,
+.rich-section ol {
+  margin: 0 0 9px;
+  padding-left: 22px;
+}
+
+.rich-section li {
+  margin: 0 0 5px;
+  color: #27364a;
+}
+
+.rich-section li:last-child {
+  margin-bottom: 0;
+}
+
+.rich-quote {
+  padding: 11px 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #cbd5e1;
+  border-left: 3px solid #0f766e;
+  border-radius: 8px;
+  color: #111827;
+  font-weight: 700;
+}
+
 .hidden { display: none; }
 
 .hidden.active { display: block; }
@@ -856,7 +978,7 @@ body {
   border-radius: 8px;
   color: #27364a;
   line-height: 1.55;
-  white-space: pre-wrap;
+  white-space: normal;
 }
 
 .steps {
@@ -1007,7 +1129,7 @@ body {
 
 @media print {
   @page {
-    margin: 13mm;
+    margin: 16mm;
   }
 
   body {
@@ -1023,67 +1145,55 @@ body {
     display: block !important;
     color: #111827;
     font-family: Arial, sans-serif;
-    font-size: 10pt;
-    line-height: 1.34;
+    font-size: 10.5pt;
+    line-height: 1.38;
   }
 
   .print-header {
-    padding-bottom: 8pt;
-    margin-bottom: 8pt;
+    padding-bottom: 10pt;
+    margin-bottom: 10pt;
     border-bottom: 1pt solid #cbd5e1;
   }
 
   .print-kicker {
-    margin: 0 0 4pt;
+    margin: 0 0 5pt;
     color: #475569;
-    font-size: 8.2pt;
+    font-size: 8.5pt;
     font-weight: 700;
     letter-spacing: .08em;
     text-transform: uppercase;
   }
 
-  .print-header p {
-    margin: 0;
-  }
-
   .print-sheet h1 {
-    margin: 0 0 5pt;
+    margin: 0 0 6pt;
     color: #0f172a;
-    font-size: 20pt;
+    font-size: 22pt;
     line-height: 1.14;
   }
 
   .print-sheet h2 {
-    margin: 11pt 0 5pt;
+    margin: 15pt 0 7pt;
     color: #0f172a;
-    font-size: 12.5pt;
+    font-size: 13.5pt;
     line-height: 1.2;
-  }
-
-  .print-section,
-  .print-task-block,
-  .print-tools,
-  .print-meta {
-    break-inside: avoid;
-    page-break-inside: avoid;
   }
 
   .print-meta {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5pt;
-    margin: 8pt 0;
+    gap: 6pt;
+    margin: 10pt 0;
   }
 
   .print-meta div {
-    padding: 5pt;
+    padding: 6pt;
     border: 1pt solid #cbd5e1;
     border-radius: 4pt;
   }
 
   .print-tools {
-    margin: 8pt 0;
-    padding: 7pt;
+    margin: 10pt 0;
+    padding: 8pt;
     border: 1pt solid #cbd5e1;
     border-left: 3pt solid #0f766e;
     border-radius: 4pt;
@@ -1098,12 +1208,12 @@ body {
   }
 
   .print-tools p {
-    margin: 0 0 5pt;
+    margin: 0 0 6pt;
   }
 
   .print-tools .tool-list {
     display: block;
-    padding-left: 12pt;
+    padding-left: 14pt;
     list-style: disc;
   }
 
@@ -1119,8 +1229,10 @@ body {
   }
 
   .print-task {
-    display: grid;
-    gap: 6pt;
+    padding: 8pt;
+    border: 1pt solid #cbd5e1;
+    border-radius: 4pt;
+    white-space: normal;
   }
 
   .print-task .text-label {
@@ -1128,30 +1240,61 @@ body {
     font-weight: 700;
   }
 
-  .print-task-block {
-    padding: 7pt;
-    border: 1pt solid #cbd5e1;
-    border-radius: 4pt;
-    white-space: pre-wrap;
+  .print-task .rich-content {
+    display: block;
   }
 
-  .print-block-break {
-    break-before: page;
-    page-break-before: always;
-  }
-
-  .print-steps {
+  .print-task .rich-content > .rich-section,
+  .print-task .rich-section {
     break-inside: avoid;
     page-break-inside: avoid;
+    margin-bottom: 7pt;
+    padding: 7pt;
+    background: #ffffff;
+    border: 1pt solid #cbd5e1;
+    border-left: 3pt solid #2563eb;
+    border-radius: 4pt;
+    box-shadow: none;
+  }
+
+  .print-task .rich-section h4 {
+    margin: 0 0 4pt;
+    color: #0f172a;
+    font-size: 11.5pt;
+    line-height: 1.2;
+  }
+
+  .print-task .rich-section p {
+    margin: 0 0 4pt;
+  }
+
+  .print-task .rich-section ul,
+  .print-task .rich-section ol {
+    margin: 0 0 4pt;
+    padding-left: 15pt;
+  }
+
+  .print-task .rich-section li {
+    margin-bottom: 2pt;
+  }
+
+  .print-task .rich-quote {
+    padding: 6pt;
+    border: 1pt solid #cbd5e1;
+    border-radius: 4pt;
   }
 
   .print-sheet ol {
     padding-left: 18pt;
-    margin-top: 0;
-    margin-bottom: 0;
   }
 
   .print-sheet li {
-    margin-bottom: 3pt;
+    margin-bottom: 4pt;
+  }
+
+  .print-notes span {
+    display: block;
+    height: 26pt;
+    border-bottom: 1pt solid #cbd5e1;
   }
 }

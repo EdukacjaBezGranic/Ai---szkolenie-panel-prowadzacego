@@ -1,5 +1,5 @@
 Panel szkolenia AI
-Wersja GitHub: 2026-05-30 / 20 cwiczen / cwiczenie 2 dopracowane bez losowania / 20260530-09
+Wersja GitHub: 2026-05-30 / 20 cwiczen / delikatne wyroznienia sekcji / 20260530-15
 
 Ta paczka zawiera ostatnie zmiany:
 - timer ustawiany automatycznie wedlug czasu cwiczenia,
@@ -15,5 +15,12 @@ Ta paczka zawiera ostatnie zmiany:
 - cwiczenia maja sekcje Narzedzia do wykonania cwiczenia z praktyczna informacja, czego uzyc.
 - cwiczenie 1 ma tylko dopracowana wersje, bez starych losowanych przykladow.
 - przycisk Losuj znika przy cwiczeniach, ktore maja tylko jeden dopracowany wariant.
-- wydruk cwiczenia jest bez miejsca na notatki, z czytelniejszymi odstepami i podzialem stron na granicach sekcji.
+- wydruk cwiczenia ma przywrocony poprzedni, bardziej czytelny wyglad z miejscem na notatki uczestnikow.
 - cwiczenie 2 "Popraw tekst urzedowy" ma dopracowana wersje bez starych losowanych przykladow.
+- cwiczenie 1 "Dobry i zly prompt" zostalo podmienione na nowy opis z pliku Word.
+- opisy cwiczen w panelu sa dzielone na czytelne sekcje, ramki, listy i kroki zamiast jednej sciany tekstu.
+- cwiczenie 2 "Popraw tekst urzedowy" zostalo podmienione na scenariusz o prostym jezyku i uzupelnieniu brakow w dokumentacji.
+- wydruk cwiczenia 2 ma osobna karte pracy dla uczestnikow.
+- scenariusze prowadzacego w cwiczeniu 1 i 2 nie powtarzaja juz pelnej karty uczestnika.
+- wydruki cwiczen 1 i 2 nadal zawieraja kompletne karty pracy dla uczestnikow.
+- sekcje w opisach cwiczen maja delikatne, kolorowe wyroznienia i spokojne akcenty boczne.
