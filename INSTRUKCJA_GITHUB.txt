@@ -1,6 +1,6 @@
 AKTUALNA PACZKA PANELU AI
 
-Wersja: 2026-05-30 / 25 cwiczen / zielone dopracowane kafelki i szare pozostale / 20260530-18
+Wersja: 2026-05-30 / 25 cwiczen / generator zaswiadczen na macOS i Windows / 20260530-20
 
 Jak wgrac na GitHub:
 
@@ -9,6 +9,7 @@ Jak wgrac na GitHub:
 3. Wgraj ZAWARTOSC rozpakowanego folderu, nie sam plik ZIP.
 4. Plik index.html musi lezec w glownym katalogu repozytorium.
 5. Katalogi assets i prompts tez musza byc w glownym katalogu repozytorium.
+   Katalog downloads tez musi byc wgrany, bo zawiera generator zaswiadczen.
 6. Nadpisz stare pliki, szczegolnie:
    - index.html
    - assets/app.js
@@ -17,6 +18,8 @@ Jak wgrac na GitHub:
    - assets/exercise-overrides-03-04.js
    - assets/exercise-overrides-05-09.js
    - assets/app.css
+   - downloads/GeneratorZaswiadczenOfflineV27.zip
+   - downloads/GeneratorZaswiadczenOfflineV27-Windows.zip
    - version.json
    - manifest.json
    - reset-cache.html
@@ -33,7 +36,7 @@ Po publikacji:
 Jak poznac, ze jest aktualna wersja:
 
 - Na dole panelu powinien byc tekst:
-  Panel szkolenia AI. Wersja GitHub 2026-05-30 / 25 cwiczen / cwiczenia 5-9 dodane.
+  Panel szkolenia AI. Wersja GitHub 2026-05-30 / 25 cwiczen / generator na macOS i Windows.
 
 - Obok tekstu w stopce powinien byc maly przycisk:
   Sprawdz nowsza wersje
@@ -46,6 +49,13 @@ Jak poznac, ze jest aktualna wersja:
   Plakat na wydarzenie
 
 - Cwiczenia 1-9 powinny miec zielone kafelki, a pozostale cwiczenia szare kafelki.
+
+- Za sekcja Timer powinien byc kafelek:
+  Generator zaswiadczen offline V27
+
+- W sekcji generatora powinny byc dwa przyciski:
+  Pobierz na macOS
+  Pobierz na Windows
 
 - Dawne cwiczenia plikowe sa teraz dalej na liscie, jako pozycje 22-25:
   Dokument roboczy

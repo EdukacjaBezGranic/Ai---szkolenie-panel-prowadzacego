@@ -11,6 +11,8 @@ Statyczny panel do prowadzenia szkolenia z praktycznego wykorzystania AI. Zawier
 - `assets/exercise-variants-advanced.js` - dodatkowe scenariusze urzędowe i warianty dla ćwiczeń zaawansowanych.
 - `assets/exercise-overrides-03-04.js` - dopracowane wersje ćwiczeń 3 i 4 w standardzie rozszerzonym.
 - `assets/exercise-overrides-05-09.js` - dopracowane wersje ćwiczeń 5-9 z plików Word.
+- `downloads/GeneratorZaswiadczenOfflineV27.zip` - generator zaświadczeń offline do pobrania z końca panelu.
+- `downloads/GeneratorZaswiadczenOfflineV27-Windows.zip` - wersja generatora dla Windows uruchamiana lokalnie w przeglądarce.
 - `prompts/` - osobne strony z gotowymi promptami.
 - `assets/prompt.css` i `assets/prompt.js` - wspólne pliki dla stron promptów.
 - `version.json` - aktualny numer wersji używany przez przycisk sprawdzania aktualizacji w stopce.
@@ -28,6 +30,7 @@ Statyczny panel do prowadzenia szkolenia z praktycznego wykorzystania AI. Zawier
 - Ćwiczenie 4 ma rozbudowany scenariusz porządkowania notatki ze spotkania, z tabelą zadań i oznaczaniem braków informacyjnych.
 - Ćwiczenia 5-9 zostały dodane w tym samym standardzie: informacja o naborze, ankieta ewaluacyjna, prezentacja ze źródeł, formularz zapisów i plakat w Canvie.
 - Dopracowane ćwiczenia 1-9 są wyróżnione zielonymi kafelkami, a pozostałe ćwiczenia mają spokojny szary kolor.
+- Na końcu panelu, za timerem, znajduje się generator zaświadczeń offline V27 do pobrania w wersji macOS i Windows.
 - W oknie ćwiczenia pojawia się krótka sekcja `Narzędzia do wykonania ćwiczenia`, dobrana do typu zadania.
 - Pierwsze ćwiczenie ma osobno uporządkowaną treść dla uczestników, widok pełnoekranowy i scenariusz prowadzącego.
 - Drugie ćwiczenie ma osobno uporządkowaną treść dla uczestników, widok pełnoekranowy, wydruk i scenariusz prowadzącego.

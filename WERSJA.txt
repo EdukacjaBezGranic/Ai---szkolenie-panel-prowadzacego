@@ -1,7 +1,10 @@
 Panel szkolenia AI
-Wersja GitHub: 2026-05-30 / 25 cwiczen / zielone dopracowane kafelki i szare pozostale / 20260530-18
+Wersja GitHub: 2026-05-30 / 25 cwiczen / generator zaswiadczen na macOS i Windows / 20260530-20
 
 Ta paczka zawiera ostatnie zmiany:
+- generator zaswiadczen offline V27 ma teraz osobne pobieranie dla macOS i Windows,
+- wersja Windows jest paczka offline uruchamiana przez plik "Uruchom generator.bat",
+- generator zaswiadczen offline V27 jest dodany na koncu strony, za timerem, jako plik ZIP do pobrania,
 - dopracowane cwiczenia 1-9 maja zielone kafelki,
 - pozostale cwiczenia maja spokojne szare kafelki,
 - nowe cwiczenia 5-9 dodane z plikow Word,
