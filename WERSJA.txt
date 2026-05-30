@@ -1,0 +1,19 @@
+Panel szkolenia AI
+Wersja GitHub: 2026-05-30 / 20 cwiczen / cwiczenie 2 dopracowane bez losowania / 20260530-09
+
+Ta paczka zawiera ostatnie zmiany:
+- timer ustawiany automatycznie wedlug czasu cwiczenia,
+- tryb ekranowy cwiczen,
+- logo projektu,
+- 20 cwiczen warsztatowych,
+- cwiczenia z kodowaniem,
+- cwiczenia plikowe: Google Docs, TXT/Markdown, Excel/Sheets, Google Slides.
+- przycisk w stopce: Sprawdz nowsza wersje.
+- pierwszy scenariusz cwiczenia "Dobry i zly prompt" ma rozbudowany scenariusz prowadzacego.
+- pierwszy scenariusz cwiczenia "Dobry i zly prompt" ma osobna wersje dla uczestnikow i poprawiony widok pelnoekranowy.
+- w oknie cwiczenia jest przycisk Drukuj, ktory przygotowuje wersje dla uczestnikow.
+- cwiczenia maja sekcje Narzedzia do wykonania cwiczenia z praktyczna informacja, czego uzyc.
+- cwiczenie 1 ma tylko dopracowana wersje, bez starych losowanych przykladow.
+- przycisk Losuj znika przy cwiczeniach, ktore maja tylko jeden dopracowany wariant.
+- wydruk cwiczenia jest bez miejsca na notatki, z czytelniejszymi odstepami i podzialem stron na granicach sekcji.
+- cwiczenie 2 "Popraw tekst urzedowy" ma dopracowana wersje bez starych losowanych przykladow.

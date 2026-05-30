@@ -14,7 +14,9 @@
     const keys = await caches.keys();
     for (const key of keys) await caches.delete(key);
   }
-  document.body.innerHTML = '<h1>Gotowe</h1><p>Stara wersja została wyczyszczona. <a href="index.html">Wróć do panelu</a>.</p>';
+  const url = new URL('index.html', window.location.href);
+  url.searchParams.set('check', Date.now().toString());
+  document.body.innerHTML = '<h1>Gotowe</h1><p>Stara wersja została wyczyszczona. <a href="' + url.href + '">Wróć do panelu</a>.</p>';
 })();
 </script>
 </body></html>

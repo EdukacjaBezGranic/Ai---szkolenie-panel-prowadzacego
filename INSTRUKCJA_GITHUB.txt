@@ -1,0 +1,61 @@
+AKTUALNA PACZKA PANELU AI
+
+Wersja: 2026-05-30 / 20 cwiczen / cwiczenie 2 dopracowane bez losowania
+
+Jak wgrac na GitHub:
+
+1. Rozpakuj ZIP na komputerze.
+2. Na GitHubie wejdz do repozytorium.
+3. Wgraj ZAWARTOSC rozpakowanego folderu, nie sam plik ZIP.
+4. Plik index.html musi lezec w glownym katalogu repozytorium.
+5. Katalogi assets i prompts tez musza byc w glownym katalogu repozytorium.
+6. Nadpisz stare pliki, szczegolnie:
+   - index.html
+   - assets/app.js
+   - assets/exercises.js
+   - assets/exercise-variants-advanced.js
+   - assets/app.css
+   - version.json
+   - manifest.json
+   - reset-cache.html
+
+Po publikacji:
+
+1. Otworz strone:
+   https://ADRES-TWOJEJ-STRONY/reset-cache.html
+2. Wroc do strony glownej.
+3. Odswiez mocno:
+   - Mac: Cmd + Shift + R
+   - Windows: Ctrl + F5
+
+Jak poznac, ze jest aktualna wersja:
+
+- Na dole panelu powinien byc tekst:
+  Panel szkolenia AI. Wersja GitHub 2026-05-30 / 20 cwiczen / cwiczenie 2 dopracowane bez losowania.
+
+- Obok tekstu w stopce powinien byc maly przycisk:
+  Sprawdz nowsza wersje
+
+- W sekcji cwiczen powinny byc pozycje 17-20:
+  Dokument roboczy
+  Instrukcja TXT/Markdown
+  Arkusz zgloszen
+  Szkielet Google Slides
+
+- Po otwarciu cwiczenia powinien byc przycisk:
+  Drukuj
+
+- W cwiczeniu "Dobry i zly prompt" tryb pelnoekranowy powinien pokazywac rozbudowane zadanie dla uczestnikow, a nie stara krotka wersje.
+
+- Po otwarciu cwiczenia powinna byc widoczna sekcja:
+  Narzedzia do wykonania cwiczenia
+
+- W cwiczeniu 1 nie powinno byc przycisku:
+  Losuj
+
+- W cwiczeniu 2 nie powinno byc przycisku:
+  Losuj
+
+- Wydruk cwiczenia nie powinien zawierac miejsca na notatki.
+
+- Podzial stron w wydruku powinien wypadac na granicach sekcji, a nie w srodku przypadkowego akapitu.

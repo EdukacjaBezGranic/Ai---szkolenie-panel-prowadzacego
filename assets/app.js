@@ -1,4 +1,211 @@
 const EXERCISES = window.EXERCISES || {};
+const APP_VERSION = '20260530-09';
+const TOOL_SETS = {
+  default: {
+    intro: 'Użyjcie narzędzia, do którego macie dostęp. Wystarczy jedno narzędzie tekstowe; nie trzeba testować wszystkich.',
+    items: [
+      ['ChatGPT', 'do przygotowania pierwszej wersji, poprawiania polecenia i porównania wariantów', 'https://chatgpt.com'],
+      ['Claude', 'do spokojniejszej analizy dłuższych tekstów i zachowania sensu materiału', 'https://claude.ai'],
+      ['Microsoft Copilot', 'jeżeli korzystacie z niego w środowisku służbowym', 'https://copilot.microsoft.com'],
+      ['Gemini', 'jako alternatywne narzędzie do pracy z tekstem', 'https://gemini.google.com']
+    ]
+  },
+  prompt: {
+    intro: 'Ćwiczenie można wykonać w dowolnym narzędziu generatywnej AI. Najważniejsze jest porównanie słabego i lepszego polecenia.',
+    items: [
+      ['ChatGPT', 'do szybkiego testowania promptu i sprawdzania, jak zmienia się odpowiedź', 'https://chatgpt.com'],
+      ['Claude', 'do porównania odpowiedzi i spokojnej oceny, czy polecenie jest wystarczająco precyzyjne', 'https://claude.ai'],
+      ['Microsoft Copilot', 'jeżeli jest dostępny w pracy lub w pakiecie służbowym', 'https://copilot.microsoft.com'],
+      ['Gemini', 'jako drugie narzędzie do sprawdzenia, czy prompt działa podobnie także poza jednym modelem', 'https://gemini.google.com']
+    ]
+  },
+  text: {
+    intro: 'Ćwiczenie można wykonać w dowolnym narzędziu generatywnej AI, które umożliwia pracę z tekstem.',
+    items: [
+      ['ChatGPT', 'do poprawy tekstu, uproszczenia języka, przygotowania listy zmian i porównania wersji', 'https://chatgpt.com'],
+      ['Claude', 'do dłuższej redakcji tekstu, zachowania sensu i spokojniejszej analizy stylu', 'https://claude.ai'],
+      ['Microsoft Copilot', 'jeżeli uczestnicy korzystają z niego w środowisku służbowym', 'https://copilot.microsoft.com'],
+      ['Gemini', 'jako alternatywne narzędzie do pracy z tekstem', 'https://gemini.google.com'],
+      ['DeepL Write', 'do językowej poprawy tekstu, gdy celem jest głównie styl, płynność i poprawność', 'https://www.deepl.com/write']
+    ]
+  },
+  info: {
+    intro: 'Do przygotowania komunikatu wystarczy jedno narzędzie tekstowe. Wybierzcie to, do którego macie dostęp.',
+    items: [
+      ['ChatGPT', 'do przygotowania kilku wersji komunikatu i dopracowania tonu', 'https://chatgpt.com'],
+      ['Claude', 'do spokojnej redakcji informacji i pilnowania, żeby tekst nie brzmiał reklamowo', 'https://claude.ai'],
+      ['Microsoft Copilot', 'jeżeli komunikat ma później trafić do Worda, Outlooka lub środowiska Microsoft 365', 'https://copilot.microsoft.com'],
+      ['Gemini', 'jako alternatywa do tworzenia krótkich komunikatów', 'https://gemini.google.com'],
+      ['DeepL Write', 'do końcowego wygładzenia języka', 'https://www.deepl.com/write']
+    ]
+  },
+  test: {
+    intro: 'Do pytań, quizów i testów wybierzcie narzędzie, które dobrze pracuje z listami i formatem odpowiedzi.',
+    items: [
+      ['ChatGPT', 'do generowania pytań, wariantów odpowiedzi i klucza', 'https://chatgpt.com'],
+      ['Claude', 'do sprawdzenia, czy pytania są zrozumiałe i nie sugerują odpowiedzi', 'https://claude.ai'],
+      ['Gemini', 'jako alternatywa do przygotowania quizu', 'https://gemini.google.com'],
+      ['Google Forms', 'do późniejszego przeniesienia pytań do formularza', 'https://forms.google.com'],
+      ['Microsoft Forms', 'jeżeli formularze są tworzone w środowisku Microsoft', 'https://forms.office.com']
+    ]
+  },
+  verify: {
+    intro: 'Tu najważniejsze jest sprawdzanie i krytyczne czytanie. Narzędzie AI pomaga, ale ostateczną decyzję podejmuje człowiek.',
+    items: [
+      ['ChatGPT', 'do wskazania błędów, ogólników, ryzyk i brakujących informacji', 'https://chatgpt.com'],
+      ['Claude', 'do dokładniejszej analizy argumentacji i tonu odpowiedzi', 'https://claude.ai'],
+      ['Microsoft Copilot', 'jeżeli materiał jest sprawdzany w środowisku służbowym', 'https://copilot.microsoft.com'],
+      ['Perplexity', 'do sprawdzenia informacji wymagających źródeł', 'https://www.perplexity.ai'],
+      ['Dokument źródłowy', 'jako najważniejszy punkt odniesienia przy ocenie wyniku AI', '']
+    ]
+  },
+  own: {
+    intro: 'Wybierzcie narzędzie, którego realnie możecie używać po szkoleniu. Ćwiczenie ma prowadzić do promptu przydatnego w pracy.',
+    items: [
+      ['ChatGPT', 'do szybkiego przygotowania i testowania własnego promptu', 'https://chatgpt.com'],
+      ['Claude', 'do dopracowania bardziej złożonych poleceń i dłuższych materiałów', 'https://claude.ai'],
+      ['Microsoft Copilot', 'jeżeli codzienna praca odbywa się w Microsoft 365', 'https://copilot.microsoft.com'],
+      ['Gemini', 'jeżeli zespół korzysta z narzędzi Google', 'https://gemini.google.com']
+    ]
+  },
+  summary: {
+    intro: 'Do streszczeń najlepiej użyć narzędzia, które dobrze radzi sobie z dłuższym tekstem lub plikiem źródłowym.',
+    items: [
+      ['Claude', 'do pracy z dłuższym tekstem i zachowania głównego sensu materiału', 'https://claude.ai'],
+      ['ChatGPT', 'do streszczenia, listy wniosków i pytań kontrolnych', 'https://chatgpt.com'],
+      ['NotebookLM', 'jeżeli materiał jest w pliku lub pochodzi z kilku źródeł', 'https://notebooklm.google.com'],
+      ['Microsoft Copilot', 'jeżeli tekst znajduje się w Wordzie lub środowisku Microsoft 365', 'https://copilot.microsoft.com'],
+      ['Gemini', 'jako alternatywa do podsumowania tekstu', 'https://gemini.google.com']
+    ]
+  },
+  workshop: {
+    intro: 'Do projektowania aktywności szkoleniowej użyjcie narzędzia tekstowego. Później warto sprawdzić wynik z perspektywy prowadzącego.',
+    items: [
+      ['ChatGPT', 'do szybkiego szkicu ćwiczenia, instrukcji i pytań do omówienia', 'https://chatgpt.com'],
+      ['Claude', 'do dopracowania przebiegu, celu i języka instrukcji', 'https://claude.ai'],
+      ['Gemini', 'jako alternatywa do generowania pomysłów', 'https://gemini.google.com'],
+      ['Canva', 'jeżeli efekt ma być później pokazany jako karta pracy lub slajd', 'https://www.canva.com']
+    ]
+  },
+  visual: {
+    intro: 'Najpierw przygotujcie dobry opis procesu. Dopiero potem przenieście go do narzędzia wizualnego.',
+    items: [
+      ['ChatGPT', 'do uporządkowania procesu w kroki i decyzje', 'https://chatgpt.com'],
+      ['Claude', 'do doprecyzowania opisów i zależności między etapami', 'https://claude.ai'],
+      ['Napkin AI', 'do zamiany uporządkowanego tekstu w schemat lub mapę', 'https://www.napkin.ai'],
+      ['Canva', 'do dopracowania grafiki, jeżeli schemat ma trafić do materiałów', 'https://www.canva.com']
+    ]
+  },
+  forms: {
+    intro: 'Najpierw przygotujcie pytania i logikę ankiety, a dopiero potem przenieście je do formularza.',
+    items: [
+      ['ChatGPT', 'do przygotowania pytań, skal odpowiedzi i komunikatu wprowadzającego', 'https://chatgpt.com'],
+      ['Claude', 'do sprawdzenia, czy pytania są neutralne i zrozumiałe', 'https://claude.ai'],
+      ['Google Forms', 'do utworzenia formularza online', 'https://forms.google.com'],
+      ['Microsoft Forms', 'jeżeli formularz ma działać w środowisku Microsoft', 'https://forms.office.com'],
+      ['Gemini', 'jako alternatywa do pracy nad pytaniami', 'https://gemini.google.com']
+    ]
+  },
+  meeting: {
+    intro: 'Do porządkowania notatek użyjcie narzędzia tekstowego. Nie wklejajcie danych wrażliwych ani informacji, których nie wolno udostępniać.',
+    items: [
+      ['ChatGPT', 'do zamiany notatek w decyzje, zadania i tabelę odpowiedzialności', 'https://chatgpt.com'],
+      ['Claude', 'do analizy dłuższych, chaotycznych notatek', 'https://claude.ai'],
+      ['Microsoft Copilot', 'jeżeli notatki są w Wordzie, Teams albo OneNote', 'https://copilot.microsoft.com'],
+      ['Gemini', 'jeżeli notatki są w środowisku Google', 'https://gemini.google.com']
+    ]
+  },
+  email: {
+    intro: 'Do maila wybierzcie narzędzie tekstowe. Ważne: nie wklejajcie danych osobowych, pełnych spraw ani informacji poufnych.',
+    items: [
+      ['ChatGPT', 'do przygotowania spokojnej odpowiedzi i kilku wariantów tonu', 'https://chatgpt.com'],
+      ['Claude', 'do wyważenia tonu i unikania eskalacji', 'https://claude.ai'],
+      ['Microsoft Copilot', 'jeżeli pracujecie w Outlooku lub Microsoft 365', 'https://copilot.microsoft.com'],
+      ['Gemini', 'jako alternatywa do redakcji wiadomości', 'https://gemini.google.com'],
+      ['DeepL Write', 'do końcowej korekty językowej', 'https://www.deepl.com/write']
+    ]
+  },
+  'code-tool': {
+    intro: 'Ćwiczenie można wykonać na koncie w narzędziu AI. Kod traktujcie jako szkic do sprawdzenia, nie jako gotowy system urzędowy.',
+    items: [
+      ['ChatGPT', 'do przygotowania prostego kodu HTML, CSS i JavaScript oraz listy testów', 'https://chatgpt.com'],
+      ['Claude', 'do wygenerowania czytelnego kodu i wyjaśnienia, co robią poszczególne elementy', 'https://claude.ai'],
+      ['Gemini', 'jako alternatywa do prostych zadań kodowych', 'https://gemini.google.com'],
+      ['CodePen', 'do szybkiego uruchomienia małego przykładu w przeglądarce', 'https://codepen.io/pen/'],
+      ['JSFiddle', 'jako alternatywne miejsce do testowania krótkiego kodu', 'https://jsfiddle.net']
+    ]
+  },
+  'code-debug': {
+    intro: 'Do debugowania użyjcie AI jako pomocnika, ale każdą poprawkę sprawdźcie ręcznie na prostym przykładzie.',
+    items: [
+      ['ChatGPT', 'do znalezienia błędu, zaproponowania poprawki i testów ręcznych', 'https://chatgpt.com'],
+      ['Claude', 'do dokładniejszego wyjaśnienia błędu w kodzie', 'https://claude.ai'],
+      ['Gemini', 'jako alternatywa do analizy krótkiego fragmentu kodu', 'https://gemini.google.com'],
+      ['CodePen', 'do uruchomienia poprawionego przykładu', 'https://codepen.io/pen/'],
+      ['Przeglądarka', 'do sprawdzenia, czy poprawka faktycznie działa', '']
+    ]
+  },
+  'code-data': {
+    intro: 'Do małego raportu można użyć AI oraz arkusza. Nie wklejajcie prawdziwych danych osobowych.',
+    items: [
+      ['ChatGPT', 'do przygotowania opisu raportu, kodu pomocniczego albo formuł', 'https://chatgpt.com'],
+      ['Claude', 'do analizy tabeli i opisania wniosków', 'https://claude.ai'],
+      ['Google Sheets', 'do sprawdzenia danych, filtrów i prostych formuł', 'https://sheets.google.com'],
+      ['Microsoft Excel', 'jeżeli arkusz ma działać w środowisku Microsoft', 'https://www.microsoft.com/microsoft-365/excel'],
+      ['Gemini', 'jako alternatywa do pracy z tabelą', 'https://gemini.google.com']
+    ]
+  },
+  'code-script': {
+    intro: 'W tym ćwiczeniu projektujecie bezpieczny szkic automatyzacji. Skrypt nie powinien niczego wysyłać ani usuwać bez decyzji człowieka.',
+    items: [
+      ['ChatGPT', 'do napisania promptu i szkicu prostego Google Apps Script', 'https://chatgpt.com'],
+      ['Claude', 'do sprawdzenia ryzyk i opisania działania skryptu', 'https://claude.ai'],
+      ['Google Apps Script', 'do późniejszego testowania skryptu na kopii pliku', 'https://script.google.com'],
+      ['Google Sheets', 'jako arkusz testowy dla automatyzacji', 'https://sheets.google.com'],
+      ['Gemini', 'jako alternatywa do prostych zadań kodowych', 'https://gemini.google.com']
+    ]
+  },
+  'file-doc': {
+    intro: 'Do dokumentu użyjcie narzędzia tekstowego oraz edytora dokumentów, w którym zespół realnie pracuje.',
+    items: [
+      ['ChatGPT', 'do przygotowania struktury dokumentu i pierwszej wersji treści', 'https://chatgpt.com'],
+      ['Claude', 'do dopracowania dłuższych fragmentów i logicznego układu', 'https://claude.ai'],
+      ['Google Docs', 'do utworzenia dokumentu współdzielonego', 'https://docs.google.com'],
+      ['Microsoft Word', 'jeżeli dokument ma powstać w środowisku Microsoft', 'https://www.microsoft.com/microsoft-365/word'],
+      ['DeepL Write', 'do końcowej korekty językowej', 'https://www.deepl.com/write']
+    ]
+  },
+  'file-text': {
+    intro: 'Do pliku tekstowego wystarczy narzędzie AI i zwykły edytor tekstu. Najważniejsza jest czytelna struktura.',
+    items: [
+      ['ChatGPT', 'do przygotowania instrukcji w prostym języku', 'https://chatgpt.com'],
+      ['Claude', 'do uporządkowania dłuższej instrukcji i sprawdzenia, czy niczego nie brakuje', 'https://claude.ai'],
+      ['Notatnik lub TextEdit', 'do zapisania prostego pliku tekstowego', ''],
+      ['Google Docs', 'jeżeli instrukcja ma być później współdzielona', 'https://docs.google.com'],
+      ['StackEdit', 'jeżeli grupa chce przygotować czytelny plik Markdown', 'https://stackedit.io/app']
+    ]
+  },
+  'file-sheet': {
+    intro: 'Do arkusza użyjcie narzędzia AI do projektu oraz arkusza kalkulacyjnego do sprawdzenia formuł.',
+    items: [
+      ['ChatGPT', 'do zaprojektowania kolumn, formuł i zasad walidacji', 'https://chatgpt.com'],
+      ['Claude', 'do sprawdzenia logiki arkusza i opisania ryzyk', 'https://claude.ai'],
+      ['Google Sheets', 'do utworzenia i przetestowania arkusza', 'https://sheets.google.com'],
+      ['Microsoft Excel', 'jeżeli arkusz ma działać w środowisku Microsoft', 'https://www.microsoft.com/microsoft-365/excel'],
+      ['Gemini', 'jako alternatywa do pracy z tabelą i formułami', 'https://gemini.google.com']
+    ]
+  },
+  'file-slides': {
+    intro: 'Do prezentacji użyjcie AI do struktury i narzędzia prezentacyjnego do slajdów. Nie chodzi o piękne slajdy, tylko o dobry szkielet.',
+    items: [
+      ['ChatGPT', 'do zaprojektowania układu slajdów, tytułów i notatek prowadzącego', 'https://chatgpt.com'],
+      ['Claude', 'do dopracowania narracji i kolejności slajdów', 'https://claude.ai'],
+      ['Google Slides', 'do złożenia prezentacji w środowisku Google', 'https://slides.google.com'],
+      ['PowerPoint', 'jeżeli prezentacja ma powstać w środowisku Microsoft', 'https://www.microsoft.com/microsoft-365/powerpoint'],
+      ['Gamma lub Canva', 'do szybkiego szkicu wizualnego, jeśli grupa ma do nich dostęp', 'https://gamma.app']
+    ]
+  }
+};
 let currentExerciseType = 'prompt';
 let currentExercise = null;
 let timerDuration = 10 * 60;
@@ -21,10 +228,20 @@ function escapeHtml(value) {
 function formatRichText(value) {
   const labels = [
     'Materiał do pracy',
+    'Materiał dla uczestników',
     'Karta sytuacji',
     'Przebieg',
     'Efekt pracy',
+    'Efekt pracy uczestników',
     'Słaby prompt',
+    'Tekst wyjściowy',
+    'Trzeba zachować',
+    'Nie wolno dopisać',
+    'Wasze zadanie',
+    'Wasz prompt powinien określać',
+    'Czego nie robicie w tym ćwiczeniu',
+    'Na końcu zapiszcie',
+    'Dobra odpowiedź AI powinna',
     'Kontekst',
     'Tekst do poprawy',
     'Brief roboczy',
@@ -141,20 +358,124 @@ function setRichText(id, value) {
   document.getElementById(id).innerHTML = formatRichText(value);
 }
 
+function formatGuideText(value) {
+  return escapeHtml(value).split('\n').map(line => {
+    if (/^###\s+/.test(line)) return `<h4>${line.replace(/^###\s+/, '')}</h4>`;
+    if (/^##\s+/.test(line)) return `<h3>${line.replace(/^##\s+/, '')}</h3>`;
+    if (/^---$/.test(line.trim())) return '<hr>';
+    return line;
+  }).join('\n');
+}
+
+function setTrainingGuide(value) {
+  const guide = document.getElementById('trainerGuide');
+  const content = document.getElementById('exGuide');
+  if (!guide || !content) return;
+  if (!String(value || '').trim()) {
+    guide.classList.remove('active');
+    content.innerHTML = '';
+    return;
+  }
+  content.innerHTML = formatGuideText(value);
+  guide.classList.add('active');
+}
+
+
+function normalizeToolItem(item) {
+  if (Array.isArray(item)) return { name: item[0], description: item[1], url: item[2] || '' };
+  return item || {};
+}
+
+function getExerciseTools(e, type = currentExerciseType) {
+  return e?.tools || TOOL_SETS[type] || TOOL_SETS.default;
+}
+
+function buildToolName(name, url) {
+  if (!url) return `<strong>${escapeHtml(name)}</strong>`;
+  return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer"><strong>${escapeHtml(name)}</strong></a>`;
+}
+
+function buildToolsHtml(tools, headingTag = 'h3') {
+  const safeTools = tools || TOOL_SETS.default;
+  const items = (safeTools.items || []).map(normalizeToolItem).filter(item => item.name);
+  return `
+    <span class="tag">narzędzia</span>
+    <${headingTag}>Narzędzia do wykonania ćwiczenia</${headingTag}>
+    <p>${escapeHtml(safeTools.intro || TOOL_SETS.default.intro)}</p>
+    <ul class="tool-list">
+      ${items.map(item => `<li>${buildToolName(item.name, item.url)} <span>${escapeHtml(item.description || '')}</span></li>`).join('')}
+    </ul>
+  `;
+}
+
+function setExerciseTools(containerId, e, type = currentExerciseType) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.innerHTML = buildToolsHtml(getExerciseTools(e, type));
+}
+
+function getParticipantHeading(e) {
+  return e?.participantHeading || e?.heading || 'Zadanie';
+}
+
+function getParticipantTask(e) {
+  return e?.participantTask || e?.task || '';
+}
+
+function getScreenHeading(e) {
+  return e?.screenHeading || getParticipantHeading(e);
+}
+
+function getScreenTask(e) {
+  return e?.screenTask || getParticipantTask(e);
+}
+
+function getPrintTask(e) {
+  return e?.printTask || e?.screenTask || getParticipantTask(e);
+}
+
+function formatPrintTaskText(value) {
+  const rawText = String(value || '');
+  const isLongTask = rawText.length > 1500;
+  return rawText.split(/\n{2,}/).map(block => {
+    const trimmed = block.trim();
+    if (!trimmed) return '';
+    const startsNewPart = /^(Wasze zadanie):/i.test(trimmed);
+    const className = `print-task-block${isLongTask && startsNewPart ? ' print-block-break' : ''}`;
+    return `<div class="${className}">${formatRichText(trimmed)}</div>`;
+  }).join('');
+}
+
 function renderScreenExercise(e) {
   document.getElementById('screenTitle').textContent = e.title;
   document.getElementById('screenIntro').textContent = e.intro || '';
-  document.getElementById('screenHeading').textContent = e.heading;
-  setRichText('screenTask', e.task);
+  document.getElementById('screenHeading').textContent = getScreenHeading(e);
+  setRichText('screenTask', getScreenTask(e));
+  setExerciseTools('screenTools', e);
   setRichText('screenHint', e.hint);
   setRichText('screenSample', e.sample);
   setRichText('screenCheck', e.check);
   ['screenHint','screenSample','screenCheck'].forEach(id => document.getElementById(id).classList.remove('active'));
 }
 
-function pickExercise(type) {
+function getExerciseList(type) {
   const list = EXERCISES[type] || EXERCISES.prompt;
+  return Array.isArray(list) ? list : [];
+}
+function canRandomizeExercise(type = currentExerciseType) {
+  return getExerciseList(type).length > 1;
+}
+function updateRandomButton() {
+  const button = document.querySelector('[data-action="random-exercise"]');
+  if (button) button.hidden = !canRandomizeExercise();
+}
+function pickExercise(type) {
+  const list = getExerciseList(type);
   return list[Math.floor(Math.random() * list.length)];
+}
+function pickDefaultExercise(type) {
+  const list = getExerciseList(type);
+  return list[0];
 }
 function getExerciseTimerMinutes(e) {
   const values = String(e?.time || '').match(/\d+/g);
@@ -182,8 +503,10 @@ function renderExercise(e) {
   document.getElementById('exIntro').textContent = e.intro || '';
   document.getElementById('exTime').textContent = e.time || '10-15 min';
   document.getElementById('exForm').textContent = e.form || 'praca w parach lub grupach';
-  document.getElementById('exHeading').textContent = e.heading;
-  setRichText('exTask', e.task);
+  document.getElementById('exHeading').textContent = getParticipantHeading(e);
+  setRichText('exTask', getParticipantTask(e));
+  setExerciseTools('exTools', e);
+  setTrainingGuide(e.guide);
   setRichText('exHint', e.hint);
   setRichText('exCheck', e.check);
   setRichText('exSample', e.sample);
@@ -196,14 +519,16 @@ function renderExercise(e) {
   }));
   ['exHint','exCheck','exSample','exDiscuss'].forEach(id => document.getElementById(id).classList.remove('active'));
   document.getElementById('exWork').value = '';
+  updateRandomButton();
   if (document.getElementById('exerciseScreen').classList.contains('active')) renderScreenExercise(e);
 }
 function openExercise(type) {
   currentExerciseType = type;
-  renderExercise(pickExercise(type));
+  renderExercise(pickDefaultExercise(type));
   document.getElementById('exerciseOverlay').classList.add('active');
 }
 function randomizeCurrentExercise() {
+  if (!canRandomizeExercise()) return;
   renderExercise(pickExercise(currentExerciseType));
 }
 function closeExercise() {
@@ -220,6 +545,42 @@ function closeScreenExercise() {
 }
 function toggle(id) {
   document.getElementById(id).classList.toggle('active');
+}
+function buildPrintableExercise(e) {
+  const steps = e.steps || [
+    'Przeczytajcie zadanie i zaznaczcie, czego brakuje w pierwszej wersji.',
+    'Przygotujcie własną wersję w parach lub małych grupach.',
+    'Sprawdźcie wynik z kryteriami i poprawcie najważniejsze słabe miejsce.',
+    'Porównajcie z przykładem i wybierzcie jedną zasadę do zapamiętania.'
+  ];
+  return `
+    <div class="print-header">
+      <p class="print-kicker">Ćwiczenie dla uczestników</p>
+      <h1>${escapeHtml(e.title)}</h1>
+      ${e.intro ? `<p>${escapeHtml(e.intro)}</p>` : ''}
+    </div>
+    <div class="print-meta">
+      <div><strong>Czas:</strong> ${escapeHtml(e.time || '10-15 min')}</div>
+      <div><strong>Forma:</strong> ${escapeHtml(e.form || 'praca w parach lub grupach')}</div>
+      <div><strong>Efekt:</strong> ${escapeHtml(e.result || 'wynik do omówienia')}</div>
+    </div>
+    <section class="print-section print-tools">${buildToolsHtml(getExerciseTools(e), 'h2')}</section>
+    <section class="print-section">
+      <h2>${escapeHtml(getParticipantHeading(e))}</h2>
+      <div class="print-task">${formatPrintTaskText(getPrintTask(e))}</div>
+    </section>
+    <section class="print-section print-steps">
+      <h2>Jak wykonać zadanie?</h2>
+      <ol>${steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>
+    </section>
+  `;
+}
+function printCurrentExercise() {
+  if (!currentExercise) return;
+  const printArea = document.getElementById('printExercise');
+  if (!printArea) return;
+  printArea.innerHTML = buildPrintableExercise(currentExercise);
+  window.print();
 }
 function qrGenerate() {
   const v = document.getElementById('qrInput').value.trim();
@@ -326,6 +687,59 @@ function setTimerPreset(minutes) {
   if (input) input.value = minutes;
   timerReset();
 }
+function compareVersions(remoteVersion, currentVersion) {
+  const remote = String(remoteVersion || '').match(/\d+/g)?.map(Number) || [];
+  const current = String(currentVersion || '').match(/\d+/g)?.map(Number) || [];
+  const length = Math.max(remote.length, current.length);
+  for (let i = 0; i < length; i += 1) {
+    const remotePart = remote[i] || 0;
+    const currentPart = current[i] || 0;
+    if (remotePart > currentPart) return 1;
+    if (remotePart < currentPart) return -1;
+  }
+  return 0;
+}
+function setVersionStatus(message) {
+  const status = document.getElementById('versionStatus');
+  if (status) status.textContent = message;
+}
+async function clearLocalAppCache() {
+  if ('serviceWorker' in navigator) {
+    const registrations = await navigator.serviceWorker.getRegistrations();
+    await Promise.all(registrations.map(registration => registration.unregister()));
+  }
+  if ('caches' in window) {
+    const keys = await caches.keys();
+    await Promise.all(keys.map(key => caches.delete(key)));
+  }
+}
+function reloadWithoutCache() {
+  const nextUrl = new URL(window.location.href);
+  nextUrl.searchParams.set('check', Date.now().toString());
+  window.location.replace(nextUrl.toString());
+}
+async function checkForNewVersion() {
+  const button = document.querySelector('[data-action="check-version"]');
+  if (button) button.disabled = true;
+  setVersionStatus('Sprawdzam wersję...');
+  try {
+    const response = await fetch(`version.json?check=${Date.now()}`, { cache: 'no-store' });
+    if (!response.ok) throw new Error('Nie udało się pobrać pliku wersji.');
+    const data = await response.json();
+    const remoteVersion = data.version || '';
+    if (compareVersions(remoteVersion, APP_VERSION) > 0) {
+      setVersionStatus('Jest nowsza wersja. Czyszczę pamięć i odświeżam...');
+      await clearLocalAppCache();
+      reloadWithoutCache();
+      return;
+    }
+    setVersionStatus('Masz aktualną wersję.');
+  } catch (error) {
+    setVersionStatus('Nie udało się sprawdzić. Spróbuj odświeżyć stronę ręcznie.');
+  } finally {
+    if (button) button.disabled = false;
+  }
+}
 function bindTimer() {
   const input = document.getElementById('timerMinutes');
   if (!input) return;
@@ -353,6 +767,7 @@ function bindUiActions() {
     if (action === 'screen-exercise') button.addEventListener('click', openScreenExercise);
     if (action === 'screen-close') button.addEventListener('click', closeScreenExercise);
     if (action === 'random-exercise') button.addEventListener('click', randomizeCurrentExercise);
+    if (action === 'print-exercise') button.addEventListener('click', printCurrentExercise);
     if (action === 'qr-generate') button.addEventListener('click', qrGenerate);
     if (action === 'qr-big') button.addEventListener('click', qrBig);
     if (action === 'qr-clear') button.addEventListener('click', qrClear);
@@ -362,6 +777,7 @@ function bindUiActions() {
     if (action === 'timer-reset') button.addEventListener('click', timerReset);
     if (action === 'timer-big') button.addEventListener('click', timerBig);
     if (action === 'timer-close') button.addEventListener('click', closeTimerBig);
+    if (action === 'check-version') button.addEventListener('click', checkForNewVersion);
   });
   document.getElementById('exerciseScreen')?.addEventListener('click', event => {
     if (event.target.closest('[data-action="screen-close"]')) closeScreenExercise();

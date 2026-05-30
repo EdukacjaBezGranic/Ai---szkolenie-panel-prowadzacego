@@ -4,11 +4,94 @@ window.EXERCISES = {
       "title": "Ćwiczenie: Dobry i zły prompt",
       "heading": "Poprawcie prompt",
       "task": "Materiał do pracy:\nSłaby prompt: „Napisz coś o szkoleniu z AI.”\n\nKarta sytuacji:\nTrzeba przygotować krótki tekst zapowiadający warsztat dla pracowników instytucji publicznej. Szkolenie ma być praktyczne: prompty, poprawianie tekstów, notatki, ankiety, weryfikacja odpowiedzi AI. Nie ma jeszcze daty, miejsca ani listy prowadzących. Tekst ma brzmieć spokojnie i informacyjnie, nie reklamowo.\n\nPrzebieg:\n1. Przeczytajcie słaby prompt i wypiszcie, czego AI musiałaby się domyślić: odbiorca, cel, materiał, format, ton, ograniczenia.\n2. Ustalcie, jak wyglądałaby dobra odpowiedź: co ma zawierać, czego ma nie robić i po czym poznacie, że wynik nadaje się do użycia.\n3. Napiszcie nową wersję promptu. Ma być konkretna, ale nadal możliwa do przeczytania jednym spojrzeniem.\n4. Zaznaczcie w promptcie 3 fragmenty, które najbardziej poprawiają jakość pracy AI.\n\nEfekt pracy:\nJedna dopracowana wersja promptu oraz krótka notatka: „dodaliśmy..., ponieważ...”.",
-      "hint": "Podpowiedzi:\n- Nie zaczynajcie od stylu. Najpierw ustalcie, do czego wynik będzie użyty.\n- Jeśli brakuje danych, każcie AI zadać pytania albo oznaczyć luki.\n- Dobry prompt mówi także, czego nie robić: nie wymyślać dat, liczb, obietnic, podstaw prawnych.\n- Format odpowiedzi jest częścią zadania, nie dodatkiem.",
-      "check": "Sprawdźcie przed pokazaniem grupie:\n1. Czy prompt ma odbiorcę i cel?\n2. Czy wiadomo, jaki ma być format odpowiedzi?\n3. Czy są ograniczenia i zakazy dopowiadania?\n4. Czy AI wie, jak ma potraktować brakujące informacje?\n5. Czy człowiek będzie umiał łatwo ocenić wynik?",
-      "sample": "Przykładowy start:\nPrzygotuj krótki komunikat o szkoleniu z praktycznego wykorzystania AI. Odbiorcy: pracownicy instytucji publicznej. Cel: wyjaśnić, po co jest szkolenie i czego uczestnicy spróbują w praktyce. Format: nagłówek, 4 krótkie punkty, zdanie zamykające. Nie obiecuj efektów, których nie ma w materiale.",
+      "participantHeading": "Zadanie dla uczestników",
+      "participantTask": `Materiał dla uczestników:
+Pracujecie nad promptem, czyli poleceniem dla narzędzia AI. W tym ćwiczeniu nie chodzi o napisanie gotowego komunikatu o szkoleniu. Chodzi o przygotowanie takiego polecenia, po którym AI będzie wiedziała, co ma zrobić, dla kogo pisze, jakim stylem i jakich informacji nie wolno jej wymyślać.
+
+Słaby prompt:
+„Napisz coś o szkoleniu z AI.”
+
+Karta sytuacji:
+W urzędzie przygotowywany jest krótki warsztat dotyczący praktycznego wykorzystania sztucznej inteligencji w pracy biurowej i edukacyjnej. Szkolenie jest skierowane do pracowników instytucji publicznych, w szczególności WUP i PUP.
+
+Warsztat ma mieć charakter praktyczny. Uczestnicy będą pracować na przykładach związanych z codziennymi zadaniami biurowymi i urzędowymi. W programie mają pojawić się między innymi:
+- pisanie i poprawianie promptów,
+- redagowanie tekstów urzędowych,
+- upraszczanie komunikatów,
+- porządkowanie notatek ze spotkań,
+- przygotowywanie ankiet i testów,
+- weryfikowanie odpowiedzi wygenerowanych przez AI,
+- bezpieczne korzystanie z narzędzi AI,
+- rozpoznawanie ograniczeń sztucznej inteligencji.
+
+Trzeba przygotować krótki tekst zapowiadający szkolenie. Tekst może zostać wykorzystany jako informacja wewnętrzna, wiadomość e-mail albo krótki opis przy formularzu zgłoszeniowym.
+
+Nie są jeszcze znane:
+- data szkolenia,
+- miejsce szkolenia,
+- nazwiska osób prowadzących,
+- dokładna godzina rozpoczęcia,
+- link do rejestracji.
+
+AI nie może wymyślać tych informacji. Tekst ma brzmieć spokojnie, profesjonalnie i informacyjnie. Nie powinien być reklamowy, przesadnie entuzjastyczny ani zbyt techniczny. Odbiorcy mogą mieć różny poziom doświadczenia z AI, dlatego język powinien być prosty i zrozumiały.
+
+Wasze zadanie:
+Poprawcie słaby prompt tak, aby AI mogła przygotować użyteczny tekst zapowiadający szkolenie. Nie piszcie jeszcze samego tekstu. Przygotujcie polecenie, które można wkleić do ChatGPT, Claude albo innego narzędzia AI.
+
+Wasz prompt powinien określać:
+- kto jest odbiorcą tekstu,
+- jaki jest cel tekstu,
+- czego dotyczy szkolenie,
+- jaki ma być charakter szkolenia,
+- jakie elementy należy uwzględnić,
+- jaki ma być styl wypowiedzi,
+- jaka ma być długość odpowiedzi,
+- czego AI ma unikać,
+- jak AI ma potraktować brakujące informacje.
+
+Czego nie robicie w tym ćwiczeniu:
+- nie tworzycie gotowego komunikatu o szkoleniu,
+- nie dopisujecie daty, miejsca, godziny ani linku,
+- nie prosicie AI o tekst reklamowy,
+- nie zostawiacie AI decyzji, których sami nie podaliście.
+
+Efekt pracy uczestników:
+Przygotujcie jedną dopracowaną wersję promptu oraz listę 3 najważniejszych doprecyzowań w formule: „Dodaliśmy..., ponieważ...”.
+
+Na końcu zapiszcie:
+Jedną zasadę pracy z AI, którą warto zapamiętać po tym ćwiczeniu.`,
+      "screenHeading": "Zadanie dla uczestników",
+      "screenTask": `Słaby prompt:
+„Napisz coś o szkoleniu z AI.”
+
+Karta sytuacji:
+W urzędzie przygotowywany jest krótki warsztat o praktycznym wykorzystaniu AI w pracy biurowej i urzędowej. Odbiorcami są pracownicy instytucji publicznych, w szczególności WUP i PUP.
+
+Szkolenie ma być praktyczne. Dotyczy między innymi: pisania promptów, redagowania tekstów urzędowych, upraszczania komunikatów, porządkowania notatek, przygotowywania ankiet i testów, weryfikacji odpowiedzi AI oraz bezpiecznego korzystania z narzędzi AI.
+
+Nie są jeszcze znane: data, miejsce, godzina, nazwiska prowadzących ani link do rejestracji. AI nie może tych danych wymyślać.
+
+Wasze zadanie:
+Napiszcie lepszy prompt, który można wkleić do narzędzia AI. Nie piszcie gotowego tekstu zapowiadającego szkolenie. Przygotujcie polecenie dla AI.
+
+W promptcie uwzględnijcie:
+- odbiorcę,
+- cel tekstu,
+- kontekst szkolenia,
+- najważniejsze tematy,
+- styl i długość,
+- format odpowiedzi,
+- informacje, których AI nie może dopowiadać.
+
+Efekt pracy:
+1. Jedna dopracowana wersja promptu.
+2. Trzy doprecyzowania w formule: „Dodaliśmy..., ponieważ...”.
+3. Jedna zasada do zapamiętania po ćwiczeniu.`,
+      "hint": "Podpowiedzi:\n- Najpierw ustalcie, jaki wynik ma powstać. Dopiero potem piszcie prompt.\n- AI powinna wiedzieć, czy tekst jest mailem, opisem przy formularzu, informacją wewnętrzną czy komunikatem na stronę.\n- Wpiszcie odbiorcę. Bez tego AI może napisać tekst jak reklamę kursu komercyjnego.\n- Zabezpieczcie brakujące dane: datę, miejsce, godzinę, nazwiska prowadzących i link.\n- Dobry prompt nie musi być długi. Ma ograniczać zgadywanie.",
+      "check": "Kryteria dobrze przygotowanego promptu:\n1. Odbiorca jest jasno wskazany.\n2. Cel tekstu jest konkretny.\n3. Kontekst szkolenia jest podany.\n4. Zakres szkolenia jest doprecyzowany.\n5. Styl jest określony jako spokojny, profesjonalny i informacyjny.\n6. Brakujące dane są zabezpieczone.\n7. Format lub długość odpowiedzi są wskazane.\n8. Wynik nadaje się do sprawdzenia i krótkiej redakcji przez człowieka.",
+      "sample": "Przykład poprawionego promptu:\nPrzygotuj krótki tekst zapowiadający warsztat dotyczący praktycznego wykorzystania sztucznej inteligencji w pracy biurowej i urzędowej.\n\nOdbiorcami są pracownicy instytucji publicznych, w szczególności WUP i PUP. Tekst ma mieć charakter informacyjny i profesjonalny. Nie powinien brzmieć reklamowo ani przesadnie entuzjastycznie.\n\nUwzględnij, że szkolenie będzie praktyczne i obejmie między innymi: pisanie promptów, poprawianie tekstów urzędowych, porządkowanie notatek, przygotowywanie ankiet i testów, weryfikowanie odpowiedzi AI oraz bezpieczne korzystanie z narzędzi AI.\n\nNie podawaj daty, miejsca, godziny, nazwisk prowadzących ani linku do rejestracji, ponieważ te informacje nie są jeszcze znane. Nie wymyślaj brakujących danych.\n\nPrzygotuj tekst o długości maksymalnie 1200 znaków. Użyj prostego, spokojnego języka odpowiedniego dla komunikacji wewnętrznej w instytucji publicznej.",
       "result": "gotowy prompt i lista 3 doprecyzowań, które najmocniej zmieniają odpowiedź AI",
-      "discuss": "Pytania do omówienia:\n- Który brak w słabym promptcie był najbardziej ryzykowny?\n- Czy wasza wersja ogranicza fantazjowanie AI?\n- Jakie jedno zdanie z tego promptu warto przenieść do własnej pracy?",
+      "discuss": "Pytania do omówienia:\n- Co najbardziej zmieniło jakość promptu?\n- Które informacje najczęściej pomijamy, gdy prosimy AI o pomoc?\n- Czy wasz prompt bardziej przypomina pytanie, czy zlecenie?\n- Które ograniczenie było najważniejsze z punktu widzenia pracy w urzędzie?\n- Co mogłoby pójść źle, gdyby AI dostała tylko słaby prompt?",
       "intro": "W tym ćwiczeniu traktujecie prompt jak mini-brief dla narzędzia. Waszym zadaniem jest dopisać brakujące decyzje tak, żeby AI nie musiała zgadywać kontekstu.",
       "time": "14-18 min",
       "form": "pary, potem krótka wymiana na forum",
@@ -17,218 +100,565 @@ window.EXERCISES = {
         "Ustalcie format odpowiedzi i ograniczenia dla AI.",
         "Napiszcie finalną wersję promptu i zaznaczcie najważniejsze doprecyzowania.",
         "Porównajcie z przykładowym startem i poprawcie jedno słabe miejsce."
-      ]
-    },
-    {
-      "title": "Ćwiczenie: Dobry i zły prompt",
-      "heading": "Poprawcie prompt",
-      "task": "Materiał do pracy:\nSłaby prompt: „Zrób maila do uczestników.”\n\nKarta sytuacji:\nMail ma trafić do osób zapisanych na szkolenie. Ma przypomnieć, że zajęcia będą warsztatowe, warto mieć dostęp do komputera lub telefonu, a materiały są w folderze szkoleniowym. Nie podano godziny, sali ani linku do spotkania, więc AI nie może ich wymyślać.\n\nPrzebieg:\n1. Przeczytajcie słaby prompt i wypiszcie, czego AI musiałaby się domyślić: odbiorca, cel, materiał, format, ton, ograniczenia.\n2. Ustalcie, jak wyglądałaby dobra odpowiedź: co ma zawierać, czego ma nie robić i po czym poznacie, że wynik nadaje się do użycia.\n3. Napiszcie nową wersję promptu. Ma być konkretna, ale nadal możliwa do przeczytania jednym spojrzeniem.\n4. Zaznaczcie w promptcie 3 fragmenty, które najbardziej poprawiają jakość pracy AI.\n\nEfekt pracy:\nJedna dopracowana wersja promptu oraz krótka notatka: „dodaliśmy..., ponieważ...”.",
-      "hint": "Podpowiedzi:\n- Nie zaczynajcie od stylu. Najpierw ustalcie, do czego wynik będzie użyty.\n- Jeśli brakuje danych, każcie AI zadać pytania albo oznaczyć luki.\n- Dobry prompt mówi także, czego nie robić: nie wymyślać dat, liczb, obietnic, podstaw prawnych.\n- Format odpowiedzi jest częścią zadania, nie dodatkiem.",
-      "check": "Sprawdźcie przed pokazaniem grupie:\n1. Czy prompt ma odbiorcę i cel?\n2. Czy wiadomo, jaki ma być format odpowiedzi?\n3. Czy są ograniczenia i zakazy dopowiadania?\n4. Czy AI wie, jak ma potraktować brakujące informacje?\n5. Czy człowiek będzie umiał łatwo ocenić wynik?",
-      "sample": "Przykładowy start:\nPrzygotuj uprzejmy mail organizacyjny do uczestników szkolenia z AI. Uwzględnij tylko informacje podane w materiale: cel wiadomości, odbiorcę, najważniejsze ustalenia i prośbę o konkretną reakcję. Zwróć temat maila oraz treść do 1200 znaków. Nie dopowiadaj dat, miejsca ani obietnic, jeśli nie ma ich w briefie. Na końcu wypisz, które informacje były brakujące.",
-      "result": "gotowy prompt i lista 3 doprecyzowań, które najmocniej zmieniają odpowiedź AI",
-      "discuss": "Pytania do omówienia:\n- Który brak w słabym promptcie był najbardziej ryzykowny?\n- Czy wasza wersja ogranicza fantazjowanie AI?\n- Jakie jedno zdanie z tego promptu warto przenieść do własnej pracy?",
-      "intro": "W tym ćwiczeniu traktujecie prompt jak mini-brief dla narzędzia. Waszym zadaniem jest dopisać brakujące decyzje tak, żeby AI nie musiała zgadywać kontekstu.",
-      "time": "14-18 min",
-      "form": "pary, potem krótka wymiana na forum",
-      "steps": [
-        "Wypiszcie brakujące informacje, zanim zaczniecie pisać prompt.",
-        "Ustalcie format odpowiedzi i ograniczenia dla AI.",
-        "Napiszcie finalną wersję promptu i zaznaczcie najważniejsze doprecyzowania.",
-        "Porównajcie z przykładowym startem i poprawcie jedno słabe miejsce."
-      ]
-    },
-    {
-      "title": "Ćwiczenie: Dobry i zły prompt",
-      "heading": "Poprawcie prompt",
-      "task": "Materiał do pracy:\nSłaby prompt: „Napisz opis do prezentacji.”\n\nKarta sytuacji:\nPotrzebny jest krótki opis slajdu otwierającego prezentację o praktycznym wykorzystaniu AI. Odbiorcy są początkujący albo średnio zaawansowani. Slajd ma ustawić temat bez straszenia i bez obietnic typu „AI zrobi wszystko za nas”.\n\nPrzebieg:\n1. Przeczytajcie słaby prompt i wypiszcie, czego AI musiałaby się domyślić: odbiorca, cel, materiał, format, ton, ograniczenia.\n2. Ustalcie, jak wyglądałaby dobra odpowiedź: co ma zawierać, czego ma nie robić i po czym poznacie, że wynik nadaje się do użycia.\n3. Napiszcie nową wersję promptu. Ma być konkretna, ale nadal możliwa do przeczytania jednym spojrzeniem.\n4. Zaznaczcie w promptcie 3 fragmenty, które najbardziej poprawiają jakość pracy AI.\n\nEfekt pracy:\nJedna dopracowana wersja promptu oraz krótka notatka: „dodaliśmy..., ponieważ...”.",
-      "hint": "Podpowiedzi:\n- Nie zaczynajcie od stylu. Najpierw ustalcie, do czego wynik będzie użyty.\n- Jeśli brakuje danych, każcie AI zadać pytania albo oznaczyć luki.\n- Dobry prompt mówi także, czego nie robić: nie wymyślać dat, liczb, obietnic, podstaw prawnych.\n- Format odpowiedzi jest częścią zadania, nie dodatkiem.",
-      "check": "Sprawdźcie przed pokazaniem grupie:\n1. Czy prompt ma odbiorcę i cel?\n2. Czy wiadomo, jaki ma być format odpowiedzi?\n3. Czy są ograniczenia i zakazy dopowiadania?\n4. Czy AI wie, jak ma potraktować brakujące informacje?\n5. Czy człowiek będzie umiał łatwo ocenić wynik?",
-      "sample": "Przykładowy start:\nPrzygotuj opis slajdu otwierającego prezentację o praktycznym użyciu AI w pracy administracyjnej. Odbiorcy: osoby początkujące. Styl: prosty, konkretny, bez marketingowych haseł. Zwróć tytuł, 3 punkty główne i jedno zdanie do wypowiedzenia przez prowadzącego.",
-      "result": "gotowy prompt i lista 3 doprecyzowań, które najmocniej zmieniają odpowiedź AI",
-      "discuss": "Pytania do omówienia:\n- Który brak w słabym promptcie był najbardziej ryzykowny?\n- Czy wasza wersja ogranicza fantazjowanie AI?\n- Jakie jedno zdanie z tego promptu warto przenieść do własnej pracy?",
-      "intro": "W tym ćwiczeniu traktujecie prompt jak mini-brief dla narzędzia. Waszym zadaniem jest dopisać brakujące decyzje tak, żeby AI nie musiała zgadywać kontekstu.",
-      "time": "14-18 min",
-      "form": "pary, potem krótka wymiana na forum",
-      "steps": [
-        "Wypiszcie brakujące informacje, zanim zaczniecie pisać prompt.",
-        "Ustalcie format odpowiedzi i ograniczenia dla AI.",
-        "Napiszcie finalną wersję promptu i zaznaczcie najważniejsze doprecyzowania.",
-        "Porównajcie z przykładowym startem i poprawcie jedno słabe miejsce."
-      ]
-    },
-    {
-      "title": "Ćwiczenie: Dobry i zły prompt",
-      "heading": "Poprawcie prompt",
-      "task": "Materiał do pracy:\nSłaby prompt: „Zrób plan szkolenia.”\n\nKarta sytuacji:\nPlan dotyczy 4-godzinnego warsztatu dla 10-15 osób. Grupa pracuje głównie z tekstami, mailami, notatkami i prostymi formularzami. Plan ma zawierać moduły, czas, ćwiczenia i krótki sposób sprawdzenia efektu. Nie chodzi o wykład o historii AI.\n\nPrzebieg:\n1. Przeczytajcie słaby prompt i wypiszcie, czego AI musiałaby się domyślić: odbiorca, cel, materiał, format, ton, ograniczenia.\n2. Ustalcie, jak wyglądałaby dobra odpowiedź: co ma zawierać, czego ma nie robić i po czym poznacie, że wynik nadaje się do użycia.\n3. Napiszcie nową wersję promptu. Ma być konkretna, ale nadal możliwa do przeczytania jednym spojrzeniem.\n4. Zaznaczcie w promptcie 3 fragmenty, które najbardziej poprawiają jakość pracy AI.\n\nEfekt pracy:\nJedna dopracowana wersja promptu oraz krótka notatka: „dodaliśmy..., ponieważ...”.",
-      "hint": "Podpowiedzi:\n- Nie zaczynajcie od stylu. Najpierw ustalcie, do czego wynik będzie użyty.\n- Jeśli brakuje danych, każcie AI zadać pytania albo oznaczyć luki.\n- Dobry prompt mówi także, czego nie robić: nie wymyślać dat, liczb, obietnic, podstaw prawnych.\n- Format odpowiedzi jest częścią zadania, nie dodatkiem.",
-      "check": "Sprawdźcie przed pokazaniem grupie:\n1. Czy prompt ma odbiorcę i cel?\n2. Czy wiadomo, jaki ma być format odpowiedzi?\n3. Czy są ograniczenia i zakazy dopowiadania?\n4. Czy AI wie, jak ma potraktować brakujące informacje?\n5. Czy człowiek będzie umiał łatwo ocenić wynik?",
-      "sample": "Przykładowy start:\nZaprojektuj plan 4-godzinnego warsztatu z praktycznego wykorzystania AI dla pracowników instytucji publicznej. Grupa: osoby początkujące i średnio zaawansowane. Zwróć tabelę: moduł, cel, aktywność uczestników, czas, materiał potrzebny do ćwiczenia. Uwzględnij bezpieczeństwo danych i weryfikację odpowiedzi AI. Nie opisuj teorii bez ćwiczeń.",
-      "result": "gotowy prompt i lista 3 doprecyzowań, które najmocniej zmieniają odpowiedź AI",
-      "discuss": "Pytania do omówienia:\n- Który brak w słabym promptcie był najbardziej ryzykowny?\n- Czy wasza wersja ogranicza fantazjowanie AI?\n- Jakie jedno zdanie z tego promptu warto przenieść do własnej pracy?",
-      "intro": "W tym ćwiczeniu traktujecie prompt jak mini-brief dla narzędzia. Waszym zadaniem jest dopisać brakujące decyzje tak, żeby AI nie musiała zgadywać kontekstu.",
-      "time": "14-18 min",
-      "form": "pary, potem krótka wymiana na forum",
-      "steps": [
-        "Wypiszcie brakujące informacje, zanim zaczniecie pisać prompt.",
-        "Ustalcie format odpowiedzi i ograniczenia dla AI.",
-        "Napiszcie finalną wersję promptu i zaznaczcie najważniejsze doprecyzowania.",
-        "Porównajcie z przykładowym startem i poprawcie jedno słabe miejsce."
-      ]
-    },
-    {
-      "title": "Ćwiczenie: Dobry i zły prompt",
-      "heading": "Poprawcie prompt",
-      "task": "Materiał do pracy:\nSłaby prompt: „Napisz regulamin korzystania z AI.”\n\nKarta sytuacji:\nPotrzebne są krótkie zasady do rozmowy z zespołem, nie dokument prawny. Mają dotyczyć bezpiecznego korzystania z AI w codziennej pracy: dane poufne, weryfikacja faktów, odpowiedzialność człowieka, przykłady bezpiecznych zastosowań. Nie wolno cytować przepisów, jeśli nie ma ich w materiale.\n\nPrzebieg:\n1. Przeczytajcie słaby prompt i wypiszcie, czego AI musiałaby się domyślić: odbiorca, cel, materiał, format, ton, ograniczenia.\n2. Ustalcie, jak wyglądałaby dobra odpowiedź: co ma zawierać, czego ma nie robić i po czym poznacie, że wynik nadaje się do użycia.\n3. Napiszcie nową wersję promptu. Ma być konkretna, ale nadal możliwa do przeczytania jednym spojrzeniem.\n4. Zaznaczcie w promptcie 3 fragmenty, które najbardziej poprawiają jakość pracy AI.\n\nEfekt pracy:\nJedna dopracowana wersja promptu oraz krótka notatka: „dodaliśmy..., ponieważ...”.",
-      "hint": "Podpowiedzi:\n- Nie zaczynajcie od stylu. Najpierw ustalcie, do czego wynik będzie użyty.\n- Jeśli brakuje danych, każcie AI zadać pytania albo oznaczyć luki.\n- Dobry prompt mówi także, czego nie robić: nie wymyślać dat, liczb, obietnic, podstaw prawnych.\n- Format odpowiedzi jest częścią zadania, nie dodatkiem.",
-      "check": "Sprawdźcie przed pokazaniem grupie:\n1. Czy prompt ma odbiorcę i cel?\n2. Czy wiadomo, jaki ma być format odpowiedzi?\n3. Czy są ograniczenia i zakazy dopowiadania?\n4. Czy AI wie, jak ma potraktować brakujące informacje?\n5. Czy człowiek będzie umiał łatwo ocenić wynik?",
-      "sample": "Przykładowy start:\nPrzygotuj projekt krótkich zasad korzystania z AI w pracy biurowej. Tekst ma być edukacyjny, prosty i możliwy do omówienia z zespołem. Ujmij: dane poufne, sprawdzanie faktów, odpowiedzialność człowieka, przykłady bezpiecznych zastosowań. Nie cytuj przepisów prawa, jeśli nie zostały podane w materiale.",
-      "result": "gotowy prompt i lista 3 doprecyzowań, które najmocniej zmieniają odpowiedź AI",
-      "discuss": "Pytania do omówienia:\n- Który brak w słabym promptcie był najbardziej ryzykowny?\n- Czy wasza wersja ogranicza fantazjowanie AI?\n- Jakie jedno zdanie z tego promptu warto przenieść do własnej pracy?",
-      "intro": "W tym ćwiczeniu traktujecie prompt jak mini-brief dla narzędzia. Waszym zadaniem jest dopisać brakujące decyzje tak, żeby AI nie musiała zgadywać kontekstu.",
-      "time": "14-18 min",
-      "form": "pary, potem krótka wymiana na forum",
-      "steps": [
-        "Wypiszcie brakujące informacje, zanim zaczniecie pisać prompt.",
-        "Ustalcie format odpowiedzi i ograniczenia dla AI.",
-        "Napiszcie finalną wersję promptu i zaznaczcie najważniejsze doprecyzowania.",
-        "Porównajcie z przykładowym startem i poprawcie jedno słabe miejsce."
-      ]
-    },
-    {
-      "title": "Ćwiczenie: Dobry i zły prompt",
-      "heading": "Poprawcie prompt",
-      "task": "Materiał do pracy:\nSłaby prompt: „Zrób podsumowanie projektu.”\n\nKarta sytuacji:\nPodsumowanie ma być dla osoby decyzyjnej, która chce szybko zobaczyć cel, wykonane działania, efekty, ryzyka i brakujące informacje. Materiał źródłowy będzie krótki i niepełny, więc AI ma oznaczać luki zamiast dopisywać liczby lub sukcesy.\n\nPrzebieg:\n1. Przeczytajcie słaby prompt i wypiszcie, czego AI musiałaby się domyślić: odbiorca, cel, materiał, format, ton, ograniczenia.\n2. Ustalcie, jak wyglądałaby dobra odpowiedź: co ma zawierać, czego ma nie robić i po czym poznacie, że wynik nadaje się do użycia.\n3. Napiszcie nową wersję promptu. Ma być konkretna, ale nadal możliwa do przeczytania jednym spojrzeniem.\n4. Zaznaczcie w promptcie 3 fragmenty, które najbardziej poprawiają jakość pracy AI.\n\nEfekt pracy:\nJedna dopracowana wersja promptu oraz krótka notatka: „dodaliśmy..., ponieważ...”.",
-      "hint": "Podpowiedzi:\n- Nie zaczynajcie od stylu. Najpierw ustalcie, do czego wynik będzie użyty.\n- Jeśli brakuje danych, każcie AI zadać pytania albo oznaczyć luki.\n- Dobry prompt mówi także, czego nie robić: nie wymyślać dat, liczb, obietnic, podstaw prawnych.\n- Format odpowiedzi jest częścią zadania, nie dodatkiem.",
-      "check": "Sprawdźcie przed pokazaniem grupie:\n1. Czy prompt ma odbiorcę i cel?\n2. Czy wiadomo, jaki ma być format odpowiedzi?\n3. Czy są ograniczenia i zakazy dopowiadania?\n4. Czy AI wie, jak ma potraktować brakujące informacje?\n5. Czy człowiek będzie umiał łatwo ocenić wynik?",
-      "sample": "Przykładowy start:\nNa podstawie poniższych notatek przygotuj podsumowanie projektu dla kadry kierowniczej. Zwróć: cel projektu, wykonane działania, efekty, ryzyka, decyzje do podjęcia. Pisz rzeczowo, bez dopowiadania danych liczbowych. Zaznacz miejsca, w których brakuje informacji.",
-      "result": "gotowy prompt i lista 3 doprecyzowań, które najmocniej zmieniają odpowiedź AI",
-      "discuss": "Pytania do omówienia:\n- Który brak w słabym promptcie był najbardziej ryzykowny?\n- Czy wasza wersja ogranicza fantazjowanie AI?\n- Jakie jedno zdanie z tego promptu warto przenieść do własnej pracy?",
-      "intro": "W tym ćwiczeniu traktujecie prompt jak mini-brief dla narzędzia. Waszym zadaniem jest dopisać brakujące decyzje tak, żeby AI nie musiała zgadywać kontekstu.",
-      "time": "14-18 min",
-      "form": "pary, potem krótka wymiana na forum",
-      "steps": [
-        "Wypiszcie brakujące informacje, zanim zaczniecie pisać prompt.",
-        "Ustalcie format odpowiedzi i ograniczenia dla AI.",
-        "Napiszcie finalną wersję promptu i zaznaczcie najważniejsze doprecyzowania.",
-        "Porównajcie z przykładowym startem i poprawcie jedno słabe miejsce."
-      ]
+      ],
+      "guide": `## Ćwiczenie 1. Dobry i zły prompt - prompt jako mini-brief dla AI
+
+### Cel ćwiczenia
+
+Uczestnicy uczą się traktować prompt nie jako luźne pytanie wpisane do narzędzia AI, ale jako krótkie zlecenie robocze. W pracy urzędowej to rozróżnienie ma duże znaczenie. Jeżeli polecenie jest nieprecyzyjne, AI zaczyna uzupełniać luki samodzielnie: zgaduje odbiorcę, styl, zakres informacji, ton wypowiedzi, a czasem także fakty, których użytkownik nie podał.
+
+Ćwiczenie pokazuje, że jakość odpowiedzi AI zależy nie od długości promptu, ale od jakości decyzji, które użytkownik przekaże narzędziu. Dobry prompt nie musi być rozbudowany. Powinien jednak zawierać te elementy, które ograniczają zgadywanie i prowadzą do odpowiedzi możliwej do użycia po krótkiej redakcji.
+
+W tym wariancie uczestnicy pracują na sytuacji bliskiej codziennej pracy WUP i PUP: przygotowaniu krótkiej informacji o szkoleniu dla pracowników instytucji publicznej. Zadanie jest proste tematycznie, ponieważ jego sens nie polega na tworzeniu idealnego komunikatu, ale na zrozumieniu, jak zmienia się odpowiedź AI, gdy polecenie zawiera kontekst, odbiorcę, cel, styl i ograniczenia.
+
+---
+
+### Kompetencje rozwijane w ćwiczeniu
+
+Po wykonaniu ćwiczenia uczestnik powinien umieć:
+
+- odróżnić ogólne polecenie od użytecznego promptu,
+- wskazać, jakich informacji brakuje w słabym poleceniu,
+- doprecyzować prompt bez niepotrzebnego wydłużania go,
+- określić odbiorcę, cel, styl i format odpowiedzi,
+- wskazać informacje, których AI nie może dopowiadać,
+- przygotować prompt możliwy do wykorzystania w pracy biurowej lub urzędowej,
+- ocenić, które elementy promptu najmocniej wpływają na jakość odpowiedzi AI.
+
+### Czas
+
+14-18 minut
+
+Rekomendowany podział czasu:
+
+- 2 minuty - wprowadzenie prowadzącego,
+- 3 minuty - analiza słabego promptu,
+- 5-6 minut - przygotowanie poprawionej wersji promptu,
+- 3 minuty - wybór 3 najważniejszych doprecyzowań,
+- 4-5 minut - omówienie na forum.
+
+Jeżeli grupa pracuje wolniej albo temat wywoła dyskusję, ćwiczenie można wydłużyć do 20 minut. Nie warto jednak nadmiernie go rozciągać, ponieważ ma ono pełnić funkcję otwierającą i porządkującą dalszą pracę z AI.
+
+### Forma pracy
+
+Praca w parach, następnie krótka wymiana na forum. W grupie mniej aktywnej można zastosować pracę w trójkach. W grupie bardziej zaawansowanej można poprosić uczestników, aby po przygotowaniu promptu od razu przetestowali go w wybranym narzędziu AI i porównali wynik z odpowiedzią uzyskaną ze słabego promptu.
+
+### Grupa docelowa
+
+Ćwiczenie jest przygotowane dla pracowników wojewódzkich i powiatowych urzędów pracy oraz innych instytucji publicznych, którzy w codziennej pracy przygotowują:
+
+- krótkie informacje dla pracowników lub uczestników,
+- komunikaty organizacyjne,
+- zaproszenia na szkolenia,
+- opisy działań projektowych,
+- treści na stronę internetową,
+- wiadomości e-mail,
+- materiały szkoleniowe,
+- ankiety, testy lub podsumowania spotkań.
+
+Ćwiczenie nie wymaga zaawansowanej znajomości narzędzi AI. Sprawdza się dobrze na początku szkolenia, ponieważ porządkuje podstawową zasadę pracy: AI nie czyta intencji użytkownika. Narzędzie odpowiada na podstawie tego, co zostało wpisane, a nie tego, co użytkownik miał na myśli.
+
+### Efekt pracy uczestników
+
+Każda para przygotowuje:
+
+1. jedną dopracowaną wersję promptu,
+2. listę 3 doprecyzowań, które najmocniej zmieniają jakość odpowiedzi AI,
+3. krótkie uzasadnienie w formule: „Dodaliśmy..., ponieważ...”.
+
+Przykład:
+
+„Dodaliśmy informację o odbiorcach, ponieważ AI musi wiedzieć, że tekst jest skierowany do pracowników instytucji publicznych, a nie do klientów komercyjnego szkolenia.”
+
+---
+
+### Materiał dla uczestników
+
+Słaby prompt:
+
+„Napisz coś o szkoleniu z AI.”
+
+Karta sytuacji:
+
+W urzędzie przygotowywany jest krótki warsztat dotyczący praktycznego wykorzystania sztucznej inteligencji w pracy biurowej i edukacyjnej. Szkolenie jest skierowane do pracowników instytucji publicznych, w szczególności WUP i PUP.
+
+Warsztat ma mieć charakter praktyczny. Uczestnicy będą pracować na przykładach związanych z codziennymi zadaniami biurowymi i urzędowymi. W programie mają pojawić się między innymi: pisanie i poprawianie promptów, redagowanie tekstów urzędowych, upraszczanie komunikatów, porządkowanie notatek ze spotkań, przygotowywanie ankiet i testów, weryfikowanie odpowiedzi wygenerowanych przez AI, bezpieczne korzystanie z narzędzi AI oraz rozpoznawanie ograniczeń sztucznej inteligencji.
+
+Trzeba przygotować krótki tekst zapowiadający szkolenie. Tekst może zostać wykorzystany jako informacja wewnętrzna, wiadomość e-mail albo krótki opis przy formularzu zgłoszeniowym.
+
+Nie są jeszcze znane: data szkolenia, miejsce szkolenia, nazwiska osób prowadzących, dokładna godzina rozpoczęcia ani link do rejestracji. Tekst nie może więc zawierać tych informacji. AI nie powinna ich wymyślać ani zastępować ogólnymi obietnicami.
+
+Tekst ma brzmieć spokojnie, profesjonalnie i informacyjnie. Nie powinien być reklamowy, przesadnie entuzjastyczny ani zbyt techniczny. Odbiorcy mogą mieć różny poziom doświadczenia z AI, dlatego język powinien być prosty i zrozumiały.
+
+### Zadanie dla uczestników
+
+Poprawcie słaby prompt tak, aby AI mogła przygotować użyteczny tekst zapowiadający szkolenie.
+
+Wasz prompt powinien jasno określać:
+
+- kto jest odbiorcą tekstu,
+- jaki jest cel tekstu,
+- czego dotyczy szkolenie,
+- jaki ma być charakter szkolenia,
+- jakie elementy należy uwzględnić,
+- jaki ma być styl wypowiedzi,
+- jaka ma być długość odpowiedzi,
+- czego AI ma unikać,
+- jak AI ma potraktować brakujące informacje.
+
+Nie piszcie jeszcze samego tekstu zapowiadającego szkolenie. Waszym zadaniem jest przygotowanie dobrego promptu, który można wkleić do narzędzia AI.
+
+### Przebieg ćwiczenia dla uczestników
+
+Krok 1. Przeanalizujcie słaby prompt.
+
+Wypiszcie, czego AI musiałaby się domyślić, żeby dobrze wykonać zadanie. Zwróćcie uwagę na pytania: dla kogo ma być tekst, gdzie będzie wykorzystany, jaki ma mieć format, styl i długość, jakie informacje są znane, jakich danych AI nie może wymyślić oraz czy wynik ma być gotowy do publikacji, czy tylko roboczy.
+
+Krok 2. Ustalcie, jak ma wyglądać dobra odpowiedź AI.
+
+Dobra odpowiedź AI powinna być krótka, zrozumiała dla osób bez technicznej wiedzy o AI, jasno informować, czego dotyczy szkolenie, nie obiecywać zbyt wiele, nie zawierać nieznanych danych, nie brzmieć jak reklama komercyjnego kursu i nadawać się do wykorzystania po krótkiej redakcji.
+
+Krok 3. Napiszcie poprawioną wersję promptu.
+
+Dobry prompt może mieć 5-8 zdań. Powinien przypominać krótki brief dla osoby, której zlecacie przygotowanie tekstu. Uwzględnijcie zadanie, odbiorców, kontekst, zakres szkolenia, styl, długość, ograniczenia i zakaz dopowiadania brakujących danych.
+
+Krok 4. Wskażcie 3 najważniejsze doprecyzowania.
+
+Przy każdym dopiszcie krótkie uzasadnienie: „Dodaliśmy..., ponieważ...”. Nie wybierajcie przypadkowych elementów. Zastanówcie się, które informacje naprawdę chronią przed słabą odpowiedzią.
+
+### Pytania pomocnicze dla uczestników
+
+- Kto dokładnie ma przeczytać tekst wygenerowany przez AI?
+- Czy odbiorca zna temat AI, czy dopiero zaczyna?
+- Czy tekst ma zachęcać, informować czy organizować udział?
+- Czy tekst ma być użyty w mailu, na stronie, w formularzu czy w materiałach szkoleniowych?
+- Jakich danych AI nie zna i nie powinna dopowiadać?
+- Jakiego tonu należy uniknąć?
+- Czy prompt powinien zawierać limit znaków?
+- Co się stanie, jeśli w promptcie nie wskażemy odbiorcy?
+- Co się stanie, jeśli nie zabronimy AI wymyślania daty lub miejsca?
+
+### Kryteria dobrze przygotowanego promptu
+
+Prompt można uznać za dobry, jeżeli spełnia większość warunków:
+
+1. Odbiorca jest jasno wskazany.
+2. Cel tekstu jest konkretny.
+3. Kontekst szkolenia jest podany.
+4. Zakres szkolenia jest doprecyzowany.
+5. Styl jest określony.
+6. Brakujące dane są zabezpieczone.
+7. Format lub długość są wskazane.
+8. Wynik nadaje się do redakcji.
+
+### Przykład poprawionego promptu
+
+Przygotuj krótki tekst zapowiadający warsztat dotyczący praktycznego wykorzystania sztucznej inteligencji w pracy biurowej i urzędowej.
+
+Odbiorcami są pracownicy instytucji publicznych, w szczególności WUP i PUP. Tekst ma mieć charakter informacyjny i profesjonalny. Nie powinien brzmieć reklamowo ani przesadnie entuzjastycznie.
+
+Uwzględnij, że szkolenie będzie praktyczne i obejmie między innymi: pisanie promptów, poprawianie tekstów urzędowych, porządkowanie notatek, przygotowywanie ankiet i testów, weryfikowanie odpowiedzi AI oraz bezpieczne korzystanie z narzędzi AI.
+
+Nie podawaj daty, miejsca, godziny, nazwisk prowadzących ani linku do rejestracji, ponieważ te informacje nie są jeszcze znane. Nie wymyślaj brakujących danych.
+
+Przygotuj tekst o długości maksymalnie 1200 znaków. Użyj prostego, spokojnego języka odpowiedniego dla komunikacji wewnętrznej w instytucji publicznej.
+
+### Wersja trudniejsza dla grupy bardziej zaawansowanej
+
+Wklejcie do narzędzia AI najpierw słaby prompt: „Napisz coś o szkoleniu z AI.” Następnie wklejcie poprawiony prompt przygotowany przez Waszą parę. Porównajcie odpowiedzi i wskażcie, które informacje pojawiły się dopiero po doprecyzowaniu, czy styl odpowiedzi się zmienił, czy AI przestała wymyślać brakujące dane i która odpowiedź byłaby bezpieczniejsza do wykorzystania w pracy.
+
+### Instrukcja dla prowadzącego
+
+Prowadzący może rozpocząć krótkim komentarzem:
+
+„W pracy z AI często wpisujemy polecenie tak, jakby narzędzie znało kontekst naszej pracy. Tymczasem AI nie wie, czy piszemy do uczestników szkolenia, do przełożonego, do klienta, czy na stronę internetową. Nie wie też, których danych nie ma i których nie wolno wymyślić. Dlatego prompt powinien działać jak mini-brief. Nie musi być długi, ale musi zawierać najważniejsze decyzje.”
+
+Podczas pracy w parach warto sprawdzać, czy uczestnicy nie piszą od razu gotowego tekstu zamiast promptu, nie pomijają odbiorcy, stylu i brakujących danych oraz czy prompt nie jest tak ogólny, że pasowałby do każdego szkolenia.
+
+### Typowe błędy i reakcja prowadzącego
+
+Błąd: prompt jest nadal zbyt ogólny.
+
+Reakcja: „To jest już lepsze niż wersja wyjściowa, bo mamy odbiorcę. Nadal jednak AI nie wie, jaki ma być styl, długość, zakres szkolenia i czego nie wolno dopowiadać.”
+
+Błąd: prompt jest zbyt długi i nieczytelny.
+
+Reakcja: „Prompt nie musi być regulaminem. Spróbujcie zostawić tylko te informacje, które realnie zmienią odpowiedź AI.”
+
+Błąd: uczestnicy piszą gotowy tekst zamiast promptu.
+
+Reakcja: „Ten tekst może być dobry, ale teraz ćwiczymy coś innego. Chodzi o napisanie zlecenia dla AI.”
+
+Błąd: AI ma prawo wymyślić brakujące dane.
+
+Reakcja: „W pracy urzędowej to szczególnie ważne. Jeżeli nie znamy daty, miejsca albo linku do rejestracji, AI nie może ich tworzyć.”
+
+### Wniosek końcowy dla uczestników
+
+Prompt to nie magiczna formuła. To krótkie zlecenie, które powinno ograniczyć zgadywanie. W pracy urzędowej ma to szczególne znaczenie, ponieważ teksty muszą być precyzyjne, spokojne i zgodne z faktami.
+
+Jeżeli w promptcie brakuje odbiorcy, celu, kontekstu, stylu i ograniczeń, AI wypełni luki po swojemu. Najlepszy prompt to taki, który pozwala uzyskać odpowiedź możliwą do wykorzystania po krótkiej, świadomej redakcji człowieka.`
     }
   ],
   "text": [
     {
       "title": "Ćwiczenie: Popraw tekst urzędowy",
-      "heading": "Poprawcie tekst",
-      "task": "Materiał do pracy:\nKontekst: komunikat ma trafić do osób zapisanych na szkolenie. Ma być prosty, ale nadal profesjonalny.\n\nTekst do poprawy:\nInformujemy, że w związku z realizacją szkolenia z zakresu sztucznej inteligencji uczestnicy są zobowiązani do zapoznania się z materiałami udostępnionymi w folderze, a także do aktywnego uczestnictwa w zajęciach, ponieważ szkolenie ma na celu podniesienie kompetencji cyfrowych.\n\nPrzebieg:\n1. Przeczytajcie tekst na głos albo po cichu, ale powoli. Zaznaczcie miejsca, w których trzeba się zatrzymać, żeby zrozumieć sens.\n2. Przygotujcie prompt dla AI: poproście o uproszczenie bez zmiany znaczenia, bez dodawania faktów i z zachowaniem profesjonalnego tonu.\n3. Porównajcie wynik z tekstem źródłowym. Sprawdźcie, czy nie zniknęła żadna informacja organizacyjna.\n4. Dopiszcie ręcznie ostatnią poprawkę, jeśli AI uprościła tekst zbyt mocno albo zmieniła ton.\n\nEfekt pracy:\nFinalny komunikat gotowy do pokazania odbiorcy oraz lista zmian: skrócenie, zamiana konstrukcji, doprecyzowanie działania.",
-      "hint": "Podpowiedzi redakcyjne:\n- Zamieniajcie rzeczowniki odczasownikowe na czasowniki: „dokonanie potwierdzenia” -> „potwierdź”.\n- Szukajcie strony biernej, gdy ukrywa wykonawcę działania.\n- Nie usuwajcie informacji tylko dlatego, że brzmią formalnie. Najpierw sprawdźcie, czy są potrzebne.\n- Profesjonalny tekst może być prosty.",
-      "check": "Kontrola jakości:\n1. Sens został zachowany.\n2. Odbiorca wie, co ma zrobić lub co się wydarzy.\n3. Zdania są krótsze, ale nie infantylne.\n4. AI nie dodała nowych terminów, obietnic ani interpretacji.\n5. Tekst można wysłać po zwykłej kontroli człowieka.",
-      "sample": "Przykładowe polecenie do AI:\nPopraw poniższy tekst tak, aby był prostszy i bardziej zrozumiały dla odbiorcy. Nie zmieniaj sensu, nie dodawaj nowych informacji i zachowaj profesjonalny ton. Najpierw podaj poprawioną wersję, a potem wypisz w 3 punktach, co zmieniłeś i dlaczego.",
-      "result": "prostsza wersja tekstu oraz 3 decyzje redakcyjne, które można stosować na co dzień",
-      "discuss": "Pytania do omówienia:\n- Co było trudniejsze: skrócić tekst czy nie zgubić sensu?\n- Które słowo albo konstrukcja najbardziej obciążała komunikat?\n- Jak sprawdziliście, że AI nie poprawiła tekstu „za bardzo”?",
-      "intro": "Pracujecie na ciężkim komunikacie i upraszczacie go bez zgubienia sensu. Liczy się czytelność, konkret i kontrola, czy AI nie dopisała niczego od siebie.",
-      "time": "12-16 min",
-      "form": "pary",
+      "heading": "Poprawcie tekst urzędowy",
+      "participantHeading": "Zadanie dla uczestników",
+      "participantTask": `Materiał dla uczestników:
+W tym ćwiczeniu pracujecie z tekstem urzędowym, który jest poprawny formalnie, ale trudny w szybkim odbiorze. Waszym zadaniem jest przygotowanie promptu do kontrolowanej redakcji, a następnie poprawienie tekstu tak, aby był prostszy, bardziej zrozumiały i nadal profesjonalny.
+
+Tekst wyjściowy:
+Informujemy, że w związku z realizacją szkolenia z zakresu sztucznej inteligencji uczestnicy są zobowiązani do zapoznania się z materiałami udostępnionymi w folderze, a także do aktywnego uczestnictwa w zajęciach, ponieważ szkolenie ma na celu podniesienie kompetencji cyfrowych oraz zwiększenie możliwości wykorzystywania narzędzi sztucznej inteligencji w wykonywaniu codziennych zadań zawodowych.
+
+Karta sytuacji:
+Urząd przygotowuje szkolenie dla pracowników WUP i PUP dotyczące praktycznego wykorzystania AI w pracy biurowej i edukacyjnej. Przed szkoleniem uczestnicy otrzymują krótką informację organizacyjną. Informacja ma przypomnieć im o materiałach udostępnionych w folderze oraz zachęcić do aktywnego udziału w zajęciach.
+
+Tekst ma trafić do osób, które mogą mieć różne doświadczenia z AI. Niektóre osoby korzystają z narzędzi AI na co dzień, inne dopiero zaczynają. Komunikat powinien być zrozumiały, spokojny i profesjonalny. Nie powinien brzmieć jak pismo formalne ani jak tekst promocyjny.
+
+Trzeba zachować:
+- szkolenie dotyczy sztucznej inteligencji,
+- uczestnicy powinni zapoznać się z materiałami w folderze,
+- uczestnicy powinni aktywnie uczestniczyć w zajęciach,
+- szkolenie rozwija kompetencje cyfrowe,
+- wiedza ze szkolenia ma pomagać w codziennych zadaniach zawodowych.
+
+Nie wolno dopisać:
+- daty szkolenia,
+- miejsca szkolenia,
+- nazwisk prowadzących,
+- linku do folderu,
+- informacji o certyfikatach,
+- informacji o obowiązkowym zaliczeniu szkolenia.
+
+Tych danych nie ma w materiale źródłowym.
+
+Wasze zadanie:
+Przygotujcie prompt, który pomoże AI poprawić tekst urzędowy. Następnie, na podstawie tego promptu, przygotujcie poprawioną wersję tekstu.
+
+Nie chodzi o skrócenie tekstu za wszelką cenę. Poprawiony komunikat ma być prostszy, bardziej zrozumiały, nadal profesjonalny, zgodny z materiałem źródłowym i odpowiedni dla komunikacji wewnętrznej w instytucji publicznej.
+
+Efekt pracy uczestników:
+Przygotujcie prompt do redakcji, poprawioną wersję tekstu, krótką listę zmian, listę elementów, których nie wolno było zmienić, oraz jedną uwagę kontrolną: co po pracy AI nadal trzeba sprawdzić ręcznie.`,
+      "screenHeading": "Zadanie dla uczestników",
+      "screenTask": `Tekst wyjściowy:
+Informujemy, że w związku z realizacją szkolenia z zakresu sztucznej inteligencji uczestnicy są zobowiązani do zapoznania się z materiałami udostępnionymi w folderze, a także do aktywnego uczestnictwa w zajęciach, ponieważ szkolenie ma na celu podniesienie kompetencji cyfrowych oraz zwiększenie możliwości wykorzystywania narzędzi sztucznej inteligencji w wykonywaniu codziennych zadań zawodowych.
+
+Karta sytuacji:
+Urząd przygotowuje szkolenie dla pracowników WUP i PUP dotyczące praktycznego wykorzystania AI w pracy biurowej i edukacyjnej. Przed szkoleniem uczestnicy otrzymują krótką informację organizacyjną. Komunikat ma przypomnieć o materiałach w folderze i zachęcić do aktywnego udziału.
+
+Trzeba zachować:
+- szkolenie dotyczy sztucznej inteligencji,
+- uczestnicy powinni zapoznać się z materiałami w folderze,
+- uczestnicy powinni aktywnie uczestniczyć w zajęciach,
+- szkolenie rozwija kompetencje cyfrowe,
+- wiedza ze szkolenia ma pomagać w codziennych zadaniach zawodowych.
+
+Nie wolno dopisać:
+- daty, miejsca, nazwisk prowadzących ani linku do folderu,
+- informacji o certyfikatach,
+- informacji o obowiązkowym zaliczeniu szkolenia.
+
+Wasze zadanie:
+1. Przygotujcie prompt do poprawy tekstu.
+2. Poprawcie tekst tak, aby był prostszy, zrozumiały i nadal profesjonalny.
+3. Sprawdźcie, czy sens został zachowany i czy AI nie dopisała nowych faktów.
+4. Zapiszcie jedną rzecz, którą człowiek musi sprawdzić przed wysłaniem tekstu.`,
+      "printTask": `Tekst wyjściowy:
+Informujemy, że w związku z realizacją szkolenia z zakresu sztucznej inteligencji uczestnicy są zobowiązani do zapoznania się z materiałami udostępnionymi w folderze, a także do aktywnego uczestnictwa w zajęciach, ponieważ szkolenie ma na celu podniesienie kompetencji cyfrowych oraz zwiększenie możliwości wykorzystywania narzędzi sztucznej inteligencji w wykonywaniu codziennych zadań zawodowych.
+
+Karta sytuacji:
+Urząd przygotowuje szkolenie dla pracowników WUP i PUP dotyczące praktycznego wykorzystania AI w pracy biurowej i edukacyjnej. Przed szkoleniem uczestnicy otrzymują krótką informację organizacyjną. Komunikat ma przypomnieć o materiałach w folderze i zachęcić do aktywnego udziału. Powinien być zrozumiały, spokojny i profesjonalny.
+
+Trzeba zachować:
+- szkolenie dotyczy sztucznej inteligencji,
+- uczestnicy powinni zapoznać się z materiałami w folderze,
+- uczestnicy powinni aktywnie uczestniczyć w zajęciach,
+- szkolenie rozwija kompetencje cyfrowe,
+- wiedza ze szkolenia ma pomagać w codziennych zadaniach zawodowych.
+
+Nie wolno dopisać:
+- daty, miejsca, nazwisk prowadzących ani linku do folderu,
+- informacji o certyfikatach,
+- informacji o obowiązkowym zaliczeniu szkolenia.
+
+Wasze zadanie:
+Przygotujcie prompt do poprawy tekstu, a następnie poprawioną wersję komunikatu. Tekst ma być prostszy, bardziej zrozumiały, nadal profesjonalny i zgodny z materiałem źródłowym.
+
+Efekt pracy:
+1. Prompt do redakcji tekstu.
+2. Poprawiona wersja komunikatu.
+3. Krótka lista zmian.
+4. Lista informacji, których nie wolno było zmienić.
+5. Jedna rzecz do ręcznego sprawdzenia przed wysłaniem.`,
+      "hint": `Podpowiedzi redakcyjne:
+- Nie piszcie tylko: „popraw tekst”. Określcie, co znaczy poprawić.
+- Wskażcie AI, że ma zachować wszystkie informacje merytoryczne.
+- Poproście o prostsze zdania, ale nie o język potoczny.
+- Zabezpieczcie brakujące dane: data, miejsce, link, prowadzący, certyfikaty.
+- Po pracy AI porównajcie tekst poprawiony z tekstem wyjściowym zdanie po zdaniu.`,
+      "check": `Kryteria dobrze wykonanego zadania:
+1. Sens tekstu został zachowany.
+2. Tekst jest bardziej zrozumiały.
+3. Styl jest profesjonalny, ale nie ciężki.
+4. AI nie dopisała faktów spoza materiału.
+5. Prompt kontroluje zakres redakcji.
+6. Uczestnicy potrafią uzasadnić zmiany.`,
+      "sample": `Przykład dobrego promptu:
+Jesteś redaktorem tekstów dla instytucji publicznej. Popraw poniższy komunikat tak, aby był prostszy, bardziej zrozumiały i nadal profesjonalny.
+
+Zachowaj wszystkie informacje merytoryczne: szkolenie dotyczy sztucznej inteligencji, uczestnicy powinni zapoznać się z materiałami w folderze, aktywnie uczestniczyć w zajęciach, rozwijać kompetencje cyfrowe i wykorzystywać AI w codziennych zadaniach zawodowych.
+
+Nie dopisuj daty, miejsca, nazwisk prowadzących, linku do folderu, informacji o certyfikatach ani żadnych danych, których nie ma w tekście.
+
+Usuń nadmiarowe formalne konstrukcje, skróć zbyt długie zdania i zamień ciężkie sformułowania na prostsze. Nie zmieniaj sensu komunikatu. Przygotuj jedną wersję finalną oraz krótką listę najważniejszych zmian.
+
+Tekst do poprawy:
+[WKLEJ TEKST]
+
+Przykład poprawionej wersji tekstu:
+Prosimy uczestników szkolenia z zakresu sztucznej inteligencji o zapoznanie się z materiałami udostępnionymi w folderze oraz aktywny udział w zajęciach.
+
+Szkolenie pomoże rozwijać kompetencje cyfrowe i lepiej wykorzystywać narzędzia AI w codziennych zadaniach zawodowych.`,
+      "result": "prompt do redakcji, poprawiony tekst, lista zmian i jedna uwaga kontrolna",
+      "discuss": `Pytania do omówienia:
+- Co w tekście najbardziej utrudniało zrozumienie?
+- Czy problemem była długość tekstu, czy sposób jego napisania?
+- Które informacje musiały zostać zachowane?
+- Czy AI próbowała usunąć albo dopisać jakąś informację?
+- Czy poprawiona wersja nadal brzmi jak komunikat instytucji publicznej?
+- Co trzeba sprawdzić przed wysłaniem takiego tekstu do uczestników?`,
+      "intro": "W tym ćwiczeniu używacie AI jako wsparcia redakcyjnego. Celem jest uproszczenie tekstu urzędowego bez utraty sensu, profesjonalnego tonu i kontroli nad faktami.",
+      "time": "16-20 min",
+      "form": "pary albo małe grupy po 3 osoby",
       "steps": [
-        "Zaznaczcie ciężkie lub niejasne fragmenty tekstu.",
-        "Napiszcie prompt, który chroni sens i zakazuje dopowiadania faktów.",
-        "Porównajcie odpowiedź AI z oryginałem zdanie po zdaniu.",
-        "Zapiszcie jedną zasadę prostego języka do wykorzystania po szkoleniu."
-      ]
-    },
-    {
-      "title": "Ćwiczenie: Popraw tekst urzędowy",
-      "heading": "Poprawcie tekst",
-      "task": "Materiał do pracy:\nKontekst: fragment ma pojawić się w informacji organizacyjnej dla uczestników. Odbiorca ma wiedzieć, do kogo się odezwać.\n\nTekst do poprawy:\nW przypadku wystąpienia potrzeby uzyskania dodatkowych informacji dotyczących organizacji szkolenia, uczestnicy mogą kontaktować się z osobą odpowiedzialną za realizację przedmiotowego działania.\n\nPrzebieg:\n1. Przeczytajcie tekst na głos albo po cichu, ale powoli. Zaznaczcie miejsca, w których trzeba się zatrzymać, żeby zrozumieć sens.\n2. Przygotujcie prompt dla AI: poproście o uproszczenie bez zmiany znaczenia, bez dodawania faktów i z zachowaniem profesjonalnego tonu.\n3. Porównajcie wynik z tekstem źródłowym. Sprawdźcie, czy nie zniknęła żadna informacja organizacyjna.\n4. Dopiszcie ręcznie ostatnią poprawkę, jeśli AI uprościła tekst zbyt mocno albo zmieniła ton.\n\nEfekt pracy:\nFinalny komunikat gotowy do pokazania odbiorcy oraz lista zmian: skrócenie, zamiana konstrukcji, doprecyzowanie działania.",
-      "hint": "Podpowiedzi redakcyjne:\n- Zamieniajcie rzeczowniki odczasownikowe na czasowniki: „dokonanie potwierdzenia” -> „potwierdź”.\n- Szukajcie strony biernej, gdy ukrywa wykonawcę działania.\n- Nie usuwajcie informacji tylko dlatego, że brzmią formalnie. Najpierw sprawdźcie, czy są potrzebne.\n- Profesjonalny tekst może być prosty.",
-      "check": "Kontrola jakości:\n1. Sens został zachowany.\n2. Odbiorca wie, co ma zrobić lub co się wydarzy.\n3. Zdania są krótsze, ale nie infantylne.\n4. AI nie dodała nowych terminów, obietnic ani interpretacji.\n5. Tekst można wysłać po zwykłej kontroli człowieka.",
-      "sample": "Przykładowe polecenie do AI:\nPopraw poniższy tekst tak, aby był prostszy i bardziej zrozumiały dla odbiorcy. Nie zmieniaj sensu, nie dodawaj nowych informacji i zachowaj profesjonalny ton. Najpierw podaj poprawioną wersję, a potem wypisz w 3 punktach, co zmieniłeś i dlaczego.",
-      "result": "prostsza wersja tekstu oraz 3 decyzje redakcyjne, które można stosować na co dzień",
-      "discuss": "Pytania do omówienia:\n- Co było trudniejsze: skrócić tekst czy nie zgubić sensu?\n- Które słowo albo konstrukcja najbardziej obciążała komunikat?\n- Jak sprawdziliście, że AI nie poprawiła tekstu „za bardzo”?",
-      "intro": "Pracujecie na ciężkim komunikacie i upraszczacie go bez zgubienia sensu. Liczy się czytelność, konkret i kontrola, czy AI nie dopisała niczego od siebie.",
-      "time": "12-16 min",
-      "form": "pary",
-      "steps": [
-        "Zaznaczcie ciężkie lub niejasne fragmenty tekstu.",
-        "Napiszcie prompt, który chroni sens i zakazuje dopowiadania faktów.",
-        "Porównajcie odpowiedź AI z oryginałem zdanie po zdaniu.",
-        "Zapiszcie jedną zasadę prostego języka do wykorzystania po szkoleniu."
-      ]
-    },
-    {
-      "title": "Ćwiczenie: Popraw tekst urzędowy",
-      "heading": "Poprawcie tekst",
-      "task": "Materiał do pracy:\nKontekst: zdanie opisuje materiały po szkoleniu. Ma brzmieć naturalnie i jasno wyjaśniać ich cel.\n\nTekst do poprawy:\nMateriały szkoleniowe zostały przygotowane w celu zapewnienia uczestnikom możliwości samodzielnego utrwalenia wiedzy po zakończeniu zajęć.\n\nPrzebieg:\n1. Przeczytajcie tekst na głos albo po cichu, ale powoli. Zaznaczcie miejsca, w których trzeba się zatrzymać, żeby zrozumieć sens.\n2. Przygotujcie prompt dla AI: poproście o uproszczenie bez zmiany znaczenia, bez dodawania faktów i z zachowaniem profesjonalnego tonu.\n3. Porównajcie wynik z tekstem źródłowym. Sprawdźcie, czy nie zniknęła żadna informacja organizacyjna.\n4. Dopiszcie ręcznie ostatnią poprawkę, jeśli AI uprościła tekst zbyt mocno albo zmieniła ton.\n\nEfekt pracy:\nFinalny komunikat gotowy do pokazania odbiorcy oraz lista zmian: skrócenie, zamiana konstrukcji, doprecyzowanie działania.",
-      "hint": "Podpowiedzi redakcyjne:\n- Zamieniajcie rzeczowniki odczasownikowe na czasowniki: „dokonanie potwierdzenia” -> „potwierdź”.\n- Szukajcie strony biernej, gdy ukrywa wykonawcę działania.\n- Nie usuwajcie informacji tylko dlatego, że brzmią formalnie. Najpierw sprawdźcie, czy są potrzebne.\n- Profesjonalny tekst może być prosty.",
-      "check": "Kontrola jakości:\n1. Sens został zachowany.\n2. Odbiorca wie, co ma zrobić lub co się wydarzy.\n3. Zdania są krótsze, ale nie infantylne.\n4. AI nie dodała nowych terminów, obietnic ani interpretacji.\n5. Tekst można wysłać po zwykłej kontroli człowieka.",
-      "sample": "Przykładowe polecenie do AI:\nPopraw poniższy tekst tak, aby był prostszy i bardziej zrozumiały dla odbiorcy. Nie zmieniaj sensu, nie dodawaj nowych informacji i zachowaj profesjonalny ton. Najpierw podaj poprawioną wersję, a potem wypisz w 3 punktach, co zmieniłeś i dlaczego.",
-      "result": "prostsza wersja tekstu oraz 3 decyzje redakcyjne, które można stosować na co dzień",
-      "discuss": "Pytania do omówienia:\n- Co było trudniejsze: skrócić tekst czy nie zgubić sensu?\n- Które słowo albo konstrukcja najbardziej obciążała komunikat?\n- Jak sprawdziliście, że AI nie poprawiła tekstu „za bardzo”?",
-      "intro": "Pracujecie na ciężkim komunikacie i upraszczacie go bez zgubienia sensu. Liczy się czytelność, konkret i kontrola, czy AI nie dopisała niczego od siebie.",
-      "time": "12-16 min",
-      "form": "pary",
-      "steps": [
-        "Zaznaczcie ciężkie lub niejasne fragmenty tekstu.",
-        "Napiszcie prompt, który chroni sens i zakazuje dopowiadania faktów.",
-        "Porównajcie odpowiedź AI z oryginałem zdanie po zdaniu.",
-        "Zapiszcie jedną zasadę prostego języka do wykorzystania po szkoleniu."
-      ]
-    },
-    {
-      "title": "Ćwiczenie: Popraw tekst urzędowy",
-      "heading": "Poprawcie tekst",
-      "task": "Materiał do pracy:\nKontekst: tekst ma zachęcić do udziału bez nadęcia i bez obietnic, których nie da się sprawdzić.\n\nTekst do poprawy:\nUczestnictwo w przedmiotowym szkoleniu przyczyni się do zwiększenia poziomu wiedzy w zakresie możliwości wykorzystywania narzędzi sztucznej inteligencji w wykonywaniu zadań zawodowych.\n\nPrzebieg:\n1. Przeczytajcie tekst na głos albo po cichu, ale powoli. Zaznaczcie miejsca, w których trzeba się zatrzymać, żeby zrozumieć sens.\n2. Przygotujcie prompt dla AI: poproście o uproszczenie bez zmiany znaczenia, bez dodawania faktów i z zachowaniem profesjonalnego tonu.\n3. Porównajcie wynik z tekstem źródłowym. Sprawdźcie, czy nie zniknęła żadna informacja organizacyjna.\n4. Dopiszcie ręcznie ostatnią poprawkę, jeśli AI uprościła tekst zbyt mocno albo zmieniła ton.\n\nEfekt pracy:\nFinalny komunikat gotowy do pokazania odbiorcy oraz lista zmian: skrócenie, zamiana konstrukcji, doprecyzowanie działania.",
-      "hint": "Podpowiedzi redakcyjne:\n- Zamieniajcie rzeczowniki odczasownikowe na czasowniki: „dokonanie potwierdzenia” -> „potwierdź”.\n- Szukajcie strony biernej, gdy ukrywa wykonawcę działania.\n- Nie usuwajcie informacji tylko dlatego, że brzmią formalnie. Najpierw sprawdźcie, czy są potrzebne.\n- Profesjonalny tekst może być prosty.",
-      "check": "Kontrola jakości:\n1. Sens został zachowany.\n2. Odbiorca wie, co ma zrobić lub co się wydarzy.\n3. Zdania są krótsze, ale nie infantylne.\n4. AI nie dodała nowych terminów, obietnic ani interpretacji.\n5. Tekst można wysłać po zwykłej kontroli człowieka.",
-      "sample": "Przykładowe polecenie do AI:\nPopraw poniższy tekst tak, aby był prostszy i bardziej zrozumiały dla odbiorcy. Nie zmieniaj sensu, nie dodawaj nowych informacji i zachowaj profesjonalny ton. Najpierw podaj poprawioną wersję, a potem wypisz w 3 punktach, co zmieniłeś i dlaczego.",
-      "result": "prostsza wersja tekstu oraz 3 decyzje redakcyjne, które można stosować na co dzień",
-      "discuss": "Pytania do omówienia:\n- Co było trudniejsze: skrócić tekst czy nie zgubić sensu?\n- Które słowo albo konstrukcja najbardziej obciążała komunikat?\n- Jak sprawdziliście, że AI nie poprawiła tekstu „za bardzo”?",
-      "intro": "Pracujecie na ciężkim komunikacie i upraszczacie go bez zgubienia sensu. Liczy się czytelność, konkret i kontrola, czy AI nie dopisała niczego od siebie.",
-      "time": "12-16 min",
-      "form": "pary",
-      "steps": [
-        "Zaznaczcie ciężkie lub niejasne fragmenty tekstu.",
-        "Napiszcie prompt, który chroni sens i zakazuje dopowiadania faktów.",
-        "Porównajcie odpowiedź AI z oryginałem zdanie po zdaniu.",
-        "Zapiszcie jedną zasadę prostego języka do wykorzystania po szkoleniu."
-      ]
-    },
-    {
-      "title": "Ćwiczenie: Popraw tekst urzędowy",
-      "heading": "Poprawcie tekst",
-      "task": "Materiał do pracy:\nKontekst: to prośba organizacyjna. Najważniejsze jest jasne działanie: potwierdzić udział przez formularz.\n\nTekst do poprawy:\nW celu zapewnienia właściwej organizacji wydarzenia prosimy o dokonanie potwierdzenia uczestnictwa za pośrednictwem formularza zgłoszeniowego.\n\nPrzebieg:\n1. Przeczytajcie tekst na głos albo po cichu, ale powoli. Zaznaczcie miejsca, w których trzeba się zatrzymać, żeby zrozumieć sens.\n2. Przygotujcie prompt dla AI: poproście o uproszczenie bez zmiany znaczenia, bez dodawania faktów i z zachowaniem profesjonalnego tonu.\n3. Porównajcie wynik z tekstem źródłowym. Sprawdźcie, czy nie zniknęła żadna informacja organizacyjna.\n4. Dopiszcie ręcznie ostatnią poprawkę, jeśli AI uprościła tekst zbyt mocno albo zmieniła ton.\n\nEfekt pracy:\nFinalny komunikat gotowy do pokazania odbiorcy oraz lista zmian: skrócenie, zamiana konstrukcji, doprecyzowanie działania.",
-      "hint": "Podpowiedzi redakcyjne:\n- Zamieniajcie rzeczowniki odczasownikowe na czasowniki: „dokonanie potwierdzenia” -> „potwierdź”.\n- Szukajcie strony biernej, gdy ukrywa wykonawcę działania.\n- Nie usuwajcie informacji tylko dlatego, że brzmią formalnie. Najpierw sprawdźcie, czy są potrzebne.\n- Profesjonalny tekst może być prosty.",
-      "check": "Kontrola jakości:\n1. Sens został zachowany.\n2. Odbiorca wie, co ma zrobić lub co się wydarzy.\n3. Zdania są krótsze, ale nie infantylne.\n4. AI nie dodała nowych terminów, obietnic ani interpretacji.\n5. Tekst można wysłać po zwykłej kontroli człowieka.",
-      "sample": "Przykładowe polecenie do AI:\nPopraw poniższy tekst tak, aby był prostszy i bardziej zrozumiały dla odbiorcy. Nie zmieniaj sensu, nie dodawaj nowych informacji i zachowaj profesjonalny ton. Najpierw podaj poprawioną wersję, a potem wypisz w 3 punktach, co zmieniłeś i dlaczego.",
-      "result": "prostsza wersja tekstu oraz 3 decyzje redakcyjne, które można stosować na co dzień",
-      "discuss": "Pytania do omówienia:\n- Co było trudniejsze: skrócić tekst czy nie zgubić sensu?\n- Które słowo albo konstrukcja najbardziej obciążała komunikat?\n- Jak sprawdziliście, że AI nie poprawiła tekstu „za bardzo”?",
-      "intro": "Pracujecie na ciężkim komunikacie i upraszczacie go bez zgubienia sensu. Liczy się czytelność, konkret i kontrola, czy AI nie dopisała niczego od siebie.",
-      "time": "12-16 min",
-      "form": "pary",
-      "steps": [
-        "Zaznaczcie ciężkie lub niejasne fragmenty tekstu.",
-        "Napiszcie prompt, który chroni sens i zakazuje dopowiadania faktów.",
-        "Porównajcie odpowiedź AI z oryginałem zdanie po zdaniu.",
-        "Zapiszcie jedną zasadę prostego języka do wykorzystania po szkoleniu."
-      ]
-    },
-    {
-      "title": "Ćwiczenie: Popraw tekst urzędowy",
-      "heading": "Poprawcie tekst",
-      "task": "Materiał do pracy:\nKontekst: komunikat dotyczy wyniku rekrutacji. Ma być krótki, zrozumiały i bez niepotrzebnej strony biernej.\n\nTekst do poprawy:\nPo zakończeniu procesu rekrutacji do uczestników zostanie skierowana informacja dotycząca zakwalifikowania do udziału w szkoleniu.\n\nPrzebieg:\n1. Przeczytajcie tekst na głos albo po cichu, ale powoli. Zaznaczcie miejsca, w których trzeba się zatrzymać, żeby zrozumieć sens.\n2. Przygotujcie prompt dla AI: poproście o uproszczenie bez zmiany znaczenia, bez dodawania faktów i z zachowaniem profesjonalnego tonu.\n3. Porównajcie wynik z tekstem źródłowym. Sprawdźcie, czy nie zniknęła żadna informacja organizacyjna.\n4. Dopiszcie ręcznie ostatnią poprawkę, jeśli AI uprościła tekst zbyt mocno albo zmieniła ton.\n\nEfekt pracy:\nFinalny komunikat gotowy do pokazania odbiorcy oraz lista zmian: skrócenie, zamiana konstrukcji, doprecyzowanie działania.",
-      "hint": "Podpowiedzi redakcyjne:\n- Zamieniajcie rzeczowniki odczasownikowe na czasowniki: „dokonanie potwierdzenia” -> „potwierdź”.\n- Szukajcie strony biernej, gdy ukrywa wykonawcę działania.\n- Nie usuwajcie informacji tylko dlatego, że brzmią formalnie. Najpierw sprawdźcie, czy są potrzebne.\n- Profesjonalny tekst może być prosty.",
-      "check": "Kontrola jakości:\n1. Sens został zachowany.\n2. Odbiorca wie, co ma zrobić lub co się wydarzy.\n3. Zdania są krótsze, ale nie infantylne.\n4. AI nie dodała nowych terminów, obietnic ani interpretacji.\n5. Tekst można wysłać po zwykłej kontroli człowieka.",
-      "sample": "Przykładowe polecenie do AI:\nPopraw poniższy tekst tak, aby był prostszy i bardziej zrozumiały dla odbiorcy. Nie zmieniaj sensu, nie dodawaj nowych informacji i zachowaj profesjonalny ton. Najpierw podaj poprawioną wersję, a potem wypisz w 3 punktach, co zmieniłeś i dlaczego.",
-      "result": "prostsza wersja tekstu oraz 3 decyzje redakcyjne, które można stosować na co dzień",
-      "discuss": "Pytania do omówienia:\n- Co było trudniejsze: skrócić tekst czy nie zgubić sensu?\n- Które słowo albo konstrukcja najbardziej obciążała komunikat?\n- Jak sprawdziliście, że AI nie poprawiła tekstu „za bardzo”?",
-      "intro": "Pracujecie na ciężkim komunikacie i upraszczacie go bez zgubienia sensu. Liczy się czytelność, konkret i kontrola, czy AI nie dopisała niczego od siebie.",
-      "time": "12-16 min",
-      "form": "pary",
-      "steps": [
-        "Zaznaczcie ciężkie lub niejasne fragmenty tekstu.",
-        "Napiszcie prompt, który chroni sens i zakazuje dopowiadania faktów.",
-        "Porównajcie odpowiedź AI z oryginałem zdanie po zdaniu.",
-        "Zapiszcie jedną zasadę prostego języka do wykorzystania po szkoleniu."
-      ]
+        "Przeczytajcie tekst wyjściowy i zaznaczcie fragmenty, które utrudniają szybkie zrozumienie.",
+        "Ustalcie, które informacje muszą zostać zachowane i czego AI nie może dopisać.",
+        "Przygotujcie prompt do kontrolowanej redakcji tekstu.",
+        "Przygotujcie poprawioną wersję komunikatu i porównajcie ją z tekstem wyjściowym.",
+        "Zapiszcie listę zmian oraz jedną rzecz, którą trzeba sprawdzić ręcznie."
+      ],
+      "guide": `## Ćwiczenie 2. Popraw tekst urzędowy - od języka formalnego do komunikatu zrozumiałego dla odbiorcy
+
+### Cel ćwiczenia
+
+Uczestnicy uczą się wykorzystywać AI do redakcji tekstów urzędowych, organizacyjnych i informacyjnych. Celem nie jest „upiększenie” tekstu ani zamiana go na język potoczny. Chodzi o zachowanie sensu, poprawności i profesjonalnego charakteru komunikatu, a jednocześnie usunięcie nadmiaru formalnych konstrukcji, które utrudniają odbiorcy szybkie zrozumienie treści.
+
+W pracy urzędu wiele tekstów powstaje pod presją czasu. Komunikaty, zaproszenia, informacje dla uczestników, krótkie opisy działań, pisma organizacyjne czy instrukcje często zawierają sformułowania, które brzmią oficjalnie, ale nie pomagają odbiorcy. AI może pomóc w ich uproszczeniu, jednak nie może samodzielnie zmieniać znaczenia, dopisywać faktów ani usuwać informacji ważnych formalnie.
+
+Ćwiczenie pokazuje, że redakcja tekstu z użyciem AI powinna być kontrolowanym procesem. Użytkownik powinien jasno wskazać, co wolno zmienić, czego nie wolno usuwać i jaki efekt ma powstać. W przeciwnym razie AI może przygotować tekst ładniejszy językowo, ale mniej precyzyjny albo niezgodny z intencją instytucji.
+
+---
+
+### Kompetencje rozwijane w ćwiczeniu
+
+Po wykonaniu ćwiczenia uczestnik powinien umieć:
+
+- rozpoznać elementy tekstu, które utrudniają zrozumienie,
+- odróżnić formalność potrzebną od formalności pozornej,
+- przygotować prompt do redakcji tekstu urzędowego,
+- wskazać AI, czego nie wolno zmieniać,
+- zachować sens i zakres informacji w poprawionej wersji,
+- uprościć tekst bez utraty profesjonalnego charakteru,
+- ocenić, czy odpowiedź AI nadaje się do użycia,
+- wskazać miejsca, które po pracy AI nadal wymagają kontroli człowieka.
+
+### Czas
+
+16-20 minut
+
+Rekomendowany podział czasu:
+
+- 2 minuty - wprowadzenie prowadzącego,
+- 3 minuty - samodzielna analiza tekstu,
+- 5 minut - przygotowanie promptu do poprawy tekstu,
+- 4-5 minut - wygenerowanie lub zaprojektowanie poprawionej wersji,
+- 4-5 minut - omówienie różnic między tekstem wyjściowym a poprawionym.
+
+Jeżeli uczestnicy nie korzystają w trakcie ćwiczenia z narzędzia AI, mogą przygotować sam prompt i ręcznie zaproponować poprawioną wersję tekstu. Wtedy prowadzący może pokazać przykładowy wynik na forum.
+
+### Forma pracy
+
+Praca w parach albo małych grupach po 3 osoby.
+
+Wariant podstawowy: uczestnicy analizują tekst, przygotowują prompt i wskazują, co powinno się zmienić.
+
+Wariant rozszerzony: uczestnicy wklejają prompt do narzędzia AI, otrzymują poprawioną wersję, a następnie sprawdzają, czy AI nie zmieniła sensu tekstu.
+
+### Grupa docelowa
+
+Ćwiczenie jest przygotowane dla pracowników WUP i PUP oraz innych instytucji publicznych, którzy w codziennej pracy przygotowują albo poprawiają:
+
+- komunikaty do uczestników szkoleń,
+- informacje organizacyjne,
+- wiadomości e-mail,
+- treści na stronę internetową,
+- opisy projektów,
+- zaproszenia,
+- instrukcje,
+- krótkie notatki informacyjne,
+- materiały dla osób korzystających ze wsparcia urzędu.
+
+Ćwiczenie sprawdza się szczególnie dobrze w grupach, które mają doświadczenie w pracy z dokumentami, ale dopiero uczą się używać AI jako wsparcia redakcyjnego.
+
+### Efekt pracy uczestników
+
+Każda para lub grupa przygotowuje:
+
+1. prompt do poprawy tekstu urzędowego,
+2. poprawioną wersję tekstu,
+3. krótką listę zmian, które zostały wprowadzone,
+4. listę elementów, których nie wolno było zmienić,
+5. jedną uwagę kontrolną: co po pracy AI nadal trzeba sprawdzić ręcznie.
+
+Przykład notatki końcowej:
+
+„Uprościliśmy zdania, usunęliśmy nadmiarowe konstrukcje i zastąpiliśmy rzeczowniki odczasownikowe czasownikami. Nie zmieniliśmy informacji o obowiązku zapoznania się z materiałami i aktywnym udziale w szkoleniu. Po pracy AI trzeba jeszcze sprawdzić, czy tekst nie brzmi zbyt swobodnie i czy nie usunięto informacji organizacyjnych.”
+
+---
+
+### Materiał dla uczestników
+
+Tekst wyjściowy:
+
+Informujemy, że w związku z realizacją szkolenia z zakresu sztucznej inteligencji uczestnicy są zobowiązani do zapoznania się z materiałami udostępnionymi w folderze, a także do aktywnego uczestnictwa w zajęciach, ponieważ szkolenie ma na celu podniesienie kompetencji cyfrowych oraz zwiększenie możliwości wykorzystywania narzędzi sztucznej inteligencji w wykonywaniu codziennych zadań zawodowych.
+
+Karta sytuacji:
+
+Urząd przygotowuje szkolenie dla pracowników WUP i PUP dotyczące praktycznego wykorzystania AI w pracy biurowej i edukacyjnej. Przed szkoleniem uczestnicy otrzymują krótką informację organizacyjną. Informacja ma przypomnieć im o materiałach udostępnionych w folderze oraz zachęcić do aktywnego udziału w zajęciach.
+
+Tekst ma trafić do osób, które mogą mieć różne doświadczenia z AI. Niektóre osoby korzystają z narzędzi AI na co dzień, inne dopiero zaczynają. Komunikat powinien być zrozumiały, spokojny i profesjonalny. Nie powinien brzmieć jak pismo formalne ani jak tekst promocyjny.
+
+Trzeba zachować następujące informacje:
+
+- szkolenie dotyczy sztucznej inteligencji,
+- uczestnicy powinni zapoznać się z materiałami w folderze,
+- uczestnicy powinni aktywnie uczestniczyć w zajęciach,
+- szkolenie rozwija kompetencje cyfrowe,
+- wiedza ze szkolenia ma pomagać w codziennych zadaniach zawodowych.
+
+Nie wolno dopisać:
+
+- daty szkolenia,
+- miejsca szkolenia,
+- nazwisk prowadzących,
+- linku do folderu,
+- informacji o certyfikatach,
+- informacji o obowiązkowym zaliczeniu szkolenia.
+
+Tych danych nie ma w materiale źródłowym.
+
+### Zadanie dla uczestników
+
+Przygotujcie prompt, który pomoże AI poprawić tekst urzędowy.
+
+Następnie, na podstawie tego promptu, przygotujcie poprawioną wersję tekstu.
+
+Waszym zadaniem nie jest skrócenie tekstu za wszelką cenę. Macie poprawić go tak, aby był prostszy, bardziej zrozumiały, nadal profesjonalny, zgodny z materiałem źródłowym i odpowiedni dla komunikacji wewnętrznej w instytucji publicznej.
+
+### Przebieg ćwiczenia dla uczestników
+
+Krok 1. Przeczytajcie tekst wyjściowy.
+
+Przeczytajcie tekst powoli i zaznaczcie fragmenty, które mogą utrudniać szybkie zrozumienie komunikatu. Zwróćcie uwagę na długie zdania, nadmiar formalnych zwrotów, rzeczowniki odczasownikowe, stronę bierną, powtarzające się konstrukcje i miejsca, gdzie można użyć czasownika zamiast rzeczownika.
+
+Krok 2. Ustalcie, czego nie wolno zmienić.
+
+Zanim zaczniecie poprawiać tekst, ustalcie, które informacje muszą zostać zachowane. W tym ćwiczeniu nie wolno usunąć informacji o materiałach w folderze, aktywnym udziale, rozwijaniu kompetencji cyfrowych oraz praktycznym wykorzystaniu AI w codziennych zadaniach zawodowych.
+
+Krok 3. Przygotujcie prompt do redakcji.
+
+Prompt powinien jasno określać rolę AI, cel redakcji, oczekiwany styl, czego nie wolno zmieniać, czego nie wolno dopisywać, jak szczegółowa ma być odpowiedź oraz czy AI ma podać tylko poprawioną wersję, czy także listę zmian.
+
+Krok 4. Przygotujcie poprawioną wersję tekstu.
+
+Poprawiony tekst powinien mieć krótsze zdania, zawierać mniej ciężkich konstrukcji, jasno wskazywać, czego oczekuje się od uczestników, zachować sens tekstu wyjściowego oraz brzmieć naturalnie i profesjonalnie.
+
+Krok 5. Sprawdźcie poprawioną wersję.
+
+Porównajcie tekst wyjściowy z tekstem poprawionym. Sprawdźcie, czy wszystkie ważne informacje zostały zachowane, czy AI nie dopisała nowych danych, czy tekst nadal brzmi profesjonalnie i czy odbiorca wie, co ma zrobić.
+
+### Pytania pomocnicze dla uczestników
+
+- Co w tekście wyjściowym najbardziej utrudnia zrozumienie?
+- Czy problemem jest długość tekstu, czy sposób jego napisania?
+- Które informacje muszą zostać zachowane?
+- Czy można podzielić jedno długie zdanie na dwa krótsze?
+- Które rzeczowniki odczasownikowe można zamienić na czasowniki?
+- Czy tekst mówi wprost, co ma zrobić uczestnik?
+- Czy poprawiona wersja nadal brzmi jak komunikat instytucji publicznej?
+- Czy AI nie usunęła czegoś, co było ważne organizacyjnie?
+- Czy AI nie dopisała informacji, których nie było w materiale?
+- Co trzeba jeszcze sprawdzić ręcznie przed wysłaniem tekstu?
+
+### Kryteria dobrze wykonanego zadania
+
+1. Sens tekstu został zachowany.
+2. Tekst jest bardziej zrozumiały.
+3. Styl jest profesjonalny, ale nie ciężki.
+4. AI nie dopisała faktów.
+5. Prompt kontroluje zakres redakcji.
+6. Uczestnicy potrafią uzasadnić zmiany.
+
+### Przykład dobrego promptu
+
+Jesteś redaktorem tekstów dla instytucji publicznej. Popraw poniższy komunikat tak, aby był prostszy, bardziej zrozumiały i nadal profesjonalny.
+
+Zachowaj wszystkie informacje merytoryczne: szkolenie dotyczy sztucznej inteligencji, uczestnicy powinni zapoznać się z materiałami w folderze, aktywnie uczestniczyć w zajęciach, rozwijać kompetencje cyfrowe i wykorzystywać AI w codziennych zadaniach zawodowych.
+
+Nie dopisuj daty, miejsca, nazwisk prowadzących, linku do folderu, informacji o certyfikatach ani żadnych danych, których nie ma w tekście.
+
+Usuń nadmiarowe formalne konstrukcje, skróć zbyt długie zdania i zamień ciężkie sformułowania na prostsze. Nie zmieniaj sensu komunikatu. Przygotuj jedną wersję finalną oraz krótką listę najważniejszych zmian.
+
+Tekst do poprawy: [WKLEJ TEKST]
+
+### Przykład poprawionej wersji tekstu
+
+Prosimy uczestników szkolenia z zakresu sztucznej inteligencji o zapoznanie się z materiałami udostępnionymi w folderze oraz aktywny udział w zajęciach.
+
+Szkolenie pomoże rozwijać kompetencje cyfrowe i lepiej wykorzystywać narzędzia AI w codziennych zadaniach zawodowych.
+
+### Wersja trudniejsza dla grupy bardziej zaawansowanej
+
+Poproście AI o przygotowanie dwóch wersji tego samego tekstu: wersji do wiadomości e-mail oraz wersji na stronę intranetową lub stronę projektu. Następnie porównajcie, czym powinny się różnić: długością, bezpośredniością zwrotu do odbiorcy, poziomem formalności, układem akapitów, obecnością wezwania do działania i sposobem zakończenia komunikatu.
+
+### Instrukcja dla prowadzącego
+
+Prowadzący może rozpocząć od krótkiego komentarza:
+
+„W pracy z AI często prosimy narzędzie: popraw tekst. To za mało. AI nie wie, czy tekst ma być bardziej formalny, prostszy, krótszy, bardziej komunikacyjny czy gotowy do publikacji. Nie wie też, których informacji nie wolno usunąć. Dlatego przy redakcji tekstów urzędowych trzeba jasno określić granice pracy AI.”
+
+Następnie prowadzący pokazuje tekst wyjściowy i pyta grupę: „Co w tym tekście jest formalne, ale niekoniecznie pomocne dla odbiorcy?”
+
+Podczas pracy grup prowadzący powinien obserwować, czy uczestnicy nie skracają tekstu kosztem sensu, nie usuwają informacji organizacyjnych, nie dopisują danych, nie zmieniają tonu na zbyt swobodny, nie akceptują odpowiedzi AI bez sprawdzenia i potrafią uzasadnić zmiany.
+
+### Typowe błędy uczestników i reakcja prowadzącego
+
+Błąd: prompt brzmi tylko „Popraw tekst”.
+
+Reakcja: „To polecenie jest zbyt ogólne. AI nie wie, co znaczy poprawić. Dopiszcie, jaki efekt chcecie uzyskać.”
+
+Błąd: poprawiona wersja jest zbyt swobodna.
+
+Reakcja: „Tekst jest prostszy, ale sprawdźmy, czy nadal pasuje do komunikacji instytucji publicznej. Prostota nie oznacza potoczności.”
+
+Błąd: AI usunęła ważną informację.
+
+Reakcja: „To częsty problem. AI czasem skraca tekst tak, że znika informacja organizacyjna. Dlatego w promptcie trzeba wskazać, które informacje muszą zostać zachowane.”
+
+Błąd: AI dopisała dane.
+
+Reakcja: „Jeżeli w materiale nie było daty, miejsca albo linku, AI nie może ich tworzyć. W pracy urzędu to szczególnie ważne.”
+
+### Omówienie na forum
+
+Po zakończeniu pracy prowadzący prosi 2-3 grupy o przeczytanie nie całego tekstu, ale jednej konkretnej zmiany, którą uznają za najważniejszą. Można zapytać: które sformułowanie najbardziej utrudniało zrozumienie tekstu, co zmieniliście jako pierwsze, czy AI próbowała usunąć lub dopisać informację, jak określiliście granice pracy AI i co trzeba sprawdzić przed wysłaniem tekstu.
+
+### Wniosek końcowy dla uczestników
+
+AI może bardzo pomóc w redagowaniu tekstów urzędowych, ale nie powinna przejmować odpowiedzialności za treść. To użytkownik musi określić, co jest sensem komunikatu, czego nie wolno usunąć i jakich danych nie wolno dopisać.
+
+Dobra redakcja z użyciem AI nie polega na tym, że tekst brzmi bardziej efektownie. Polega na tym, że odbiorca szybciej rozumie, co ma zrobić, a instytucja nadal komunikuje się precyzyjnie, spokojnie i zgodnie z faktami.`
     }
   ],
   "info": [
