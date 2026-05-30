@@ -1,5 +1,5 @@
 const EXERCISES = window.EXERCISES || {};
-const APP_VERSION = '20260530-15';
+const APP_VERSION = '20260530-18';
 const TOOL_SETS = {
   default: {
     intro: 'Użyjcie narzędzia, do którego macie dostęp. Wystarczy jedno narzędzie tekstowe; nie trzeba testować wszystkich.',
@@ -383,9 +383,16 @@ function getRichHeading(line) {
 }
 
 function formatParagraph(lines) {
-  const text = lines.join(' ').trim();
+  let text = lines.join(' ').trim();
   if (!text) return '';
-  const className = /^„/.test(text) || /^"[^"]/.test(text) ? ' class="rich-quote"' : '';
+  const isMarkdownQuote = lines.some(line => /^>\s?/.test(line.trim()));
+  if (isMarkdownQuote) {
+    text = lines
+      .map(line => line.trim().replace(/^>\s?/, '').trim())
+      .filter(Boolean)
+      .join('\n\n');
+  }
+  const className = isMarkdownQuote || /^„/.test(text) || /^"[^"]/.test(text) ? ' class="rich-quote"' : '';
   return `<p${className}>${escapeHtml(text)}</p>`;
 }
 
@@ -395,11 +402,30 @@ function formatStructuredText(value) {
   let sectionOpen = false;
   let paragraph = [];
   let listType = '';
+  let tableRows = [];
 
   const closeList = () => {
     if (!listType) return;
     html += `</${listType}>`;
     listType = '';
+  };
+  const parseTableRow = (line) => {
+    const cells = line.split('|').map(cell => cell.trim());
+    if (!cells[0]) cells.shift();
+    if (!cells[cells.length - 1]) cells.pop();
+    return cells;
+  };
+  const isSeparatorRow = (cells) => cells.length && cells.every(cell => /^:?-{3,}:?$/.test(cell));
+  const buildTableCells = (cells, tag) => cells.map(cell => `<${tag}>${escapeHtml(cell)}</${tag}>`).join('');
+  const closeTable = () => {
+    if (!tableRows.length) return;
+    const rows = tableRows.map(parseTableRow).filter(row => row.length);
+    const hasHeader = rows.length > 1 && isSeparatorRow(rows[1]);
+    const bodyRows = hasHeader ? rows.slice(2) : rows;
+    const header = hasHeader ? `<thead><tr>${buildTableCells(rows[0], 'th')}</tr></thead>` : '';
+    const body = `<tbody>${bodyRows.map(row => `<tr>${buildTableCells(row, 'td')}</tr>`).join('')}</tbody>`;
+    html += `<div class="rich-table-wrap"><table class="rich-table">${header}${body}</table></div>`;
+    tableRows = [];
   };
   const closeParagraph = () => {
     if (!paragraph.length) return;
@@ -409,6 +435,7 @@ function formatStructuredText(value) {
   const closeSection = () => {
     closeParagraph();
     closeList();
+    closeTable();
     if (sectionOpen) html += '</section>';
     sectionOpen = false;
   };
@@ -421,6 +448,7 @@ function formatStructuredText(value) {
   };
   const appendListItem = (type, text) => {
     closeParagraph();
+    closeTable();
     if (listType && listType !== type) closeList();
     if (!listType) {
       html += `<${type}>`;
@@ -434,6 +462,7 @@ function formatStructuredText(value) {
     if (!trimmed) {
       closeParagraph();
       closeList();
+      closeTable();
       return;
     }
     if (/^---+$/.test(trimmed)) {
@@ -443,6 +472,12 @@ function formatStructuredText(value) {
     const heading = getRichHeading(trimmed);
     if (heading) {
       openSection(heading);
+      return;
+    }
+    if (/^\|.+\|$/.test(trimmed)) {
+      closeParagraph();
+      closeList();
+      tableRows.push(trimmed);
       return;
     }
     const bullet = trimmed.match(/^[-*]\s+(.+)$/);
@@ -455,6 +490,7 @@ function formatStructuredText(value) {
       appendListItem('ol', number[1]);
       return;
     }
+    closeTable();
     closeList();
     paragraph.push(trimmed);
   });
@@ -574,22 +610,8 @@ function pickDefaultExercise(type) {
   const list = getExerciseList(type);
   return list[0];
 }
-function getExerciseTimerMinutes(e) {
-  const values = String(e?.time || '').match(/\d+/g);
-  if (!values) return null;
-  const minutes = values.map(Number).filter(Number.isFinite);
-  return minutes.length ? Math.max(...minutes) : null;
-}
-function setTimerForExercise(e) {
-  const minutes = getExerciseTimerMinutes(e);
-  const input = document.getElementById('timerMinutes');
-  if (!minutes || !input) return;
-  input.value = minutes;
-  timerReset();
-}
 function renderExercise(e) {
   currentExercise = e;
-  setTimerForExercise(e);
   const steps = e.steps || [
     'Przeczytajcie zadanie i zaznaczcie, czego brakuje w pierwszej wersji.',
     'Przygotujcie własną wersję w parach lub małych grupach.',
@@ -635,7 +657,6 @@ function openScreenExercise() {
   if (!currentExercise) return;
   renderScreenExercise(currentExercise);
   document.getElementById('exerciseScreen').classList.add('active');
-  setTimerState(timerStatusText);
 }
 function closeScreenExercise() {
   document.getElementById('exerciseScreen').classList.remove('active');
@@ -729,10 +750,10 @@ function readTimerMinutes() {
 }
 function setTimerState(status) {
   timerStatusText = status;
-  const displays = ['timerDisplay', 'timerFullDisplay', 'screenTimerDisplay'].map(id => document.getElementById(id)).filter(Boolean);
-  const statusBoxes = ['timerStatus', 'timerFullStatus', 'screenTimerStatus'].map(id => document.getElementById(id)).filter(Boolean);
-  const progressBars = ['timerProgress', 'timerFullProgress', 'screenTimerProgress'].map(id => document.getElementById(id)).filter(Boolean);
-  const timerCards = ['timerCard', 'timerFull', 'exerciseScreen'].map(id => document.getElementById(id)).filter(Boolean);
+  const displays = ['timerDisplay', 'timerFullDisplay'].map(id => document.getElementById(id)).filter(Boolean);
+  const statusBoxes = ['timerStatus', 'timerFullStatus'].map(id => document.getElementById(id)).filter(Boolean);
+  const progressBars = ['timerProgress', 'timerFullProgress'].map(id => document.getElementById(id)).filter(Boolean);
+  const timerCards = ['timerCard', 'timerFull'].map(id => document.getElementById(id)).filter(Boolean);
   if (!displays.length || !statusBoxes.length || !progressBars.length) return;
   const progressValue = timerDuration ? Math.max(0, Math.min(100, (timerRemaining / timerDuration) * 100)) : 0;
   displays.forEach(display => { display.textContent = formatTimer(timerRemaining); });

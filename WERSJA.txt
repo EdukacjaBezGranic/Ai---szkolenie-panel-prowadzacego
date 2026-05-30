@@ -1,11 +1,15 @@
 Panel szkolenia AI
-Wersja GitHub: 2026-05-30 / 20 cwiczen / delikatne wyroznienia sekcji / 20260530-15
+Wersja GitHub: 2026-05-30 / 25 cwiczen / zielone dopracowane kafelki i szare pozostale / 20260530-18
 
 Ta paczka zawiera ostatnie zmiany:
-- timer ustawiany automatycznie wedlug czasu cwiczenia,
-- tryb ekranowy cwiczen,
+- dopracowane cwiczenia 1-9 maja zielone kafelki,
+- pozostale cwiczenia maja spokojne szare kafelki,
+- nowe cwiczenia 5-9 dodane z plikow Word,
+- cwiczenia ulozone w nowej kolejnosci: nowe materialy sa teraz po cwiczeniu 4,
+- timer zostaje tylko na dole glownej strony i nie jest juz pokazywany w widoku cwiczenia,
+- tryb ekranowy cwiczen bez bocznego timera,
 - logo projektu,
-- 20 cwiczen warsztatowych,
+- 25 cwiczen warsztatowych,
 - cwiczenia z kodowaniem,
 - cwiczenia plikowe: Google Docs, TXT/Markdown, Excel/Sheets, Google Slides.
 - przycisk w stopce: Sprawdz nowsza wersje.
@@ -24,3 +28,10 @@ Ta paczka zawiera ostatnie zmiany:
 - scenariusze prowadzacego w cwiczeniu 1 i 2 nie powtarzaja juz pelnej karty uczestnika.
 - wydruki cwiczen 1 i 2 nadal zawieraja kompletne karty pracy dla uczestnikow.
 - sekcje w opisach cwiczen maja delikatne, kolorowe wyroznienia i spokojne akcenty boczne.
+- cwiczenie 3 "Odpowiedz na trudnego maila" ma pelny scenariusz, karte uczestnika, druk i widok ekranowy.
+- cwiczenie 4 "Uporzadkuj notatke ze spotkania" ma pelny scenariusz, karte uczestnika, druk, widok ekranowy i tabele.
+- cwiczenie 5 "Przygotuj informacje o naborze" ma pelny scenariusz, karte uczestnika, druk i widok ekranowy.
+- cwiczenie 6 "Przygotuj ankiete ewaluacyjna" ma pelny scenariusz, karte uczestnika, druk i widok ekranowy.
+- cwiczenie 7 "Przygotuj prezentacje z materialow zrodlowych" ma pelny scenariusz, karte uczestnika, druk i widok ekranowy.
+- cwiczenie 8 "Przygotuj formularz zapisow na konferencje" ma pelny scenariusz, karte uczestnika, druk i widok ekranowy.
+- cwiczenie 9 "Przygotuj plakat na wydarzenie w Canvie" ma pelny scenariusz, karte uczestnika, druk i widok ekranowy.

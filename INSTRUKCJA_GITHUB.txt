@@ -1,6 +1,6 @@
 AKTUALNA PACZKA PANELU AI
 
-Wersja: 2026-05-30 / 20 cwiczen / delikatne wyroznienia sekcji
+Wersja: 2026-05-30 / 25 cwiczen / zielone dopracowane kafelki i szare pozostale / 20260530-18
 
 Jak wgrac na GitHub:
 
@@ -14,6 +14,8 @@ Jak wgrac na GitHub:
    - assets/app.js
    - assets/exercises.js
    - assets/exercise-variants-advanced.js
+   - assets/exercise-overrides-03-04.js
+   - assets/exercise-overrides-05-09.js
    - assets/app.css
    - version.json
    - manifest.json
@@ -31,12 +33,21 @@ Po publikacji:
 Jak poznac, ze jest aktualna wersja:
 
 - Na dole panelu powinien byc tekst:
-  Panel szkolenia AI. Wersja GitHub 2026-05-30 / 20 cwiczen / delikatne wyroznienia sekcji.
+  Panel szkolenia AI. Wersja GitHub 2026-05-30 / 25 cwiczen / cwiczenia 5-9 dodane.
 
 - Obok tekstu w stopce powinien byc maly przycisk:
   Sprawdz nowsza wersje
 
-- W sekcji cwiczen powinny byc pozycje 17-20:
+- W sekcji cwiczen powinny byc nowe pozycje 5-9:
+  Informacja o naborze
+  Ankieta ewaluacyjna
+  Prezentacja ze zrodel
+  Formularz zapisow
+  Plakat na wydarzenie
+
+- Cwiczenia 1-9 powinny miec zielone kafelki, a pozostale cwiczenia szare kafelki.
+
+- Dawne cwiczenia plikowe sa teraz dalej na liscie, jako pozycje 22-25:
   Dokument roboczy
   Instrukcja TXT/Markdown
   Arkusz zgloszen
@@ -56,6 +67,8 @@ Jak poznac, ze jest aktualna wersja:
 - W cwiczeniu 2 nie powinno byc przycisku:
   Losuj
 
-- Wydruk cwiczenia nie powinien zawierac miejsca na notatki.
+- Wydruk cwiczenia powinien miec czytelny wyglad karty pracy i miejsce na notatki uczestnikow.
 
 - Podzial stron w wydruku powinien wypadac na granicach sekcji, a nie w srodku przypadkowego akapitu.
+
+- W trybie ekranowym cwiczenia nie powinno byc timera. Timer powinien zostac tylko na dole glownej strony panelu.

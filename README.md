@@ -9,12 +9,14 @@ Statyczny panel do prowadzenia szkolenia z praktycznego wykorzystania AI. Zawier
 - `assets/app.js` - obsługa panelu, ćwiczeń, druku, timera i QR.
 - `assets/exercises.js` - baza ćwiczeń warsztatowych.
 - `assets/exercise-variants-advanced.js` - dodatkowe scenariusze urzędowe i warianty dla ćwiczeń zaawansowanych.
+- `assets/exercise-overrides-03-04.js` - dopracowane wersje ćwiczeń 3 i 4 w standardzie rozszerzonym.
+- `assets/exercise-overrides-05-09.js` - dopracowane wersje ćwiczeń 5-9 z plików Word.
 - `prompts/` - osobne strony z gotowymi promptami.
 - `assets/prompt.css` i `assets/prompt.js` - wspólne pliki dla stron promptów.
 - `version.json` - aktualny numer wersji używany przez przycisk sprawdzania aktualizacji w stopce.
 - `reset-cache.html` - pomocnicza strona do odświeżenia cache, gdy przeglądarka pokazuje starą wersję.
-- W panelu jest też timer do odmierzania czasu ćwiczeń, z opcją powiększenia na cały ekran.
-- Ćwiczenia mają tryb ekranowy do pokazania zadania uczestnikom na rzutniku.
+- W panelu jest też timer do odmierzania czasu ćwiczeń, z opcją powiększenia na cały ekran. Timer działa jako osobne narzędzie na dole strony głównej.
+- Ćwiczenia mają tryb ekranowy do pokazania zadania uczestnikom na rzutniku, bez wbudowanego timera w widoku ćwiczenia.
 - W oknie ćwiczenia można wydrukować czystą wersję zadania dla uczestników.
 - Wydruk ćwiczenia ma przywrócony poprzedni, bardziej czytelny wygląd karty pracy z miejscem na notatki uczestników.
 - Ćwiczenie 1 ma nowy opis z pliku Word i osobną, skróconą kartę pracy do druku.
@@ -22,6 +24,10 @@ Statyczny panel do prowadzenia szkolenia z praktycznego wykorzystania AI. Zawier
 - Długie opisy ćwiczeń są automatycznie dzielone na czytelne sekcje, ramki, listy i kroki.
 - Scenariusze prowadzącego w ćwiczeniach 1 i 2 nie powtarzają pełnej karty uczestnika.
 - Sekcje w opisach ćwiczeń mają delikatne kolorowe akcenty, które poprawiają orientację w długich materiałach.
+- Ćwiczenie 3 ma rozbudowany scenariusz odpowiedzi na trudnego maila bez przyznawania winy i bez obietnic bez podstawy.
+- Ćwiczenie 4 ma rozbudowany scenariusz porządkowania notatki ze spotkania, z tabelą zadań i oznaczaniem braków informacyjnych.
+- Ćwiczenia 5-9 zostały dodane w tym samym standardzie: informacja o naborze, ankieta ewaluacyjna, prezentacja ze źródeł, formularz zapisów i plakat w Canvie.
+- Dopracowane ćwiczenia 1-9 są wyróżnione zielonymi kafelkami, a pozostałe ćwiczenia mają spokojny szary kolor.
 - W oknie ćwiczenia pojawia się krótka sekcja `Narzędzia do wykonania ćwiczenia`, dobrana do typu zadania.
 - Pierwsze ćwiczenie ma osobno uporządkowaną treść dla uczestników, widok pełnoekranowy i scenariusz prowadzącego.
 - Drugie ćwiczenie ma osobno uporządkowaną treść dla uczestników, widok pełnoekranowy, wydruk i scenariusz prowadzącego.
