@@ -1,6 +1,6 @@
 AKTUALNA PACZKA PANELU AI
 
-Wersja: 2026-05-30 / 25 cwiczen / generator zaswiadczen na macOS i Windows / 20260530-20
+Wersja: 2026-05-31 / 25 cwiczen / nowy widok cwiczenia 7 / 20260531-01
 
 Jak wgrac na GitHub:
 
@@ -17,6 +17,7 @@ Jak wgrac na GitHub:
    - assets/exercise-variants-advanced.js
    - assets/exercise-overrides-03-04.js
    - assets/exercise-overrides-05-09.js
+   - assets/exercise-modern-07.js
    - assets/app.css
    - downloads/GeneratorZaswiadczenOfflineV27.zip
    - downloads/GeneratorZaswiadczenOfflineV27-Windows.zip
@@ -57,6 +58,18 @@ Jak poznac, ze jest aktualna wersja:
   Pobierz na macOS
   Pobierz na Windows
 
+- Cwiczenie 7 powinno miec nowy widok z zakladkami:
+  Dla uczestnika
+  Dla prowadzacego
+  Materialy i przyklady
+
+- W cwiczeniu 7 pelne teksty zrodlowe powinny byc widoczne w zakladce:
+  Materialy i przyklady
+
+- W cwiczeniu 7 powinny byc dwa przyciski druku:
+  Drukuj dla uczestnika
+  Drukuj dla prowadzacego
+
 - Dawne cwiczenia plikowe sa teraz dalej na liscie, jako pozycje 22-25:
   Dokument roboczy
   Instrukcja TXT/Markdown
@@ -77,7 +90,7 @@ Jak poznac, ze jest aktualna wersja:
 - W cwiczeniu 2 nie powinno byc przycisku:
   Losuj
 
-- Wydruk cwiczenia powinien miec czytelny wyglad karty pracy i miejsce na notatki uczestnikow.
+- Wydruk cwiczenia powinien miec czytelny wyglad karty pracy bez automatycznie dodawanego pustego miejsca na notatki.
 
 - Podzial stron w wydruku powinien wypadac na granicach sekcji, a nie w srodku przypadkowego akapitu.
 

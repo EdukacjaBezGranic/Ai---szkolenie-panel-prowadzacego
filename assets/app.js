@@ -1,5 +1,5 @@
 const EXERCISES = window.EXERCISES || {};
-const APP_VERSION = '20260530-20';
+const APP_VERSION = '20260531-01';
 const TOOL_SETS = {
   default: {
     intro: 'Użyjcie narzędzia, do którego macie dostęp. Wystarczy jedno narzędzie tekstowe; nie trzeba testować wszystkich.',
@@ -559,6 +559,113 @@ function setExerciseTools(containerId, e, type = currentExerciseType) {
   container.innerHTML = buildToolsHtml(getExerciseTools(e, type));
 }
 
+function getExerciseModal() {
+  return document.querySelector('#exerciseOverlay .modal');
+}
+
+function ensureModernExerciseContainer() {
+  let container = document.getElementById('exerciseModern');
+  if (container) return container;
+  container = document.createElement('div');
+  container.id = 'exerciseModern';
+  container.className = 'modern-exercise';
+  const meta = document.querySelector('#exerciseOverlay .meta');
+  if (meta) meta.insertAdjacentElement('afterend', container);
+  return container;
+}
+
+function hideModernExercise() {
+  const modal = getExerciseModal();
+  const container = document.getElementById('exerciseModern');
+  modal?.classList.remove('modal-modern');
+  if (container) {
+    container.hidden = true;
+    container.innerHTML = '';
+  }
+}
+
+function buildModernCard(card) {
+  const classes = [
+    'modern-card',
+    `modern-card-${card.tone || 'neutral'}`,
+    card.wide ? 'modern-card-wide' : ''
+  ].filter(Boolean).join(' ');
+  return `
+    <article class="${classes}">
+      ${card.kicker ? `<span class="tag">${escapeHtml(card.kicker)}</span>` : ''}
+      <h3>${escapeHtml(card.title || '')}</h3>
+      <div class="modern-card-body">${formatRichText(card.body || '')}</div>
+    </article>
+  `;
+}
+
+function buildModernExerciseHtml(e) {
+  const modern = e.modern || {};
+  const tabs = modern.tabs || [];
+  return `
+    <div class="modern-hero">
+      <div>
+        ${modern.badge ? `<span class="tag">${escapeHtml(modern.badge)}</span>` : ''}
+        <h3>${escapeHtml(e.heading || e.title)}</h3>
+        ${modern.lead ? `<p>${escapeHtml(modern.lead)}</p>` : ''}
+      </div>
+      <div class="modern-print-actions" aria-label="Opcje ćwiczenia">
+        <button class="btn print-btn" type="button" data-modern-print="participant">Drukuj dla uczestnika</button>
+        <button class="btn ghost" type="button" data-modern-print="trainer">Drukuj dla prowadzącego</button>
+        <button class="btn screen-mode-btn" type="button" data-modern-screen>Tryb ekranowy</button>
+      </div>
+    </div>
+    <div class="modern-tabs" role="tablist" aria-label="Widoki ćwiczenia">
+      ${tabs.map((tab, index) => `
+        <button class="modern-tab ${index === 0 ? 'active' : ''}" type="button" data-modern-tab="${escapeHtml(tab.id)}" role="tab" aria-selected="${index === 0 ? 'true' : 'false'}">
+          ${escapeHtml(tab.label)}
+        </button>
+      `).join('')}
+    </div>
+    <div class="modern-views">
+      ${tabs.map((tab, index) => `
+        <section class="modern-view ${index === 0 ? 'active' : ''}" data-modern-view="${escapeHtml(tab.id)}" role="tabpanel">
+          <div class="modern-card-grid">
+            ${(tab.cards || []).map(buildModernCard).join('')}
+          </div>
+        </section>
+      `).join('')}
+    </div>
+  `;
+}
+
+function activateModernTab(container, tabId) {
+  container.querySelectorAll('[data-modern-tab]').forEach(button => {
+    const active = button.dataset.modernTab === tabId;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-selected', active ? 'true' : 'false');
+  });
+  container.querySelectorAll('[data-modern-view]').forEach(view => {
+    view.classList.toggle('active', view.dataset.modernView === tabId);
+  });
+}
+
+function renderModernExercise(e) {
+  const container = ensureModernExerciseContainer();
+  const modal = getExerciseModal();
+  container.innerHTML = buildModernExerciseHtml(e);
+  container.hidden = false;
+  modal?.classList.add('modal-modern');
+  container.onclick = event => {
+    const tabButton = event.target.closest('[data-modern-tab]');
+    if (tabButton) {
+      activateModernTab(container, tabButton.dataset.modernTab);
+      return;
+    }
+    const printButton = event.target.closest('[data-modern-print]');
+    if (printButton) {
+      printCurrentExercise(printButton.dataset.modernPrint);
+      return;
+    }
+    if (event.target.closest('[data-modern-screen]')) openScreenExercise();
+  };
+}
+
 function getParticipantHeading(e) {
   return e?.participantHeading || e?.heading || 'Zadanie';
 }
@@ -622,6 +729,11 @@ function renderExercise(e) {
   document.getElementById('exIntro').textContent = e.intro || '';
   document.getElementById('exTime').textContent = e.time || '10-15 min';
   document.getElementById('exForm').textContent = e.form || 'praca w parach lub grupach';
+  if (e.layout === 'workshop-v2' && e.modern) {
+    renderModernExercise(e);
+  } else {
+    hideModernExercise();
+  }
   document.getElementById('exHeading').textContent = getParticipantHeading(e);
   setRichText('exTask', getParticipantTask(e));
   setExerciseTools('exTools', e);
@@ -664,7 +776,29 @@ function closeScreenExercise() {
 function toggle(id) {
   document.getElementById(id).classList.toggle('active');
 }
-function buildPrintableExercise(e) {
+function buildCustomPrintableExercise(e, content, kicker) {
+  return `
+    <div class="print-header">
+      <p class="print-kicker">${escapeHtml(kicker)}</p>
+      <h1>${escapeHtml(e.title)}</h1>
+      ${e.intro ? `<p>${escapeHtml(e.intro)}</p>` : ''}
+    </div>
+    <div class="print-meta">
+      <div><strong>Czas:</strong> ${escapeHtml(e.time || '10-15 min')}</div>
+      <div><strong>Forma:</strong> ${escapeHtml(e.form || 'praca w parach lub grupach')}</div>
+      <div><strong>Efekt:</strong> ${escapeHtml(e.result || 'wynik do omówienia')}</div>
+    </div>
+    <div class="print-body">${formatRichText(content)}</div>
+  `;
+}
+
+function buildPrintableExercise(e, audience = 'participant') {
+  if (audience === 'trainer' && e.printTrainer) {
+    return buildCustomPrintableExercise(e, e.printTrainer, 'Scenariusz dla prowadzącego');
+  }
+  if (e.printParticipant) {
+    return buildCustomPrintableExercise(e, e.printParticipant, 'Karta pracy uczestnika');
+  }
   const steps = e.steps || [
     'Przeczytajcie zadanie i zaznaczcie, czego brakuje w pierwszej wersji.',
     'Przygotujcie własną wersję w parach lub małych grupach.',
@@ -687,15 +821,14 @@ function buildPrintableExercise(e) {
     <div class="print-task">${formatRichText(getPrintTask(e))}</div>
     <h2>Jak wykonać zadanie?</h2>
     <ol>${steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}</ol>
-    <h2>Notatki uczestników</h2>
-    <div class="print-notes"><span></span><span></span><span></span><span></span><span></span></div>
   `;
 }
-function printCurrentExercise() {
+function printCurrentExercise(audience = 'participant') {
   if (!currentExercise) return;
   const printArea = document.getElementById('printExercise');
   if (!printArea) return;
-  printArea.innerHTML = buildPrintableExercise(currentExercise);
+  const safeAudience = typeof audience === 'string' ? audience : 'participant';
+  printArea.innerHTML = buildPrintableExercise(currentExercise, safeAudience);
   window.print();
 }
 function qrGenerate() {

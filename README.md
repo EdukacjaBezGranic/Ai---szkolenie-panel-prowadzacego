@@ -11,6 +11,7 @@ Statyczny panel do prowadzenia szkolenia z praktycznego wykorzystania AI. Zawier
 - `assets/exercise-variants-advanced.js` - dodatkowe scenariusze urzędowe i warianty dla ćwiczeń zaawansowanych.
 - `assets/exercise-overrides-03-04.js` - dopracowane wersje ćwiczeń 3 i 4 w standardzie rozszerzonym.
 - `assets/exercise-overrides-05-09.js` - dopracowane wersje ćwiczeń 5-9 z plików Word.
+- `assets/exercise-modern-07.js` - próbny nowy układ ćwiczenia 7: karty, zakładki, pełne materiały źródłowe i dwa warianty druku.
 - `downloads/GeneratorZaswiadczenOfflineV27.zip` - generator zaświadczeń offline do pobrania z końca panelu.
 - `downloads/GeneratorZaswiadczenOfflineV27-Windows.zip` - wersja generatora dla Windows uruchamiana lokalnie w przeglądarce.
 - `prompts/` - osobne strony z gotowymi promptami.
@@ -19,8 +20,8 @@ Statyczny panel do prowadzenia szkolenia z praktycznego wykorzystania AI. Zawier
 - `reset-cache.html` - pomocnicza strona do odświeżenia cache, gdy przeglądarka pokazuje starą wersję.
 - W panelu jest też timer do odmierzania czasu ćwiczeń, z opcją powiększenia na cały ekran. Timer działa jako osobne narzędzie na dole strony głównej.
 - Ćwiczenia mają tryb ekranowy do pokazania zadania uczestnikom na rzutniku, bez wbudowanego timera w widoku ćwiczenia.
-- W oknie ćwiczenia można wydrukować czystą wersję zadania dla uczestników.
-- Wydruk ćwiczenia ma przywrócony poprzedni, bardziej czytelny wygląd karty pracy z miejscem na notatki uczestników.
+- W oknie ćwiczenia można wydrukować wersję zadania dla uczestników.
+- Wydruki są składane jako kompletne karty pracy lub scenariusze, bez automatycznego dodawania pustego miejsca na notatki.
 - Ćwiczenie 1 ma nowy opis z pliku Word i osobną, skróconą kartę pracy do druku.
 - Ćwiczenie 2 ma nowy scenariusz o prostym języku w wiadomości urzędowej dotyczącej braków w dokumentacji.
 - Długie opisy ćwiczeń są automatycznie dzielone na czytelne sekcje, ramki, listy i kroki.
@@ -29,6 +30,7 @@ Statyczny panel do prowadzenia szkolenia z praktycznego wykorzystania AI. Zawier
 - Ćwiczenie 3 ma rozbudowany scenariusz odpowiedzi na trudnego maila bez przyznawania winy i bez obietnic bez podstawy.
 - Ćwiczenie 4 ma rozbudowany scenariusz porządkowania notatki ze spotkania, z tabelą zadań i oznaczaniem braków informacyjnych.
 - Ćwiczenia 5-9 zostały dodane w tym samym standardzie: informacja o naborze, ankieta ewaluacyjna, prezentacja ze źródeł, formularz zapisów i plakat w Canvie.
+- Ćwiczenie 7 ma próbny nowy widok: osobno `Dla uczestnika`, `Dla prowadzącego` oraz `Materiały i przykłady`. Pełne teksty źródłowe nie są skracane.
 - Dopracowane ćwiczenia 1-9 są wyróżnione zielonymi kafelkami, a pozostałe ćwiczenia mają spokojny szary kolor.
 - Na końcu panelu, za timerem, znajduje się generator zaświadczeń offline V27 do pobrania w wersji macOS i Windows.
 - W oknie ćwiczenia pojawia się krótka sekcja `Narzędzia do wykonania ćwiczenia`, dobrana do typu zadania.

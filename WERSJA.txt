@@ -1,7 +1,15 @@
 Panel szkolenia AI
-Wersja GitHub: 2026-05-30 / 25 cwiczen / generator zaswiadczen na macOS i Windows / 20260530-20
+Wersja GitHub: 2026-05-31 / 25 cwiczen / nowy widok cwiczenia 7 / 20260531-01
 
 Ta paczka zawiera ostatnie zmiany:
+- cwiczenie 7 "Prezentacja ze zrodel" ma probny nowy widok z zakladkami:
+  Dla uczestnika, Dla prowadzacego, Materialy i przyklady,
+- cwiczenie 7 ma kolorowe karty, delikatny efekt po najechaniu i mniej przytlaczajacy uklad,
+- pelne teksty zrodlowe w cwiczeniu 7 zostaja w materialach i w wydruku uczestnika,
+- cwiczenie 7 ma osobne przyciski:
+  Drukuj dla uczestnika
+  Drukuj dla prowadzacego,
+- wydruki sa przygotowywane jako kompletne materialy bez automatycznego dodawania pustego miejsca na notatki,
 - generator zaswiadczen offline V27 ma teraz osobne pobieranie dla macOS i Windows,
 - wersja Windows jest paczka offline uruchamiana przez plik "Uruchom generator.bat",
 - generator zaswiadczen offline V27 jest dodany na koncu strony, za timerem, jako plik ZIP do pobrania,
@@ -22,7 +30,7 @@ Ta paczka zawiera ostatnie zmiany:
 - cwiczenia maja sekcje Narzedzia do wykonania cwiczenia z praktyczna informacja, czego uzyc.
 - cwiczenie 1 ma tylko dopracowana wersje, bez starych losowanych przykladow.
 - przycisk Losuj znika przy cwiczeniach, ktore maja tylko jeden dopracowany wariant.
-- wydruk cwiczenia ma przywrocony poprzedni, bardziej czytelny wyglad z miejscem na notatki uczestnikow.
+- wydruk cwiczenia ma czytelny wyglad karty pracy, bez sztucznego dopelniania pustymi notatkami.
 - cwiczenie 2 "Popraw tekst urzedowy" ma dopracowana wersje bez starych losowanych przykladow.
 - cwiczenie 1 "Dobry i zly prompt" zostalo podmienione na nowy opis z pliku Word.
 - opisy cwiczen w panelu sa dzielone na czytelne sekcje, ramki, listy i kroki zamiast jednej sciany tekstu.
