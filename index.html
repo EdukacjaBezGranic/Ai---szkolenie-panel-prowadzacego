@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Panel szkolenia AI - stabilny v2</title>
-<link rel="icon" type="image/png" href="assets/project-icon.png?v=20260601-02">
-<link rel="apple-touch-icon" href="assets/project-icon.png?v=20260601-02">
-<link rel="manifest" href="manifest.json?v=20260601-02">
-<link rel="stylesheet" href="assets/app.css?v=20260601-02">
+<link rel="icon" type="image/png" href="assets/project-icon.png?v=20260602-04">
+<link rel="apple-touch-icon" href="assets/project-icon.png?v=20260602-04">
+<link rel="manifest" href="manifest.json?v=20260602-04">
+<link rel="stylesheet" href="assets/app.css?v=20260602-04">
 </head>
 <body>
 <div class="wrap">
-<section class="hero"><div class="hero-logo"><img src="assets/project-logo.png" alt="Logo projektu"></div><h1>Nowe kompetencje cyfrowe w praktyce - praktyczne wykorzystanie AI</h1></section>
+<section class="hero hero-banner"><img src="assets/training-banner.png?v=20260602-04" alt="Nowe kompetencje cyfrowe w praktyce - praktyczne wykorzystanie AI"></section>
 
 <section class="section"><h2>Materiały</h2><div class="grid">
 <article class="card"><span class="tag">prezentacja</span><h3>Prezentacja główna</h3><p>Główna prezentacja ze szkolenia.</p><a class="btn" target="_blank" rel="noopener noreferrer" href="https://kompetencjekierunek4zero.my.canva.site/nowe-kompetencje-cyfrowe-w-praktyce">Otwórz</a></article>
@@ -79,7 +79,7 @@
 <section class="section"><h2>Generator zaświadczeń</h2><p class="lead">Dodatkowe narzędzie offline dla prowadzącego do przygotowania zaświadczeń po szkoleniu.</p><div class="grid"><article class="card"><span class="tag">macOS</span><h3>Generator zaświadczeń offline V27</h3><p>Aplikacja dla macOS spakowana jako ZIP. Po pobraniu rozpakuj plik i uruchom aplikację na komputerze.</p><a class="btn" href="downloads/GeneratorZaswiadczenOfflineV27.zip" download>Pobierz na macOS</a><p class="small">Jeżeli macOS zapyta o zgodę na uruchomienie aplikacji spoza App Store, otwórz ją z menu kontekstowego.</p></article>
 <article class="card"><span class="tag">Windows</span><h3>Generator zaświadczeń offline V27</h3><p>Wersja offline dla Windows. Po pobraniu rozpakuj ZIP i uruchom plik „Uruchom generator.bat”.</p><a class="btn" href="downloads/GeneratorZaswiadczenOfflineV27-Windows.zip" download>Pobierz na Windows</a><p class="small">Generator otworzy się lokalnie w przeglądarce, np. Microsoft Edge albo Chrome.</p></article></div></section>
 
-<p class="footer"><span class="footer-text">Panel szkolenia AI. Wersja GitHub 2026-06-01 / 25 ćwiczeń / wizualne pulpity ćwiczeń.</span><button class="version-check" type="button" data-action="check-version">Sprawdź nowszą wersję</button><span id="versionStatus" class="version-status" aria-live="polite"></span></p>
+<p class="footer"><span class="footer-text">Panel szkolenia AI. Wersja GitHub 2026-06-02 / 25 ćwiczeń / subtelne kolory w ćwiczeniach.</span><button class="version-check" type="button" data-action="check-version">Sprawdź nowszą wersję</button><span id="versionStatus" class="version-status" aria-live="polite"></span></p>
 </div>
 
 <div class="overlay" id="exerciseOverlay"><div class="modal"><div class="top"><div><h2 id="exTitle">Ćwiczenie</h2><p id="exIntro" class="lead"></p></div><button class="btn ghost" data-action="close-exercise">Zamknij</button></div><div class="meta"><div><strong>Czas</strong><br><span id="exTime">10-15 min</span></div><div><strong>Forma</strong><br><span id="exForm">praca w parach lub grupach</span></div><div><strong>Efekt</strong><br><span id="exResult">wynik do omówienia</span></div></div><div class="task"><h3 id="exHeading">Zadanie</h3><div class="taskbox" id="exTask"></div></div><div class="toolbox" id="exTools"></div><div class="trainer-guide" id="trainerGuide"><span class="tag">scenariusz prowadzącego</span><div class="guidebox" id="exGuide"></div></div><div class="card"><span class="tag">instrukcja</span><h3>Jak wykonać zadanie?</h3><div class="steps" id="exSteps"></div></div><div class="actions exercise-actions"><button class="btn" data-toggle="exHint">Podpowiedzi</button><button class="btn ghost" data-toggle="exCheck">Kryteria</button><button class="btn ghost" data-toggle="exSample">Przykład</button><button class="btn ghost" data-toggle="exDiscuss">Rozmowa</button><button class="btn ghost" data-action="random-exercise">Losuj</button><button class="btn print-btn" data-action="print-exercise" title="Wydrukuj wersję dla uczestników">Drukuj</button><button class="btn screen-mode-btn" data-action="screen-exercise">Tryb ekranowy</button></div><div id="exHint" class="hint hidden"></div><div id="exCheck" class="hint hidden"></div><div id="exSample" class="hint hidden"></div><div id="exDiscuss" class="hint hidden"></div><div class="grid two" style="margin-top:18px"><article class="card"><span class="tag">wasza praca</span><h3>Wynik pracy</h3><textarea class="area" id="exWork" placeholder="Wpiszcie tutaj swoją wersję..."></textarea></article><article class="card"><span class="tag">zasada</span><h3>Jak pracujemy z AI?</h3><p>Najpierw doprecyzujcie zadanie, potem wygenerujcie odpowiedź, sprawdźcie wynik, poprawcie polecenie i oceńcie, czy materiał nadaje się do użycia.</p></article></div></div></div>
@@ -89,13 +89,13 @@
 <section class="print-sheet" id="printExercise" aria-hidden="true"></section>
 
 
-<script src="assets/exercises.js?v=20260601-02" defer></script>
-<script src="assets/exercise-variants-advanced.js?v=20260601-02" defer></script>
-<script src="assets/exercise-overrides-03-04.js?v=20260601-02" defer></script>
-<script src="assets/exercise-overrides-05-09.js?v=20260601-02" defer></script>
-<script src="assets/exercise-modern-07.js?v=20260601-02" defer></script>
-<script src="assets/exercise-visual-all.js?v=20260601-02" defer></script>
-<script src="assets/app.js?v=20260601-02" defer></script>
+<script src="assets/exercises.js?v=20260602-04" defer></script>
+<script src="assets/exercise-variants-advanced.js?v=20260602-04" defer></script>
+<script src="assets/exercise-overrides-03-04.js?v=20260602-04" defer></script>
+<script src="assets/exercise-overrides-05-09.js?v=20260602-04" defer></script>
+<script src="assets/exercise-modern-07.js?v=20260602-04" defer></script>
+<script src="assets/exercise-visual-all.js?v=20260602-04" defer></script>
+<script src="assets/app.js?v=20260602-04" defer></script>
 
 </body>
 </html>

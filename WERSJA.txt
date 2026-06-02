@@ -1,7 +1,13 @@
 Panel szkolenia AI
-Wersja GitHub: 2026-06-01 / 25 cwiczen / wizualne pulpity cwiczen / 20260601-02
+Wersja GitHub: 2026-06-02 / 25 cwiczen / subtelne kolory w cwiczeniach / 20260602-04
 
 Ta paczka zawiera ostatnie zmiany:
+- naglowek panelu ma teraz szeroki baner graficzny zamiast osobnego tytulu i malego logo,
+- baner jest statyczny i nie porusza sie przy przewijaniu strony,
+- tytuly glownych sekcji maja wlasne kolory,
+- kafelki sa spokojne w stanie spoczynku, a po najechaniu kursorem dostaja kolorowy fade, lekkie uniesienie i kolorowy przycisk,
+- wnetrza cwiczen maja delikatne pastelowe akcenty w kartach, sekcjach, zakladkach, materialach zrodlowych i scenariuszach prowadzacego,
+- dodany jest plik assets/training-banner.png,
 - wszystkie cwiczenia otwieraja sie teraz w wizualnym ukladzie:
   Pulpit pracy, Materialy zrodlowe, Dla prowadzacego,
 - pierwszy ekran cwiczenia pokazuje mape pracy, efekty, decyzje, kroki i checklisty zamiast samej dlugiej tresci,
@@ -19,8 +25,7 @@ Ta paczka zawiera ostatnie zmiany:
 - generator zaswiadczen offline V27 ma teraz osobne pobieranie dla macOS i Windows,
 - wersja Windows jest paczka offline uruchamiana przez plik "Uruchom generator.bat",
 - generator zaswiadczen offline V27 jest dodany na koncu strony, za timerem, jako plik ZIP do pobrania,
-- dopracowane cwiczenia 1-9 maja zielone kafelki,
-- pozostale cwiczenia maja spokojne szare kafelki,
+- dopracowane i pozostale cwiczenia maja spokojne kafelki, ktore ozywaja kolorem po najechaniu kursorem,
 - nowe cwiczenia 5-9 dodane z plikow Word,
 - cwiczenia ulozone w nowej kolejnosci: nowe materialy sa teraz po cwiczeniu 4,
 - timer zostaje tylko na dole glownej strony i nie jest juz pokazywany w widoku cwiczenia,
@@ -44,7 +49,7 @@ Ta paczka zawiera ostatnie zmiany:
 - wydruk cwiczenia 2 ma osobna karte pracy dla uczestnikow.
 - scenariusze prowadzacego w cwiczeniu 1 i 2 nie powtarzaja juz pelnej karty uczestnika.
 - wydruki cwiczen 1 i 2 nadal zawieraja kompletne karty pracy dla uczestnikow.
-- sekcje w opisach cwiczen maja delikatne, kolorowe wyroznienia i spokojne akcenty boczne.
+- sekcje w opisach cwiczen maja delikatne szare wyroznienia i spokojne akcenty boczne.
 - cwiczenie 3 "Odpowiedz na trudnego maila" ma pelny scenariusz, karte uczestnika, druk i widok ekranowy.
 - cwiczenie 4 "Uporzadkuj notatke ze spotkania" ma pelny scenariusz, karte uczestnika, druk, widok ekranowy i tabele.
 - cwiczenie 5 "Przygotuj informacje o naborze" ma pelny scenariusz, karte uczestnika, druk i widok ekranowy.

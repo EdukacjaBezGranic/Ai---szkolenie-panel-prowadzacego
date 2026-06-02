@@ -1,6 +1,6 @@
 AKTUALNA PACZKA PANELU AI
 
-Wersja: 2026-06-01 / 25 cwiczen / wizualne pulpity cwiczen / 20260601-02
+Wersja: 2026-06-02 / 25 cwiczen / subtelne kolory w cwiczeniach / 20260602-04
 
 Jak wgrac na GitHub:
 
@@ -20,6 +20,7 @@ Jak wgrac na GitHub:
    - assets/exercise-modern-07.js
    - assets/exercise-visual-all.js
    - assets/app.css
+   - assets/training-banner.png
    - downloads/GeneratorZaswiadczenOfflineV27.zip
    - downloads/GeneratorZaswiadczenOfflineV27-Windows.zip
    - version.json
@@ -38,7 +39,17 @@ Po publikacji:
 Jak poznac, ze jest aktualna wersja:
 
 - Na dole panelu powinien byc tekst:
-  Panel szkolenia AI. Wersja GitHub 2026-06-01 / 25 cwiczen / wizualne pulpity cwiczen.
+  Panel szkolenia AI. Wersja GitHub 2026-06-02 / 25 cwiczen / subtelne kolory w cwiczeniach.
+
+- Na gorze strony powinien byc szeroki baner graficzny zamiast osobnego tytulu i malego logo.
+
+- Baner powinien byc statyczny i nie powinien poruszac sie przy przewijaniu strony.
+
+- Tytuly glownych sekcji powinny miec kolorowe akcenty.
+
+- Kafelki na stronie glownej powinny byc spokojne w stanie spoczynku i kolorowe po najechaniu kursorem.
+
+- Po otwarciu cwiczenia sekcje, zakladki, karty materialow i elementy scenariusza powinny miec delikatne pastelowe akcenty.
 
 - Obok tekstu w stopce powinien byc maly przycisk:
   Sprawdz nowsza wersje
@@ -50,7 +61,7 @@ Jak poznac, ze jest aktualna wersja:
   Formularz zapisow
   Plakat na wydarzenie
 
-- Cwiczenia 1-9 powinny miec zielone kafelki, a pozostale cwiczenia szare kafelki.
+- Kafelki cwiczen powinny ozywiac sie kolorem po najechaniu kursorem.
 
 - Za sekcja Timer powinien byc kafelek:
   Generator zaswiadczen offline V27

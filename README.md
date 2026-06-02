@@ -13,6 +13,7 @@ Statyczny panel do prowadzenia szkolenia z praktycznego wykorzystania AI. Zawier
 - `assets/exercise-overrides-05-09.js` - dopracowane wersje ćwiczeń 5-9 z plików Word.
 - `assets/exercise-modern-07.js` - trzeci próbny układ ćwiczenia 7: wizualny pulpit pracy, mapa źródeł, oś procesu, rozwijane źródła i dwa warianty druku.
 - `assets/exercise-visual-all.js` - wspólna warstwa wizualnych pulpitów dla ćwiczeń, z mapą pracy, efektami, decyzjami i materiałami źródłowymi.
+- `assets/training-banner.png` - szeroki baner graficzny w nagłówku panelu.
 - `downloads/GeneratorZaswiadczenOfflineV27.zip` - generator zaświadczeń offline do pobrania z końca panelu.
 - `downloads/GeneratorZaswiadczenOfflineV27-Windows.zip` - wersja generatora dla Windows uruchamiana lokalnie w przeglądarce.
 - `prompts/` - osobne strony z gotowymi promptami.
@@ -27,13 +28,17 @@ Statyczny panel do prowadzenia szkolenia z praktycznego wykorzystania AI. Zawier
 - Ćwiczenie 2 ma nowy scenariusz o prostym języku w wiadomości urzędowej dotyczącej braków w dokumentacji.
 - Długie opisy ćwiczeń są automatycznie dzielone na czytelne sekcje, ramki, listy i kroki.
 - Scenariusze prowadzącego w ćwiczeniach 1 i 2 nie powtarzają pełnej karty uczestnika.
-- Sekcje w opisach ćwiczeń mają delikatne kolorowe akcenty, które poprawiają orientację w długich materiałach.
+- Sekcje w opisach ćwiczeń mają delikatne szare akcenty, które poprawiają orientację w długich materiałach bez nadmiaru koloru.
 - Ćwiczenie 3 ma rozbudowany scenariusz odpowiedzi na trudnego maila bez przyznawania winy i bez obietnic bez podstawy.
 - Ćwiczenie 4 ma rozbudowany scenariusz porządkowania notatki ze spotkania, z tabelą zadań i oznaczaniem braków informacyjnych.
 - Ćwiczenia 5-9 zostały dodane w tym samym standardzie: informacja o naborze, ankieta ewaluacyjna, prezentacja ze źródeł, formularz zapisów i plakat w Canvie.
 - Ćwiczenie 7 ma trzeci próbny widok: `Pulpit pracy`, `Materiały źródłowe` oraz `Dla prowadzącego`. W pierwszej zakładce są dodatkowe elementy graficzne: mapa źródeł, oś pracy, kafle efektów i krótkie decyzje projektowe. Pełne teksty źródłowe nie są skracane i są pokazane w rozwijanych sekcjach.
 - Wszystkie ćwiczenia są teraz otwierane w wizualnym układzie: `Pulpit pracy`, `Materiały źródłowe` oraz `Dla prowadzącego`. Długie karty pracy zostają dostępne w materiałach i wydruku, a pierwszy ekran pokazuje mapę pracy, efekty, decyzje i checklistę.
-- Dopracowane ćwiczenia 1-9 są wyróżnione zielonymi kafelkami, a pozostałe ćwiczenia mają spokojny szary kolor.
+- Nagłówek panelu używa pełnego banera graficznego zamiast osobnego tytułu i małego logo.
+- Baner jest statyczny, bez efektu parallax.
+- Tytuły głównych sekcji mają własne kolory, a kafelki pozostają spokojne w stanie spoczynku.
+- Po najechaniu kursorem kafelki dostają kolorowy fade, lekkie uniesienie, świetlisty przebieg i kolorowy przycisk.
+- Wnętrza ćwiczeń mają subtelne pastelowe akcenty w zakładkach, kartach, sekcjach materiałów i scenariuszach prowadzącego.
 - Na końcu panelu, za timerem, znajduje się generator zaświadczeń offline V27 do pobrania w wersji macOS i Windows.
 - W oknie ćwiczenia pojawia się krótka sekcja `Narzędzia do wykonania ćwiczenia`, dobrana do typu zadania.
 - Pierwsze ćwiczenie ma osobno uporządkowaną treść dla uczestników, widok pełnoekranowy i scenariusz prowadzącego.
