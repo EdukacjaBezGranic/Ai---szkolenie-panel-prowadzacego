@@ -1,6 +1,6 @@
 AKTUALNA PACZKA PANELU AI
 
-Wersja: 2026-06-02 / 25 cwiczen / subtelne kolory w cwiczeniach / 20260602-04
+Wersja: 2026-06-02 / 25 cwiczen / kolory sekcji i szare tla cwiczen / 20260602-06
 
 Jak wgrac na GitHub:
 
@@ -39,9 +39,11 @@ Po publikacji:
 Jak poznac, ze jest aktualna wersja:
 
 - Na dole panelu powinien byc tekst:
-  Panel szkolenia AI. Wersja GitHub 2026-06-02 / 25 cwiczen / subtelne kolory w cwiczeniach.
+  Panel szkolenia AI. Wersja GitHub 2026-06-02 / 25 cwiczen / baner bez ramki i subtelne kolory.
 
 - Na gorze strony powinien byc szeroki baner graficzny zamiast osobnego tytulu i malego logo.
+
+- Baner nie powinien miec dodatkowej ramki, obramowania ani cienia.
 
 - Baner powinien byc statyczny i nie powinien poruszac sie przy przewijaniu strony.
 

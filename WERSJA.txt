@@ -1,8 +1,13 @@
 Panel szkolenia AI
-Wersja GitHub: 2026-06-02 / 25 cwiczen / subtelne kolory w cwiczeniach / 20260602-04
+Wersja GitHub: 2026-06-02 / 25 cwiczen / kolory sekcji i szare tla cwiczen / 20260602-06
 
 Ta paczka zawiera ostatnie zmiany:
+- sekcja Cwiczenia warsztatowe ma kolor akcentu taki sam jak Narzedzia AI,
+- sekcja Materialy ma kolor akcentu taki sam jak Generator zaswiadczen,
+- sekcja Cwiczenia warsztatowe ma ciemniejsze szare tlo pod kafelkami,
+- okna cwiczen, nowoczesne pulpity cwiczen i tryb ekranowy maja spokojne szare tlo,
 - naglowek panelu ma teraz szeroki baner graficzny zamiast osobnego tytulu i malego logo,
+- baner nie ma juz dodatkowej ramki, obramowania ani cienia,
 - baner jest statyczny i nie porusza sie przy przewijaniu strony,
 - tytuly glownych sekcji maja wlasne kolory,
 - kafelki sa spokojne w stanie spoczynku, a po najechaniu kursorem dostaja kolorowy fade, lekkie uniesienie i kolorowy przycisk,

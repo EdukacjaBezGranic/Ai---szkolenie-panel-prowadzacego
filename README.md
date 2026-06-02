@@ -35,6 +35,7 @@ Statyczny panel do prowadzenia szkolenia z praktycznego wykorzystania AI. Zawier
 - Ćwiczenie 7 ma trzeci próbny widok: `Pulpit pracy`, `Materiały źródłowe` oraz `Dla prowadzącego`. W pierwszej zakładce są dodatkowe elementy graficzne: mapa źródeł, oś pracy, kafle efektów i krótkie decyzje projektowe. Pełne teksty źródłowe nie są skracane i są pokazane w rozwijanych sekcjach.
 - Wszystkie ćwiczenia są teraz otwierane w wizualnym układzie: `Pulpit pracy`, `Materiały źródłowe` oraz `Dla prowadzącego`. Długie karty pracy zostają dostępne w materiałach i wydruku, a pierwszy ekran pokazuje mapę pracy, efekty, decyzje i checklistę.
 - Nagłówek panelu używa pełnego banera graficznego zamiast osobnego tytułu i małego logo.
+- Baner jest pokazany bez dodatkowej ramki, obramowania i cienia.
 - Baner jest statyczny, bez efektu parallax.
 - Tytuły głównych sekcji mają własne kolory, a kafelki pozostają spokojne w stanie spoczynku.
 - Po najechaniu kursorem kafelki dostają kolorowy fade, lekkie uniesienie, świetlisty przebieg i kolorowy przycisk.

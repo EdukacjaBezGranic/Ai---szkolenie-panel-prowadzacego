@@ -42,10 +42,6 @@ body {
 
 .hero-banner {
   overflow: hidden;
-  border: 1px solid rgba(196, 202, 211, .9);
-  border-radius: 10px;
-  background: #e5e7eb;
-  box-shadow: var(--shadow);
 }
 
 .hero-banner img {
@@ -68,17 +64,22 @@ body {
 }
 
 .wrap > .section:nth-of-type(2) {
-  --accent: #2563eb;
-  --accent-rgb: 37, 99, 235;
-  --accent-soft: #eff6ff;
-  --accent-line: #bfdbfe;
+  --accent: #475569;
+  --accent-rgb: 71, 85, 105;
+  --accent-soft: #f1f5f9;
+  --accent-line: #cbd5e1;
 }
 
 .wrap > .section:nth-of-type(3) {
-  --accent: #0f8f68;
-  --accent-rgb: 15, 143, 104;
-  --accent-soft: #ecfdf5;
-  --accent-line: #b7ead7;
+  --accent: #0e7490;
+  --accent-rgb: 14, 116, 144;
+  --accent-soft: #ecfeff;
+  --accent-line: #a5f3fc;
+  margin-inline: -10px;
+  padding: 22px;
+  background: linear-gradient(180deg, #dfe3e8 0%, #d4dae1 100%);
+  border: 1px solid #c8d0da;
+  border-radius: 10px;
 }
 
 .wrap > .section:nth-of-type(4),
@@ -601,8 +602,10 @@ body {
   width: min(1280px, 100%);
   min-height: calc(100vh - 60px);
   padding: 28px;
-  background: rgba(255, 255, 255, .94);
-  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(14, 116, 144, .08) 0%, rgba(255, 255, 255, 0) 30%),
+    linear-gradient(180deg, #dfe3e8 0%, #d4dae1 100%);
+  border: 1px solid #c8d0da;
   border-radius: 14px;
   box-shadow: 0 22px 90px rgba(15, 23, 42, .14);
 }
@@ -613,7 +616,7 @@ body {
   gap: 18px;
   align-items: flex-start;
   padding-bottom: 16px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(148, 163, 184, .6);
 }
 
 .screen-top h2 {
@@ -702,8 +705,8 @@ body {
   max-width: 1080px;
   margin: 0 auto;
   padding: 24px;
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: linear-gradient(180deg, #dfe3e8 0%, #d4dae1 100%);
+  border: 1px solid #c8d0da;
   border-radius: 10px;
   box-shadow: 0 22px 70px rgba(15, 23, 42, .16);
 }
@@ -714,7 +717,7 @@ body {
   justify-content: space-between;
   gap: 18px;
   padding-bottom: 16px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(148, 163, 184, .6);
 }
 
 .top h2 {
@@ -830,8 +833,8 @@ body {
 .modal-modern {
   max-width: 1220px;
   background:
-    radial-gradient(circle at 8% 0%, rgba(37, 99, 235, .045) 0%, rgba(255, 255, 255, 0) 28%),
-    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    radial-gradient(circle at 8% 0%, rgba(14, 116, 144, .09) 0%, rgba(255, 255, 255, 0) 30%),
+    linear-gradient(180deg, #dfe3e8 0%, #d4dae1 100%);
 }
 
 .modal-modern > .task,
@@ -1942,6 +1945,11 @@ body {
 
 @media (max-width: 900px) {
   .wrap { padding: 20px 16px 38px; }
+
+  .wrap > .section:nth-of-type(3) {
+    margin-inline: 0;
+    padding: 18px;
+  }
 
   .hero {
     padding-bottom: 22px;
