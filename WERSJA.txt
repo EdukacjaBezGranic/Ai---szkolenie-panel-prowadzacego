@@ -1,11 +1,17 @@
 Panel szkolenia AI
-Wersja GitHub: 2026-05-31 / 25 cwiczen / nowy widok cwiczenia 7 / 20260531-01
+Wersja GitHub: 2026-06-01 / 25 cwiczen / wizualne pulpity cwiczen / 20260601-02
 
 Ta paczka zawiera ostatnie zmiany:
-- cwiczenie 7 "Prezentacja ze zrodel" ma probny nowy widok z zakladkami:
-  Dla uczestnika, Dla prowadzacego, Materialy i przyklady,
-- cwiczenie 7 ma kolorowe karty, delikatny efekt po najechaniu i mniej przytlaczajacy uklad,
-- pelne teksty zrodlowe w cwiczeniu 7 zostaja w materialach i w wydruku uczestnika,
+- wszystkie cwiczenia otwieraja sie teraz w wizualnym ukladzie:
+  Pulpit pracy, Materialy zrodlowe, Dla prowadzacego,
+- pierwszy ekran cwiczenia pokazuje mape pracy, efekty, decyzje, kroki i checklisty zamiast samej dlugiej tresci,
+- dlugie karty pracy nie sa usuniete: zostaja w Materialach zrodlowych i w wydruku,
+- dodany jest wspolny plik assets/exercise-visual-all.js do dalszego przerabiania cwiczen po kolei,
+- cwiczenie 7 "Prezentacja ze zrodel" ma trzeci probny widok z zakladkami:
+  Pulpit pracy, Materialy zrodlowe, Dla prowadzacego,
+- cwiczenie 7 ma bardziej wizualny pulpit zadania: mape zrodel, kafle efektow, os pracy, krotkie decyzje projektowe i boczny panel,
+- cwiczenie 7 ma rozwijane pelne zrodla i mniej przytlaczajacy uklad,
+- pelne teksty zrodlowe w cwiczeniu 7 zostaja w materialach zrodlowych i w wydruku uczestnika,
 - cwiczenie 7 ma osobne przyciski:
   Drukuj dla uczestnika
   Drukuj dla prowadzacego,

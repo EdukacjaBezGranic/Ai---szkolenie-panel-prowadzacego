@@ -1,6 +1,6 @@
 AKTUALNA PACZKA PANELU AI
 
-Wersja: 2026-05-31 / 25 cwiczen / nowy widok cwiczenia 7 / 20260531-01
+Wersja: 2026-06-01 / 25 cwiczen / wizualne pulpity cwiczen / 20260601-02
 
 Jak wgrac na GitHub:
 
@@ -18,6 +18,7 @@ Jak wgrac na GitHub:
    - assets/exercise-overrides-03-04.js
    - assets/exercise-overrides-05-09.js
    - assets/exercise-modern-07.js
+   - assets/exercise-visual-all.js
    - assets/app.css
    - downloads/GeneratorZaswiadczenOfflineV27.zip
    - downloads/GeneratorZaswiadczenOfflineV27-Windows.zip
@@ -37,7 +38,7 @@ Po publikacji:
 Jak poznac, ze jest aktualna wersja:
 
 - Na dole panelu powinien byc tekst:
-  Panel szkolenia AI. Wersja GitHub 2026-05-30 / 25 cwiczen / generator na macOS i Windows.
+  Panel szkolenia AI. Wersja GitHub 2026-06-01 / 25 cwiczen / wizualne pulpity cwiczen.
 
 - Obok tekstu w stopce powinien byc maly przycisk:
   Sprawdz nowsza wersje
@@ -59,12 +60,23 @@ Jak poznac, ze jest aktualna wersja:
   Pobierz na Windows
 
 - Cwiczenie 7 powinno miec nowy widok z zakladkami:
-  Dla uczestnika
+  Pulpit pracy
+  Materialy zrodlowe
   Dla prowadzacego
-  Materialy i przyklady
+
+- Kazde cwiczenie powinno otwierac sie w ukladzie z zakladkami:
+  Pulpit pracy
+  Materialy zrodlowe
+  Dla prowadzacego
+
+- W pierwszej zakladce kazdego cwiczenia powinny byc widoczne elementy wizualne:
+  mapa pracy, kafle efektow, decyzje, kroki pracy i checklista.
 
 - W cwiczeniu 7 pelne teksty zrodlowe powinny byc widoczne w zakladce:
-  Materialy i przyklady
+  Materialy zrodlowe
+
+- W cwiczeniu 7 widok Pulpit pracy powinien miec elementy graficzne:
+  mape zrodel, kafle efektow, os pracy, krotkie decyzje projektowe i boczny panel.
 
 - W cwiczeniu 7 powinny byc dwa przyciski druku:
   Drukuj dla uczestnika

@@ -185,18 +185,19 @@ Poproś grupy o przygotowanie dwóch wersji tej samej prezentacji: dla osób poc
       sample: "Główny przekaz: AI może wspierać pracowników urzędu w porządkowaniu treści, redagowaniu tekstów i przygotowywaniu materiałów, ale wynik zawsze wymaga sprawdzenia przez człowieka.",
       discuss: "Co powinno być na slajdzie, a co powinien powiedzieć prowadzący? Które dopowiedzenie AI byłoby najbardziej ryzykowne?",
       modern: {
+        mode: "guided",
         badge: "wersja pilotażowa",
-        lead: "Ćwiczenie jest podzielone na karty, żeby grupa widziała najpierw zadanie, potem materiał, a dopiero później przykłady i wskazówki.",
+        lead: "Trzecia próba układu: bardziej wizualny pulpit pracy, mapa źródeł, oś procesu i krótkie bloki decyzyjne. Dłuższe teksty zostają w materiałach źródłowych i wydruku.",
         tabs: [
           {
             id: "participant",
-            label: "Dla uczestnika",
+            label: "Pulpit pracy",
             cards: [
               { tone: "blue", kicker: "cel", title: "Co trenujemy?", body: "Uczymy się tworzyć prezentację z materiałów źródłowych w uporządkowanym procesie: analiza, przekaz, konspekt, prompt do narzędzia wizualnego, kontrola wyniku." },
               { tone: "neutral", kicker: "sytuacja", title: "Kontekst pracy", body: "Przygotowujecie 20-minutową prezentację dla pracowników WUP i PUP. Temat: „Jak narzędzia AI mogą wspierać codzienną pracę biurową i szkoleniową w instytucji publicznej?”. Prezentacja ma być praktyczna, zrozumiała dla osób początkujących i nieprzeładowana tekstem.", wide: true },
               { tone: "teal", kicker: "zadanie", title: "Wasz wynik", body: "- prompt lub zestaw pytań do NotebookLM,\n- główny przekaz prezentacji w jednym zdaniu,\n- konspekt około 8 slajdów,\n- prompt do Gamma albo Canvy,\n- checklista kontroli prezentacji po wygenerowaniu." },
               { tone: "amber", kicker: "uwaga", title: "Nie zaczynajcie od slajdów", body: "Najpierw ustalcie, co chcecie powiedzieć, do kogo i na podstawie jakich źródeł. Gamma albo Canva powinny dostać uporządkowany konspekt, a nie ogólne hasło." },
-              { tone: "green", kicker: "materiały", title: "Trzy źródła do pracy", body: "1. Notatka z warsztatu o AI w pracy biurowej.\n2. Zasady bezpiecznego korzystania z AI.\n3. Przykłady zastosowań AI w pracy urzędu.\n\nPełne streszczenia są w zakładce „Materiały i przykłady”.", wide: true },
+              { tone: "green", kicker: "materiały", title: "Trzy źródła do pracy", body: "1. Notatka z warsztatu o AI w pracy biurowej.\n2. Zasady bezpiecznego korzystania z AI.\n3. Przykłady zastosowań AI w pracy urzędu.\n\nPełne streszczenia są w zakładce „Materiały źródłowe”.", wide: true },
               { tone: "red", kicker: "ryzyko", title: "Niedopracowany prompt", body: "> Zrób prezentację o AI w pracy urzędu. Ma być nowoczesna, ciekawa i profesjonalna. Dodaj slajdy o narzędziach AI, automatyzacji pracy, zwiększaniu efektywności i przyszłości administracji.\n\nTen prompt może dopisać tematy, których nie ma w materiałach, i przesunąć prezentację w stronę ogólnej reklamy AI.", wide: true },
               { tone: "blue", kicker: "proces", title: "Kroki pracy", body: "1. Wyciągnijcie 5 najważniejszych informacji ze źródeł.\n2. Ustalcie główny przekaz prezentacji.\n3. Zaprojektujcie 8 slajdów.\n4. Przy każdym slajdzie wpiszcie tytuł, 2-3 punkty, element wizualny i notatkę dla prowadzącego.\n5. Napiszcie prompt do Gamma albo Canvy.\n6. Sprawdźcie wynik checklistą.", wide: true },
               { tone: "green", kicker: "zachować", title: "Co musi zostać w prezentacji?", body: "- AI wspiera pracę, ale nie podejmuje decyzji za człowieka.\n- Odpowiedzi AI trzeba sprawdzać.\n- Dobry prompt wymaga kontekstu, odbiorcy, celu i ograniczeń.\n- Nie wklejamy danych osobowych ani informacji poufnych.\n- Slajdy wspierają wystąpienie, a nie zastępują prowadzącego." },
@@ -219,7 +220,7 @@ Poproś grupy o przygotowanie dwóch wersji tej samej prezentacji: dla osób poc
           },
           {
             id: "materials",
-            label: "Materiały i przykłady",
+            label: "Materiały źródłowe",
             cards: [
               { tone: "neutral", kicker: "źródło 1", title: "Notatka z warsztatu o AI", body: "Podczas warsztatu wskazano, że narzędzia AI mogą wspierać pracowników w przygotowywaniu pierwszych wersji tekstów, porządkowaniu notatek, tworzeniu roboczych konspektów, upraszczaniu zbyt formalnych komunikatów i przygotowywaniu pytań do ankiet lub testów.\n\nPodkreślono, że AI nie powinna być traktowana jako źródło nieomylne. Każda odpowiedź wymaga sprawdzenia, szczególnie gdy dotyczy przepisów, procedur, danych liczbowych, informacji o projektach albo komunikatów kierowanych do odbiorców zewnętrznych.\n\nWskazano też, że jakość odpowiedzi AI zależy od jakości promptu. Polecenie powinno zawierać kontekst, odbiorcę, cel, styl, format i ograniczenia. Zbyt ogólne polecenia prowadzą do odpowiedzi ogólnych albo nieprzydatnych.", wide: true },
               { tone: "neutral", kicker: "źródło 2", title: "Bezpieczne korzystanie z AI", body: "W materiale podkreślono, że do narzędzi AI nie należy wklejać danych osobowych, numerów spraw, danych klientów, informacji poufnych, nieopublikowanych dokumentów wewnętrznych ani treści pozwalających zidentyfikować konkretną osobę.\n\nPrzed użyciem AI warto zanonimizować materiał albo przygotować przykład szkoleniowy. Jeżeli tekst zawiera dane wrażliwe lub informacje objęte poufnością, nie należy wprowadzać go do zewnętrznych narzędzi.\n\nAI może wspierać pracę, ale nie podejmuje decyzji za pracownika. Człowiek odpowiada za ocenę wyniku, sprawdzenie faktów, zgodność z procedurami i ostateczny kształt tekstu.", wide: true },

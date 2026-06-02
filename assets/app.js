@@ -1,5 +1,5 @@
 const EXERCISES = window.EXERCISES || {};
-const APP_VERSION = '20260531-01';
+const APP_VERSION = '20260601-02';
 const TOOL_SETS = {
   default: {
     intro: 'Użyjcie narzędzia, do którego macie dostęp. Wystarczy jedno narzędzie tekstowe; nie trzeba testować wszystkich.',
@@ -599,8 +599,291 @@ function buildModernCard(card) {
   `;
 }
 
+function findModernTab(tabs, id) {
+  return (tabs || []).find(tab => tab.id === id) || { cards: [] };
+}
+
+function findModernCard(tabs, tabId, titlePart) {
+  const tab = findModernTab(tabs, tabId);
+  return (tab.cards || []).find(card => String(card.title || '').includes(titlePart)) || {};
+}
+
+function buildGuidedPanel(card, extraClass = '') {
+  const classes = [
+    'guided-panel',
+    `guided-panel-${card.tone || 'neutral'}`,
+    extraClass
+  ].filter(Boolean).join(' ');
+  return `
+    <section class="${classes}">
+      ${card.kicker ? `<span class="tag">${escapeHtml(card.kicker)}</span>` : ''}
+      <h3>${escapeHtml(card.title || '')}</h3>
+      <div class="guided-body">${formatRichText(card.body || '')}</div>
+    </section>
+  `;
+}
+
+function hasGuidedCard(card) {
+  return Boolean(card && (card.title || card.body));
+}
+
+function buildGuidedPanelIfAny(card, extraClass = '') {
+  return hasGuidedCard(card) ? buildGuidedPanel(card, extraClass) : '';
+}
+
+function buildGuidedSource(card, index) {
+  return `
+    <details class="source-detail" ${index === 0 ? 'open' : ''}>
+      <summary>
+        <span>${escapeHtml(card.title || `Materiał ${index + 1}`)}</span>
+        <em>pełny tekst źródłowy</em>
+      </summary>
+      <div class="source-detail-body">${formatRichText(card.body || '')}</div>
+    </details>
+  `;
+}
+
+function buildGuidedTrainerCard(card) {
+  return `
+    <section class="trainer-strip trainer-strip-${card.tone || 'neutral'}">
+      ${card.kicker ? `<span class="tag">${escapeHtml(card.kicker)}</span>` : ''}
+      <h3>${escapeHtml(card.title || '')}</h3>
+      <div class="guided-body">${formatRichText(card.body || '')}</div>
+    </section>
+  `;
+}
+
+function getGuidedVisual(e) {
+  return e?.modern?.visual || {};
+}
+
+function normalizeVisualItem(item, index, prefix = '') {
+  if (Array.isArray(item)) {
+    return {
+      number: item[0] || `${prefix}${index + 1}`,
+      title: item[1] || '',
+      text: item[2] || '',
+      tone: item[3] || 'neutral'
+    };
+  }
+  return {
+    number: item?.number || item?.mark || `${prefix}${index + 1}`,
+    title: item?.title || '',
+    text: item?.text || item?.body || '',
+    tone: item?.tone || 'neutral'
+  };
+}
+
+function buildGuidedHeroMap(e) {
+  const visual = getGuidedVisual(e);
+  const flow = (visual.flow && visual.flow.length ? visual.flow : ['Materiał', 'Decyzje', 'Wynik']).slice(0, 3);
+  return `
+    <div class="guided-hero-map" aria-hidden="true">
+      <span>${escapeHtml(flow[0] || '')}</span>
+      <i></i>
+      <span>${escapeHtml(flow[1] || '')}</span>
+      <i></i>
+      <span>${escapeHtml(flow[2] || '')}</span>
+    </div>
+  `;
+}
+
+function buildGuidedDeliverables(e) {
+  const visual = getGuidedVisual(e);
+  const items = (visual.deliverables && visual.deliverables.length
+    ? visual.deliverables
+    : [
+      ['01', 'Wynik pracy', e.result || 'materiał do omówienia'],
+      ['02', 'Prompt', 'instrukcja gotowa do użycia'],
+      ['03', 'Kontrola', 'sprawdzenie wyniku AI']
+    ]).map((item, index) => normalizeVisualItem(item, index, '0'));
+  return `
+    <div class="guided-deliverables" aria-label="Efekty pracy">
+      ${items.map(item => `
+        <div class="guided-deliverable">
+          <strong>${escapeHtml(item.number)}</strong>
+          <span>${escapeHtml(item.title)}</span>
+          <small>${escapeHtml(item.text)}</small>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+function buildGuidedSourceTiles(e) {
+  const visual = getGuidedVisual(e);
+  const sources = (visual.sourceTiles || []).map((item, index) => normalizeVisualItem(item, index, 'Ź'));
+  if (!sources.length) return '';
+  return `
+    <section class="guided-source-tiles" aria-label="Mapa materiałów źródłowych">
+      <div>
+        <span class="tag">${escapeHtml(visual.sourceKicker || 'mapa pracy')}</span>
+        <h3>${escapeHtml(visual.sourceTitle || 'Zanim czytacie szczegóły, zobaczcie z czego składa się zadanie')}</h3>
+      </div>
+      <div class="guided-source-grid">
+        ${sources.map(item => `
+          <article class="guided-source-tile guided-source-${item.tone}">
+            <b>${escapeHtml(item.number)}</b>
+            <h4>${escapeHtml(item.title)}</h4>
+            <p>${escapeHtml(item.text)}</p>
+          </article>
+        `).join('')}
+      </div>
+    </section>
+  `;
+}
+
+function buildGuidedDecisionCards(e) {
+  const cards = (getGuidedVisual(e).decisions || []).map((item, index) => normalizeVisualItem(item, index));
+  if (!cards.length) return '';
+  return `
+    <section class="guided-decision-strip" aria-label="Decyzje projektowe">
+      ${cards.map(item => `
+        <article>
+          <span>${escapeHtml(item.title)}</span>
+          <p>${escapeHtml(item.text)}</p>
+        </article>
+      `).join('')}
+    </section>
+  `;
+}
+
+function buildGuidedPromptPath(e) {
+  const path = (getGuidedVisual(e).path || ['Rozpoznaj materiał', 'Ułóż instrukcję', 'Sprawdź wynik']).slice(0, 4);
+  return `
+    <div class="guided-prompt-path" aria-label="Przepływ pracy">
+      ${path.map((item, index) => `
+        <div class="prompt-path-node">
+          <strong>${index + 1}</strong>
+          <span>${escapeHtml(item)}</span>
+        </div>
+        ${index < path.length - 1 ? '<div class="prompt-path-line"></div>' : ''}
+      `).join('')}
+    </div>
+  `;
+}
+
+function buildGuidedExerciseHtml(e) {
+  const modern = e.modern || {};
+  const visual = getGuidedVisual(e);
+  const tabs = modern.tabs || [];
+  const context = findModernCard(tabs, 'participant', 'Kontekst pracy');
+  const outcome = findModernCard(tabs, 'participant', 'Wasz wynik');
+  const warning = findModernCard(tabs, 'participant', 'Nie zaczynajcie').title
+    ? findModernCard(tabs, 'participant', 'Nie zaczynajcie')
+    : findModernCard(tabs, 'participant', 'Największe ryzyko');
+  const weakPrompt = findModernCard(tabs, 'participant', 'Niedopracowany prompt');
+  const keep = findModernCard(tabs, 'participant', 'Co musi');
+  const avoid = findModernCard(tabs, 'participant', 'Czego nie');
+  const checklist = findModernCard(tabs, 'participant', 'Checklista');
+  const materialCards = findModernTab(tabs, 'materials').cards || [];
+  const trainerCards = findModernTab(tabs, 'trainer').cards || [];
+  const steps = e.steps || [];
+  return `
+    <div class="modern-hero guided-hero">
+      <div>
+        ${modern.badge ? `<span class="tag">${escapeHtml(modern.badge)}</span>` : ''}
+        <h3>${escapeHtml(e.heading || e.title)}</h3>
+        ${modern.lead ? `<p>${escapeHtml(modern.lead)}</p>` : ''}
+      </div>
+      ${buildGuidedHeroMap(e)}
+      <div class="modern-print-actions" aria-label="Opcje ćwiczenia">
+        <button class="btn print-btn" type="button" data-modern-print="participant">Drukuj dla uczestnika</button>
+        <button class="btn ghost" type="button" data-modern-print="trainer">Drukuj dla prowadzącego</button>
+        <button class="btn screen-mode-btn" type="button" data-modern-screen>Tryb ekranowy</button>
+      </div>
+    </div>
+    <div class="modern-tabs guided-tabs" role="tablist" aria-label="Widoki ćwiczenia">
+      <button class="modern-tab active" type="button" data-modern-tab="guided-work" role="tab" aria-selected="true">Pulpit pracy</button>
+      <button class="modern-tab" type="button" data-modern-tab="guided-materials" role="tab" aria-selected="false">Materiały źródłowe</button>
+      <button class="modern-tab" type="button" data-modern-tab="guided-trainer" role="tab" aria-selected="false">Dla prowadzącego</button>
+    </div>
+    <div class="modern-views guided-views">
+      <section class="modern-view active" data-modern-view="guided-work" role="tabpanel">
+        <div class="guided-layout">
+          <main class="guided-main">
+            <section class="guided-task-card">
+              <span class="tag">wasze zadanie</span>
+              <h3>${escapeHtml(visual.taskTitle || 'Najpierw ustalcie sens pracy, potem uruchomcie narzędzie AI')}</h3>
+              <p>${escapeHtml(visual.taskLead || 'Zbudujcie krótki proces pracy: od materiału wejściowego, przez decyzje i ograniczenia, do wyniku gotowego do sprawdzenia przez człowieka.')}</p>
+              ${buildGuidedDeliverables(e)}
+            </section>
+            ${buildGuidedPanelIfAny(context, 'guided-context')}
+            ${buildGuidedSourceTiles(e)}
+            ${buildGuidedDecisionCards(e)}
+            <section class="guided-process">
+              <span class="tag">proces</span>
+              <h3>Kolejność pracy</h3>
+              <ol>
+                ${steps.map(step => `<li><span>${escapeHtml(step)}</span></li>`).join('')}
+              </ol>
+            </section>
+            ${[keep, avoid].some(hasGuidedCard) ? `
+              <div class="guided-duo">
+                ${buildGuidedPanelIfAny(keep)}
+                ${buildGuidedPanelIfAny(avoid)}
+              </div>
+            ` : ''}
+            ${buildGuidedPanelIfAny(weakPrompt, 'guided-wide')}
+            ${buildGuidedPanelIfAny(checklist, 'guided-wide')}
+          </main>
+          <aside class="guided-sidebar">
+            <section>
+              <span class="tag">efekt</span>
+              <h3>Co ma powstać?</h3>
+              ${buildGuidedPromptPath(e)}
+            </section>
+            <section>
+              <span class="tag">${escapeHtml(visual.sideKicker || 'materiały')}</span>
+              <h3>${escapeHtml(visual.sideTitle || 'Na czym pracujecie?')}</h3>
+              <p>${escapeHtml(visual.sideText || 'Pełne materiały są w zakładce „Materiały źródłowe”. W pulpicie zostawiamy tylko orientację i decyzje robocze.')}</p>
+            </section>
+            <section class="guided-sidebar-tools">
+              ${buildToolsHtml(getExerciseTools(e), 'h3')}
+            </section>
+            ${hasGuidedCard(warning) ? `
+              <section class="guided-sidebar-warning">
+                <span class="tag">uważajcie</span>
+                <h3>Największe ryzyko</h3>
+                ${formatRichText(warning.body || '')}
+              </section>
+            ` : ''}
+          </aside>
+        </div>
+      </section>
+      <section class="modern-view" data-modern-view="guided-materials" role="tabpanel">
+        <div class="source-layout">
+          <div class="source-intro">
+            <span class="tag">materiały do pracy</span>
+            <h3>${escapeHtml(visual.materialsTitle || 'Pełne materiały do ćwiczenia')}</h3>
+            <p>${escapeHtml(visual.materialsText || 'Ta zakładka przechowuje pełną kartę pracy, materiał wejściowy, przykłady i elementy kontrolne. Pulpit pracy celowo pokazuje tylko najważniejsze sygnały.')}</p>
+          </div>
+          ${buildGuidedSourceTiles(e)}
+          <div class="source-stack">
+            ${materialCards.slice(0, 3).map(buildGuidedSource).join('')}
+          </div>
+          <div class="guided-duo">
+            ${materialCards.slice(3).map(card => buildGuidedPanel(card)).join('')}
+          </div>
+        </div>
+      </section>
+      <section class="modern-view" data-modern-view="guided-trainer" role="tabpanel">
+        <div class="trainer-layout">
+          <div class="source-intro">
+            <span class="tag">scenariusz prowadzącego</span>
+            <h3>${escapeHtml(visual.trainerTitle || 'Instrukcja metodyczna bez obciążania uczestnika')}</h3>
+            <p>${escapeHtml(visual.trainerText || 'Ta część pomaga prowadzącemu wprowadzić ćwiczenie, obserwować pracę grup i omówić wynik bez dublowania całej karty uczestnika.')}</p>
+          </div>
+          ${trainerCards.map(buildGuidedTrainerCard).join('')}
+        </div>
+      </section>
+    </div>
+  `;
+}
+
 function buildModernExerciseHtml(e) {
   const modern = e.modern || {};
+  if (modern.mode === 'guided') return buildGuidedExerciseHtml(e);
   const tabs = modern.tabs || [];
   return `
     <div class="modern-hero">
